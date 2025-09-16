@@ -10,7 +10,6 @@ public class CameraTrigger : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(cameraManager);
         if (collision.tag == "Player")
         {
             cameraManager.AddToQueue(transform);
