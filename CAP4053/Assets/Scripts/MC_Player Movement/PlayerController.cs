@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1); // face right
         else if (movement.x < 0)
             transform.localScale = new Vector3(1, 1, 1); // face left
-            
+
         // set animator parameter
         animator.SetFloat("Speed", movement.sqrMagnitude);
     }
@@ -33,5 +33,11 @@ public class PlayerController : MonoBehaviour
     {
         // move player
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    public void MoveFromDamage(Vector2 direction, float enemyKnockback)
+    {
+        Vector2 scaledDirection = direction * enemyKnockback;
+        rb.AddForce(scaledDirection);
     }
 }
