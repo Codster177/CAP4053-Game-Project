@@ -6,11 +6,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 movement;
+    private SpriteRenderer spriteRenderer;
+    private bool movingUp = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -21,12 +24,19 @@ public class PlayerController : MonoBehaviour
 
         // flip sprite (left/right)
         if (movement.x > 0)
-            transform.localScale = new Vector3(-1, 1, 1); // face right
+        {
+            spriteRenderer.flipX = true; // face right
+            movingUp = false;
+        }
         else if (movement.x < 0)
-            transform.localScale = new Vector3(1, 1, 1); // face left
+        {
+            spriteRenderer.flipX = false; // face left
+            movingUp = false;
+        }
 
         // set animator parameter
         animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetBool("MovingUp", movingUp);
     }
 
     void FixedUpdate()
@@ -40,4 +50,5 @@ public class PlayerController : MonoBehaviour
         Vector2 scaledDirection = direction * enemyKnockback;
         rb.AddForce(scaledDirection);
     }
+
 }

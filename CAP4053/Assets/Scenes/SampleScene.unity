@@ -8266,9 +8266,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5054542592063542978, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
+      propertyPath: playerTrans
+      value: 
+      objectReference: {fileID: 975306204}
     - target: {fileID: 6071255053859952349, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
       propertyPath: m_Name
       value: Enemy 1_ Chaser
+      objectReference: {fileID: 0}
+    - target: {fileID: 6071255053859952349, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6688995054955382938, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
       propertyPath: m_LocalPosition.x
