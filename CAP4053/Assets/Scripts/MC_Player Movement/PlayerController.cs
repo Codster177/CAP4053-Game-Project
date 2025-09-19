@@ -22,6 +22,13 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+
+        //looking for rainbow(dash)
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Debug.Log("Left shift was pressed");
+        }
+
         // flip sprite (left/right)
         if (movement.x > 0)
         {
