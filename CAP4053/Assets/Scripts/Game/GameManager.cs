@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         publicGameManager = this;
+        OnGameStateChanged = null;
     }
     // Quick Debug
     void Update()
@@ -58,7 +59,6 @@ public class GameManager : MonoBehaviour
             Debug.Log(OnGameStateChanged);
         }
     }
-
 }
 
 public enum GameState
