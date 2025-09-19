@@ -24,11 +24,6 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        //looking for rainbow(dash)
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Debug.Log("Left shift was pressed");
-        }
 
         // flip sprite (left/right)
         if (movement.x > 0)
@@ -45,6 +40,24 @@ public class PlayerController : MonoBehaviour
         // set animator parameter
         animator.SetFloat("Speed", movement.sqrMagnitude);
         animator.SetBool("MovingUp", movingUp);
+
+        //looking for rainbow(dash)
+        if (Input.GetButtonDown("Dash"))
+        {
+            Debug.Log("Left shift was pressed and Rainbowdash is saved!");
+        }
+
+        //light attack
+        if (Input.GetButtonDown("LightAttack"))
+        {
+            Debug.Log("You weakling...");
+        }
+
+        //heavy attack
+        if (Input.GetButtonDown("HeavyAttack"))
+        {
+            Debug.Log("Why are you seeing this... weirdo");
+        }
     }
 
     void FixedUpdate()
