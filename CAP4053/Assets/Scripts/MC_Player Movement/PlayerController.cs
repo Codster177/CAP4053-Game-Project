@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,10 +8,11 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private Vector2 movement;
     private SpriteRenderer spriteRenderer;
-    private bool movingUp = false;
+    private bool movingUp = false, movementEnabled = true;
 
     void Start()
     {
+        GameManager.OnGameStateChanged += PlayerDeath;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -21,7 +23,6 @@ public class PlayerController : MonoBehaviour
         // get input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
 
         //looking for rainbow(dash)
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -49,13 +50,30 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // move player
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (movementEnabled)
+        {
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
     }
 
-    public void MoveFromDamage(Vector2 direction, float enemyKnockback)
+    public void AllowMovement(bool newState)
     {
-        Vector2 scaledDirection = direction * enemyKnockback;
-        rb.AddForce(scaledDirection);
+        movementEnabled = newState;
+    }
+
+    void PlayerDeath(GameState newGameState)
+    {
+        if (newGameState == GameState.Death)
+        {
+            AllowMovement(false);
+            animator.SetTrigger("Die");
+            StartCoroutine(DeathCoroutine());
+        }
+    }
+    IEnumerator DeathCoroutine()
+    {
+        yield return new WaitForSeconds(2.2f);
+        Destroy(gameObject);
     }
 
 }

@@ -161,8 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbdde526b134c74b81b959a4a6ae102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTrans: {fileID: 0}
-  navMeshAgent: {fileID: 2111347056427954712}
+  enemyCombater: {fileID: 6521783576388939197}
 --- !u!1 &8075297384640778381
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +171,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4455909737792847921}
+  - component: {fileID: 7181126247533033113}
+  - component: {fileID: 6521783576388939197}
   m_Layer: 0
   m_Name: Damage Collider
   m_TagString: Untagged
@@ -194,3 +195,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6688995054955382938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &7181126247533033113
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075297384640778381}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.85
+--- !u!114 &6521783576388939197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075297384640778381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd7cf01a45009e546a602aa95feaed77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyKnockback: 2
