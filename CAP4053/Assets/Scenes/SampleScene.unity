@@ -8304,6 +8304,7 @@ GameObject:
   - component: {fileID: 975306207}
   - component: {fileID: 975306205}
   - component: {fileID: 975306208}
+  - component: {fileID: 975306209}
   m_Layer: 0
   m_Name: MC/Player
   m_TagString: Player
@@ -8416,6 +8417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  canDash: 1
 --- !u!50 &975306207
 Rigidbody2D:
   serializedVersion: 5
@@ -8480,6 +8482,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.3}
   m_Size: {x: 1.1, y: 2.14}
   m_Direction: 0
+--- !u!114 &975306209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975306201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b16353b743a7dc45822c42c795eaefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1110114528
 GameObject:
   m_ObjectHideFlags: 0

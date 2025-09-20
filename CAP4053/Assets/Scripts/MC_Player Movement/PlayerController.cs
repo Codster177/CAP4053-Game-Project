@@ -10,6 +10,12 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool movingUp = false, movementEnabled = true;
 
+    public bool canDash = true;
+    private bool isDashing = false;
+    private float dashVelocity = 15f;
+    private float dashTime = 0.5f;
+    private float dashCoolDown = 3f;
+
     void Start()
     {
         GameManager.OnGameStateChanged += PlayerDeath;
@@ -23,7 +29,6 @@ public class PlayerController : MonoBehaviour
         // get input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
 
         // flip sprite (left/right)
         if (movement.x > 0)
@@ -42,21 +47,11 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("MovingUp", movingUp);
 
         //looking for rainbow(dash)
-        if (Input.GetButtonDown("Dash"))
+        if (Input.GetButtonDown("Dash") && canDash)
         {
+            animator.SetTrigger("mc-dash");
+            StartCoroutine(Dash());
             Debug.Log("Left shift was pressed and Rainbowdash is saved!");
-        }
-
-        //light attack
-        if (Input.GetButtonDown("LightAttack"))
-        {
-            Debug.Log("You weakling...");
-        }
-
-        //heavy attack
-        if (Input.GetButtonDown("HeavyAttack"))
-        {
-            Debug.Log("Why are you seeing this... weirdo");
         }
     }
 
@@ -66,6 +61,11 @@ public class PlayerController : MonoBehaviour
         if (movementEnabled)
         {
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
+        
+        if (isDashing)
+        {
+            return;
         }
     }
 
@@ -87,6 +87,20 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(2.2f);
         Destroy(gameObject);
+    }
+
+    IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        movementEnabled = false;
+        rb.linearVelocity = new Vector2(movement.x * dashVelocity, movement.y * dashVelocity);
+        yield return new WaitForSeconds(dashTime);
+        isDashing = false;
+        movementEnabled = true;
+        yield return new WaitForSeconds(dashCoolDown);
+        canDash = true;
+        
     }
 
 }
