@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ChaserCombater : EnemyCombater
 {
-    [SerializeField] private float damageAmount;
-    [SerializeField] private float enemyKnockback;
-    [SerializeField] private float knockbackTime;
+    [SerializeField] private float damageAmount, enemyKnockback, knockbackTime;
+    [SerializeField] private bool hitWhileDash;
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -14,7 +13,7 @@ public class ChaserCombater : EnemyCombater
             Vector2 knockbackDir = collision.transform.position - controller.transform.position;
             knockbackDir.Normalize();
             knockbackDir = knockbackDir * enemyKnockback;
-            HitWithKnockback(collision.gameObject, damageAmount, knockbackDir, knockbackTime);
+            HitWithKnockback(collision.gameObject, damageAmount, knockbackDir, knockbackTime, hitWhileDash);
         }
         else
         {

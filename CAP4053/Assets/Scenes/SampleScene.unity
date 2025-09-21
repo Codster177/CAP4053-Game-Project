@@ -8416,7 +8416,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76fca6efb956d148a8a5d8a4e5405e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
+  dashCoolDown: 3
+  dashTime: 0.5
+  dashVelocity: 15
   canDash: 1
 --- !u!50 &975306207
 Rigidbody2D:
@@ -8872,7 +8875,7 @@ GameObject:
   - component: {fileID: 2119507599}
   m_Layer: 0
   m_Name: Wall Map
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -11,17 +11,22 @@ public class EnemyCombater : MonoBehaviour
     {
         controller = newController;
     }
-    protected void HitWithKnockback(GameObject EntityGO, float damageAmount, Vector2 knockbackDir, float knockbackTime)
+    protected void HitWithKnockback(GameObject EntityGO, float damageAmount, Vector2 knockbackDir, float knockbackTime, bool hitWhileDash)
     {
         if (isBeingHit)
         {
             return;
         }
-        GameManager.publicGameManager.DealDamage(damageAmount);
-        isBeingHit = true;
         Rigidbody2D playerRB = EntityGO.GetComponent<Rigidbody2D>();
         PlayerController playerCon = EntityGO.GetComponent<PlayerController>();
 
+        if (!playerCon.CanEnemyHit(hitWhileDash))
+        {
+            return;
+        }
+
+        GameManager.publicGameManager.DealDamage(damageAmount);
+        isBeingHit = true;
         StartCoroutine(KnockbackCoroutine(playerRB, playerCon, knockbackTime));
         Debug.Log(knockbackDir);
         playerRB.AddForce(knockbackDir, ForceMode2D.Impulse);

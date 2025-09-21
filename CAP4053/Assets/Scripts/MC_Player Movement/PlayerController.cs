@@ -3,18 +3,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 5f, dashCoolDown = 3f, dashTime = 0.5f, dashVelocity = 15f;
+    [SerializeField] private bool canDash = true;
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 movement;
     private SpriteRenderer spriteRenderer;
-    private bool movingUp = false, movementEnabled = true;
-
-    public bool canDash = true;
-    private bool isDashing = false;
-    private float dashVelocity = 15f;
-    private float dashTime = 0.5f;
-    private float dashCoolDown = 3f;
+    private bool isDashing = false, movingUp = false, movementEnabled = true;
 
     void Start()
     {
@@ -43,7 +38,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // set animator parameter
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetFloat("Speed", (movement.sqrMagnitude * moveSpeed));
         animator.SetBool("MovingUp", movingUp);
 
         //looking for rainbow(dash)
@@ -60,9 +55,16 @@ public class PlayerController : MonoBehaviour
         // move player
         if (movementEnabled)
         {
-            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+            float diagFix = 1f;
+            if (movement.x != 0 && movement.y != 0)
+            {
+                diagFix = 0.75f;
+            }
+            Vector3 fixedMovement = (movement * moveSpeed * diagFix * Time.fixedDeltaTime);
+            transform.position += new Vector3(fixedMovement.x, fixedMovement.y, 0f);
+            // rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
-        
+
         if (isDashing)
         {
             return;
@@ -72,6 +74,15 @@ public class PlayerController : MonoBehaviour
     public void AllowMovement(bool newState)
     {
         movementEnabled = newState;
+    }
+
+    public bool CanEnemyHit(bool hitWhileDash)
+    {
+        if (!isDashing || hitWhileDash)
+        {
+            return true;
+        }
+        return false;
     }
 
     void PlayerDeath(GameState newGameState)
@@ -98,9 +109,23 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
         movementEnabled = true;
+        rb.linearVelocity = new Vector2(0f, 0f);
         yield return new WaitForSeconds(dashCoolDown);
         canDash = true;
-        
+
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            if (isDashing)
+            {
+                isDashing = false;
+                movementEnabled = true;
+                rb.linearVelocity = new Vector2(0f, 0f);
+            }
+        }
     }
 
 }
