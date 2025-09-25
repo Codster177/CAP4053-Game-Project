@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isDashing = false, movingUp = false, movementEnabled = true;
 
+    // Start() establishes PlayerDeath as a function that listens to OnGameStateChanged, and gets
+    // components.
     void Start()
     {
         GameManager.OnGameStateChanged += PlayerDeath;
@@ -71,11 +73,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Enables or disables movement.
     public void AllowMovement(bool newState)
     {
         movementEnabled = newState;
     }
-
+    
+    // Asks player if conditions are occuring where the enemy can or cannot hit them.
     public bool CanEnemyHit(bool hitWhileDash)
     {
         if (!isDashing || hitWhileDash)
@@ -85,6 +89,7 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
+    // Called OnGameStateChanged. Activates the player death. Triggers animation.
     void PlayerDeath(GameState newGameState)
     {
         if (newGameState == GameState.Death)
@@ -94,12 +99,14 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(DeathCoroutine());
         }
     }
+    // Destroys player 2.2 seconds (animation length) after coroutine is called.
     IEnumerator DeathCoroutine()
     {
         yield return new WaitForSeconds(2.2f);
         Destroy(gameObject);
     }
-
+    
+    // Sends the player forward for the dash while disabling movement, then enables movement after the dash
     IEnumerator Dash()
     {
         canDash = false;
@@ -115,6 +122,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    // Reads collisions to stop dash if the player hits a wall.
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Wall")
