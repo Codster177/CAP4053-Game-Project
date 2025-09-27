@@ -1099,7 +1099,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2409617412963358826, guid: a80b28aa20a4c0044b33a22e22306986, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1321,7 +1321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6071255053859952349, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521783576388939197, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
       propertyPath: damageAmount
@@ -1389,6 +1389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1451215906}
+  - component: {fileID: 1451215907}
   m_Layer: 0
   m_Name: GenerationManager
   m_TagString: Untagged
@@ -1411,6 +1412,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1451215907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451215905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89de6b7c25414c84ca82adc7cf177330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalGrid: {fileID: 0}
+  roomPrefabs:
+  - {fileID: 3011557817051098995, guid: 452aad30437c7ec4ea571168b962febf, type: 3}
+  - {fileID: 8905777958041529751, guid: 72bc98886d147d34daaa2311e38c26a7, type: 3}
+  currentlyGenerating: []
+  xOffsetConst: 34
+  yOffsetConst: 20
+  testGenerationDirection: 0
+  squareBounds: 6
+  minimumRoomRange: 0a0000000e000000
 --- !u!1 &1652182068
 GameObject:
   m_ObjectHideFlags: 0
