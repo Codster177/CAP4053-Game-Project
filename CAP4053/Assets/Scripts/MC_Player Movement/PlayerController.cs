@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject deathScreen;
+
     [SerializeField] private float moveSpeed = 5f, dashCoolDown = 3f, dashTime = 0.5f, dashVelocity = 15f;
     [SerializeField] private bool canDash = true;
     private Rigidbody2D rb;
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         movementEnabled = newState;
     }
-    
+
     // Asks player if conditions are occuring where the enemy can or cannot hit them.
     public bool CanEnemyHit(bool hitWhileDash)
     {
@@ -96,7 +98,9 @@ public class PlayerController : MonoBehaviour
         {
             AllowMovement(false);
             animator.SetTrigger("Die");
+            if (deathScreen) deathScreen.SetActive(true);
             StartCoroutine(DeathCoroutine());
+
         }
     }
     // Destroys player 2.2 seconds (animation length) after coroutine is called.
@@ -105,7 +109,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(2.2f);
         Destroy(gameObject);
     }
-    
+
     // Sends the player forward for the dash while disabling movement, then enables movement after the dash
     IEnumerator Dash()
     {
