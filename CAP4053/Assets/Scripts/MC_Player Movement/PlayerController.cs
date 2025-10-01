@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f, dashCoolDown = 3f, dashTime = 0.5f, dashVelocity = 15f;
     [SerializeField] private bool canDash = true;
+    [SerializeField] private DashParticles dashPS;
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 movement;
@@ -32,21 +33,25 @@ public class PlayerController : MonoBehaviour
         {
             spriteRenderer.flipX = true; // face right
             movingUp = false;
+            dashPS.flipXSprite(true);
         }
         else if (movement.x < 0)
         {
             spriteRenderer.flipX = false; // face left
             movingUp = false;
+            dashPS.flipXSprite(false);
         }
 
         // set animator parameter
         animator.SetFloat("Speed", (movement.sqrMagnitude * moveSpeed));
         animator.SetBool("MovingUp", movingUp);
+        // float spriteIndex = dashPS.addCheckSprite(spriteRenderer.sprite);
+        // dashPS.setSprite(spriteIndex);
 
         //looking for rainbow(dash)
         if (Input.GetButtonDown("Dash") && canDash)
         {
-            animator.SetTrigger("mc-dash");
+            // animator.SetTrigger("mc-dash");
             StartCoroutine(Dash());
             Debug.Log("Left shift was pressed and Rainbowdash is saved!");
         }
@@ -78,7 +83,7 @@ public class PlayerController : MonoBehaviour
     {
         movementEnabled = newState;
     }
-    
+
     // Asks player if conditions are occuring where the enemy can or cannot hit them.
     public bool CanEnemyHit(bool hitWhileDash)
     {
@@ -105,17 +110,19 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(2.2f);
         Destroy(gameObject);
     }
-    
+
     // Sends the player forward for the dash while disabling movement, then enables movement after the dash
     IEnumerator Dash()
     {
         canDash = false;
         isDashing = true;
         movementEnabled = false;
+        dashPS.playStop(true);
         rb.linearVelocity = new Vector2(movement.x * dashVelocity, movement.y * dashVelocity);
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
         movementEnabled = true;
+        dashPS.playStop(false);
         rb.linearVelocity = new Vector2(0f, 0f);
         yield return new WaitForSeconds(dashCoolDown);
         canDash = true;
