@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     private int comboStep = 0;
     private bool isAttacking = false;
     private Coroutine comboResetCoroutine;
+    [SerializeField] private GameObject LightAttackHitbox;
 
     private void Start()
     {
@@ -52,6 +53,16 @@ public class PlayerAttack : MonoBehaviour
         }
 
         comboResetCoroutine = StartCoroutine(ResetComboAfterDelay());
+    }
+
+    public void EnableHitbox()
+    {
+        if (LightAttackHitbox != null) LightAttackHitbox.SetActive(true);
+    }
+
+    public void DisableHitbox()
+    {
+        if (LightAttackHitbox != null) LightAttackHitbox.SetActive(false);
     }
 
     IEnumerator AttackCoroutine()
