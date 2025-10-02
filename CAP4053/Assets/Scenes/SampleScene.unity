@@ -1223,6 +1223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b16353b743a7dc45822c42c795eaefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comboResetTime: 1
 --- !u!1 &1110114528
 GameObject:
   m_ObjectHideFlags: 0
