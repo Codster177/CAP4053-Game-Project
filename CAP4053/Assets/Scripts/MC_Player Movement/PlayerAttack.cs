@@ -1,22 +1,23 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private Animator animator;
+    [SerializeField] private Animator animator;
     [SerializeField] private float comboResetTime = 1f; // the combo time window
+    [SerializeField] private int damage = 10;
     private int comboStep = 0;
-    private bool isAttacking = false;
+    private bool isAttacking = false, canAttack = true;
     private Coroutine comboResetCoroutine;
-    [SerializeField] private GameObject LightAttackHitbox;
-
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+    [SerializeField] private List<EnemyHealth> enemiesInRange = new List<EnemyHealth>();
 
     void Update()
     {
+        if (!canAttack)
+        {
+            return;
+        }
         //light attack
         if (Input.GetButtonDown("LightAttack"))
         {
@@ -55,14 +56,9 @@ public class PlayerAttack : MonoBehaviour
         comboResetCoroutine = StartCoroutine(ResetComboAfterDelay());
     }
 
-    public void EnableHitbox()
+    public void SetCanAttack(bool newState)
     {
-        if (LightAttackHitbox != null) LightAttackHitbox.SetActive(true);
-    }
-
-    public void DisableHitbox()
-    {
-        if (LightAttackHitbox != null) LightAttackHitbox.SetActive(false);
+        canAttack = newState;
     }
 
     IEnumerator AttackCoroutine()
@@ -71,6 +67,10 @@ public class PlayerAttack : MonoBehaviour
 
         // sync with animation length
         yield return new WaitForSeconds(0.4f);
+        for (int i = 0; i < enemiesInRange.Count; i++)
+        {
+            enemiesInRange[i].TakeDamage(damage);
+        }
 
         isAttacking = false;
     }
@@ -80,5 +80,33 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(comboResetTime);
         comboStep = 0;
         animator.SetInteger("ComboStep", 0);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (!other.CompareTag("Enemy")) return;
+
+        EnemyHealth health = other.GetComponentInParent<EnemyHealth>();
+        if (health != null)
+        {
+            if (!enemiesInRange.Contains(health))
+            {
+                enemiesInRange.Add(health);
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Enemy")) return;
+
+        EnemyHealth health = other.GetComponentInParent<EnemyHealth>();
+        if (health != null)
+        {
+            if (enemiesInRange.Contains(health))
+            {
+                enemiesInRange.Remove(health);
+            }
+        }
     }
 }

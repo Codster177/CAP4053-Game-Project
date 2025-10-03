@@ -25,14 +25,8 @@ public class EnemyCombater : MonoBehaviour
         Rigidbody2D playerRB = EntityGO.GetComponent<Rigidbody2D>();
         PlayerController playerCon = EntityGO.GetComponent<PlayerController>();
 
-        // Checks if the player is in a condition where they should not be hit. Returns if they can't be hit.
-        if (!playerCon.CanEnemyHit(hitWhileDash))
-        {
-            return;
-        }
-
         // Deals damage, knocks the player back, and starts the coroutine to reset the player to normal.
-        GameManager.publicGameManager.DealDamage(damageAmount);
+        playerCon.DealDamageToPlayer(damageAmount, hitWhileDash);
         isBeingHit = true;
         StartCoroutine(KnockbackCoroutine(playerRB, playerCon, knockbackTime));
         Debug.Log(knockbackDir);

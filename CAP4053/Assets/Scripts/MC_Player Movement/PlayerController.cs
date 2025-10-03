@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private Vector2 movement;
     private SpriteRenderer spriteRenderer;
-    private bool isDashing = false, movingUp = false, movementEnabled = true;
+    private bool isDashing = false, movingUp = false, movementEnabled = true, canBeHit = true;
 
     // Start() establishes PlayerDeath as a function that listens to OnGameStateChanged, and gets
     // components.
@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        EffectHolder effectHolder = GetComponent<EffectHolder>();
+        effectHolder.AddEffect(new Invincibility(4));
     }
 
     void Update()
@@ -86,14 +88,21 @@ public class PlayerController : MonoBehaviour
         movementEnabled = newState;
     }
 
-    // Asks player if conditions are occuring where the enemy can or cannot hit them.
-    public bool CanEnemyHit(bool hitWhileDash)
+    public void SetCanBeHit(bool newCanBeHit)
     {
-        if (!isDashing || hitWhileDash)
+        canBeHit = newCanBeHit;
+    }
+
+    public void DealDamageToPlayer(float damageAmount, bool hitWhileDash)
+    {
+        if (isDashing && !hitWhileDash)
         {
-            return true;
+            return;
         }
-        return false;
+        if (canBeHit)
+        {
+            GameManager.publicGameManager.DealDamage(damageAmount);
+        }
     }
 
     // Called OnGameStateChanged. Activates the player death. Triggers animation.
@@ -105,7 +114,6 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Die");
             if (deathScreen) deathScreen.SetActive(true);
             StartCoroutine(DeathCoroutine());
-
         }
     }
     // Destroys player 2.2 seconds (animation length) after coroutine is called.
