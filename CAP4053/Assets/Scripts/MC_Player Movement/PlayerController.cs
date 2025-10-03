@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject deathScreen;
-
+    [SerializeField] private PlayerAttack playerAttack;
     [SerializeField] private float moveSpeed = 5f, dashCoolDown = 3f, dashTime = 0.5f, dashVelocity = 15f;
     [SerializeField] private bool canDash = true;
     [SerializeField] private DashParticles dashPS;
@@ -86,6 +86,11 @@ public class PlayerController : MonoBehaviour
     public void AllowMovement(bool newState)
     {
         movementEnabled = newState;
+    }
+
+    public void SetCanAttack(bool newState)
+    {
+        playerAttack.SetCanAttack(newState);
     }
 
     public void SetCanBeHit(bool newCanBeHit)

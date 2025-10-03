@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
     private int comboStep = 0;
     private bool isAttacking = false, canAttack = true;
     private Coroutine comboResetCoroutine;
-    [SerializeField] private List<EnemyHealth> enemiesInRange = new List<EnemyHealth>();
+    [SerializeField] private List<GameObject> enemiesInRange = new List<GameObject>();
 
     void Update()
     {
@@ -69,7 +69,12 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         for (int i = 0; i < enemiesInRange.Count; i++)
         {
-            enemiesInRange[i].TakeDamage(damage);
+            EnemyHealth enemyHealth = enemiesInRange[i].GetComponent<EnemyHealth>();
+            EffectHolder effectHolder = enemiesInRange[i].GetComponent<EffectHolder>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(damage);
+            }
         }
 
         isAttacking = false;
@@ -87,26 +92,19 @@ public class PlayerAttack : MonoBehaviour
 
         if (!other.CompareTag("Enemy")) return;
 
-        EnemyHealth health = other.GetComponentInParent<EnemyHealth>();
-        if (health != null)
+        if (!enemiesInRange.Contains(other.gameObject))
         {
-            if (!enemiesInRange.Contains(health))
-            {
-                enemiesInRange.Add(health);
-            }
+            enemiesInRange.Add(other.gameObject);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Enemy")) return;
 
-        EnemyHealth health = other.GetComponentInParent<EnemyHealth>();
-        if (health != null)
+        if (enemiesInRange.Contains(other.gameObject))
         {
-            if (enemiesInRange.Contains(health))
-            {
-                enemiesInRange.Remove(health);
-            }
+            enemiesInRange.Remove(other.gameObject);
         }
+
     }
 }

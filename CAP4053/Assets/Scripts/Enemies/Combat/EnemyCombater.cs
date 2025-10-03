@@ -5,42 +5,42 @@ using UnityEngine;
 public class EnemyCombater : MonoBehaviour
 {
     protected EnemyController controller;
-    private bool isBeingHit = false;
+    [SerializeField] protected float cooldownTime;
+    protected bool isBeingHit = false, canAttack = true;
 
     // Sets the controller that the combater uses to a specific controller.
     public void SetController(EnemyController newController)
     {
         controller = newController;
     }
+    public void SetCanAttack(bool newState)
+    {
+        canAttack = newState;
+    }
 
     // Hits the player, knocks them back, and does damage to them.
     protected void HitWithKnockback(GameObject EntityGO, float damageAmount, Vector2 knockbackDir, float knockbackTime, bool hitWhileDash)
     {
         // Checks if the player is being hit. Returns if the player is currently being hit.
-        if (isBeingHit)
+        Debug.Log($"isBeingHit: {isBeingHit}, canAttack: {canAttack}");
+        if (isBeingHit || !canAttack)
         {
             return;
         }
         // Gets player componenets.
-        Rigidbody2D playerRB = EntityGO.GetComponent<Rigidbody2D>();
+        EffectHolder playerEH = EntityGO.GetComponent<EffectHolder>();
         PlayerController playerCon = EntityGO.GetComponent<PlayerController>();
 
         // Deals damage, knocks the player back, and starts the coroutine to reset the player to normal.
+        StartCoroutine(AttackCooldown());
         playerCon.DealDamageToPlayer(damageAmount, hitWhileDash);
-        isBeingHit = true;
-        StartCoroutine(KnockbackCoroutine(playerRB, playerCon, knockbackTime));
-        Debug.Log(knockbackDir);
-        playerRB.AddForce(knockbackDir, ForceMode2D.Impulse);
+        playerEH.AddEffect(new Knockback(knockbackTime, 1, knockbackDir));
     }
-    private IEnumerator KnockbackCoroutine(Rigidbody2D playerRB, PlayerController playerCon, float knockbackTime)
+
+    private IEnumerator AttackCooldown()
     {
-        playerCon.AllowMovement(false);
-        yield return new WaitForSeconds(knockbackTime);
-        if (GameManager.publicGameManager.GetGameState() != GameState.Death)
-        {
-            playerCon.AllowMovement(true);
-        }
+        isBeingHit = true;
+        yield return new WaitForSeconds(cooldownTime);
         isBeingHit = false;
-        playerRB.linearVelocity = new Vector2(0f, 0f);
     }
 }

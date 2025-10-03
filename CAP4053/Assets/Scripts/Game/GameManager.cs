@@ -28,9 +28,9 @@ public class GameManager : MonoBehaviour
         healthLabel.text = "DEBUG: Health = " + playerHealth;
     }
     // Returns the player location as a vector.
-    public Vector3 GetPlayerLocation()
+    public Transform GetPlayerLocation()
     {
-        return playerTransform.position;
+        return playerTransform;
     }
     // Deals a set amount of damage to the global player health.
     public void DealDamage(float damage)
