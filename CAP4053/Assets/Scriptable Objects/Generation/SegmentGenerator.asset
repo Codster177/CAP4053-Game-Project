@@ -21,8 +21,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   xOffsetConst: 32
   yOffsetConst: 18
-  squareBounds: 4
+  squareBounds: 5
   minimumRoomRange: 0500000008000000
   roomOutfitter: {fileID: 11400000, guid: b9b0a6134e57de4428e384c625663044, type: 2}
