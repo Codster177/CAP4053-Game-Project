@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GenerateSegments : MonoBehaviour
 {
-    [SerializeField] private Grid globalGrid;
     [SerializeField] private List<RoomPrefab> roomPrefabs, currentlyGenerating;
     [SerializeField] private float xOffsetConst, yOffsetConst;
     [SerializeField] private int squareBounds;
@@ -62,7 +61,8 @@ public class GenerateSegments : MonoBehaviour
 
         // Debug.Log($"Stopwatch time before ConnectSegment(): {stopwatch.ElapsedMilliseconds} ms.");
 
-        ConnectSegment(spawnedIndexList, roomIndexList);
+        List<SpawnNode> nodeList = ConnectSegment(spawnedIndexList, roomIndexList);
+        // DetermineRooms(nodeList, spawnedIndexList);
 
         for (int i = 0; i < spawnedIndexList.Count; i++)
         {
@@ -78,7 +78,6 @@ public class GenerateSegments : MonoBehaviour
         GameObject newRoom = Instantiate(prefab.roomPrefab, position, Quaternion.identity);
         return newRoom.GetComponent<RoomPrefab>();
     }
-
     private int[] ConvertGridIndex(int index)
     {
         int[] gridCoords = new int[2];
@@ -130,7 +129,7 @@ public class GenerateSegments : MonoBehaviour
         return new Vector2(startingPosition.x + (xOffsetConst * (gridPos[0] + localOffset[0])),
         startingPosition.y + (yOffsetConst * (gridPos[1] + localOffset[1])));
     }
-    private void ConnectSegment(List<int> spawnedRoomIndices, List<int> notSpawnedIndices)
+    private List<SpawnNode> ConnectSegment(List<int> spawnedRoomIndices, List<int> notSpawnedIndices)
     {
         List<SpawnNode> nodeList = new List<SpawnNode>();
 
@@ -145,6 +144,7 @@ public class GenerateSegments : MonoBehaviour
         nodeList.Sort();
         MakeEdges(nodeList);
         FindPaths(nodeList, spawnedRoomIndices, notSpawnedIndices);
+        return nodeList;
     }
     private void FindPaths(List<SpawnNode> nodeList, List<int> spawnedRoomIndices, List<int> notSpawnedIndices)
     {
