@@ -24,6 +24,29 @@ public class GenerationManager : MonoBehaviour
         stopwatch.Stop();
         Debug.Log($"GenerationManager: Time taken to generate rooms: {stopwatch.ElapsedMilliseconds} ms.");
     }
+    public static GenerationDirection GetOppositeDirection(GenerationDirection direction)
+    {
+        if (direction == GenerationDirection.right)
+        {
+            return GenerationDirection.left;
+        }
+        else if (direction == GenerationDirection.left)
+        {
+            return GenerationDirection.right;
+        }
+        else if (direction == GenerationDirection.up)
+        {
+            return GenerationDirection.down;
+        }
+        else if (direction == GenerationDirection.down)
+        {
+            return GenerationDirection.up;
+        }
+        else
+        {
+            return GenerationDirection.nullType;
+        }
+    }
 }
 
 public enum GenerationDirection

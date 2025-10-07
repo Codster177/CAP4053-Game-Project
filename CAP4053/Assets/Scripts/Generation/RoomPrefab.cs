@@ -13,8 +13,8 @@ public class RoomPrefab : MonoBehaviour
     {
         return roomGrid;
     }
-    public List<Tilemap> GetTilemaps()
+    public Tilemap[] GetTilemaps()
     {
-        return new List<Tilemap>() { floormap, wallmap };
+        return new Tilemap[2] { floormap, wallmap };
     }
 }

@@ -1397,7 +1397,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1451215906}
   - component: {fileID: 1451215907}
-  - component: {fileID: 1451215908}
   m_Layer: 0
   m_Name: GenerationManager
   m_TagString: Untagged
@@ -1432,28 +1431,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89de6b7c25414c84ca82adc7cf177330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  segmentGenerator: {fileID: 1451215908}
+  segmentGenerator: {fileID: 11400000, guid: 5e4a72fce6d034545974def74bc8c619, type: 2}
   testGenerationDirection: 1
---- !u!114 &1451215908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1451215905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1269ec20aa961c74e87138faadb9841b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomPrefabs:
-  - {fileID: 3011557817051098995, guid: 452aad30437c7ec4ea571168b962febf, type: 3}
-  - {fileID: 8905777958041529751, guid: 72bc98886d147d34daaa2311e38c26a7, type: 3}
-  currentlyGenerating: []
-  xOffsetConst: 32
-  yOffsetConst: 18
-  squareBounds: 4
-  minimumRoomRange: 0500000008000000
 --- !u!1 &1905403859
 GameObject:
   m_ObjectHideFlags: 0

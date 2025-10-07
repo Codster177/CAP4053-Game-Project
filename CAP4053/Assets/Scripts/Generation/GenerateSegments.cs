@@ -1,13 +1,16 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class GenerateSegments : MonoBehaviour
+[CreateAssetMenu(menuName = "Scriptable Objects/Generation/GenerateSegments")]
+public class GenerateSegments : ScriptableObject
 {
-    [SerializeField] private List<RoomPrefab> roomPrefabs, currentlyGenerating;
-    [SerializeField] private float xOffsetConst, yOffsetConst;
-    [SerializeField] private int squareBounds;
+    [SerializeField] private List<RoomPrefab> currentlyGenerating;
+    [SerializeField] private float xOffsetConst = 32, yOffsetConst = 18;
+    [SerializeField] private int squareBounds = 5;
     [SerializeField] private int[] minimumRoomRange;
+    [SerializeField] private OutfitRooms roomOutfitter;
     private int startRoomIndex;
     void Awake()
     {
@@ -17,8 +20,17 @@ public class GenerateSegments : MonoBehaviour
             Destroy(this);
         }
     }
+    public void SetParameters(float xOffset, float yOffset, int squareBounds, int[] minimumRoomRange)
+    {
+        this.xOffsetConst = xOffset;
+        this.yOffsetConst = yOffset;
+        this.squareBounds = squareBounds;
+        this.minimumRoomRange = minimumRoomRange;
+    }
     public void GenerateSegment(Vector2 startingPosition, GenerationDirection direction)
     {
+
+        currentlyGenerating = new List<RoomPrefab>();
         // Finds the position of the connecting room to the new segment.
         int[] connectingGridInfo = DetermineLocalOffset(direction);
 
@@ -69,7 +81,8 @@ public class GenerateSegments : MonoBehaviour
             int[] gridCoords = ConvertGridIndex(spawnedIndexList[i]);
 
             Vector2 roomVectorPos = CalculateVectorPos(startingPosition, localOffset, gridCoords);
-            RoomPrefab newRoom = GenerateRoom(roomVectorPos, roomPrefabs[1]);
+            RoomPrefab newRoom = GenerateRoom(roomVectorPos, roomOutfitter.GetRoomPrefab(nodeList[spawnedIndexList[i]]));
+            roomOutfitter.OutfitRoom(nodeList[spawnedIndexList[i]], newRoom, startRoomIndex, direction, this);
             currentlyGenerating.Add(newRoom);
         }
     }
@@ -246,19 +259,19 @@ public class GenerateSegments : MonoBehaviour
 
             if (left != null)
             {
-                nodeList[i].SetEdge(left);
+                nodeList[i].SetEdge(left, GenerationDirection.left);
             }
             if (down != null)
             {
-                nodeList[i].SetEdge(down);
+                nodeList[i].SetEdge(down, GenerationDirection.down);
             }
             if (right != null)
             {
-                nodeList[i].SetEdge(right);
+                nodeList[i].SetEdge(right, GenerationDirection.right);
             }
             if (up != null)
             {
-                nodeList[i].SetEdge(up);
+                nodeList[i].SetEdge(up, GenerationDirection.up);
             }
         }
     }
@@ -333,7 +346,7 @@ public class GenerateSegments : MonoBehaviour
         }
         return returnDirs;
     }
-    private class SpawnNode : IComparable
+    public class SpawnNode : IComparable
     {
         public int spawnIndex;
         public bool activated, connected;
@@ -356,7 +369,7 @@ public class GenerateSegments : MonoBehaviour
             }
             activated = true;
         }
-        public void SetEdge(SpawnNode otherNode)
+        public void SetEdge(SpawnNode otherNode, GenerationDirection direction)
         {
             if (this.GetNodesEdge(otherNode) != null)
             {
@@ -378,7 +391,7 @@ public class GenerateSegments : MonoBehaviour
                 {
                     weight -= 1;
                 }
-                connectedEdges.Add(new Edge(this, otherNode, weight));
+                connectedEdges.Add(new Edge(this, otherNode, weight, direction));
             }
         }
         public Edge GetNodesEdge(SpawnNode otherNode)
@@ -410,19 +423,26 @@ public class GenerateSegments : MonoBehaviour
             }
         }
     }
+    public String LogNodeCoords(SpawnNode node)
+    {
+        int[] coords = ConvertGridIndex(node.spawnIndex);
+        return $"({coords[0]}, {coords[1]})";
+    }
     // Edge weight rules:
     // Weight = 3: Two non-activated nodes.
     // Weight = 2: One activated node and one unactivated node.
     // Weight = 1: Two activated nodes.
-    private class Edge
+    public class Edge
     {
         public SpawnNode node1, node2;
         public int weight;
-        public Edge(SpawnNode newNode1, SpawnNode newNode2, int newWeight)
+        private GenerationDirection direction;
+        public Edge(SpawnNode newNode1, SpawnNode newNode2, int newWeight, GenerationDirection direction)
         {
             node1 = newNode1;
             node2 = newNode2;
             weight = newWeight;
+            this.direction = direction;
         }
         public SpawnNode GetOtherNode(SpawnNode startNode)
         {
@@ -435,5 +455,14 @@ public class GenerateSegments : MonoBehaviour
                 return node1;
             }
         }
+        public GenerationDirection GetDirection()
+        {
+            return direction;
+        }
+
+    }
+    public String LogEdge(Edge edge)
+    {
+        return $"Edge - Node1 = {LogNodeCoords(edge.node1)}, Node 2 = {LogNodeCoords(edge.node2)}, weight = {edge.weight}, direction = {edge.GetDirection()}";
     }
 }
