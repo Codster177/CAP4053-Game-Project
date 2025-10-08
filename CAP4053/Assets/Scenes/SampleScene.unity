@@ -493,7 +493,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190791538}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2875,7 +2875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521783576388939197, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
       propertyPath: knockbackTime
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6521783576388939197, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
       propertyPath: enemyKnockback

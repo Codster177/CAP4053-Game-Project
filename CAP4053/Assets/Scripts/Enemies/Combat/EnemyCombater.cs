@@ -34,7 +34,7 @@ public class EnemyCombater : MonoBehaviour
         // Deals damage, knocks the player back, and starts the coroutine to reset the player to normal.
         StartCoroutine(AttackCooldown());
         playerCon.DealDamageToPlayer(damageAmount, hitWhileDash);
-        playerEH.AddEffect(new Knockback(knockbackTime, 1, knockbackDir));
+        playerEH.AddEffect(new Knockback(knockbackTime, 20, knockbackDir));
     }
 
     private IEnumerator AttackCooldown()

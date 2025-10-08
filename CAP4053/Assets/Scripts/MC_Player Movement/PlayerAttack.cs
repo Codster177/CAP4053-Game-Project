@@ -7,10 +7,11 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private float[] comboResetTime; // the combo time window
     [SerializeField] private int damage = 10;
+    [SerializeField] private List<GameObject> enemiesInRange = new List<GameObject>();
+    private PlayerController playerController;
+    private Coroutine comboResetCoroutine;
     private int comboStep = 0;
     private bool isAttacking = false, canAttack = true;
-    private Coroutine comboResetCoroutine;
-    [SerializeField] private List<GameObject> enemiesInRange = new List<GameObject>();
 
     void Update()
     {
@@ -34,7 +35,10 @@ public class PlayerAttack : MonoBehaviour
 
     private void HandleLightAttack()
     {
-        if (isAttacking) return;
+        if (isAttacking)
+        {
+            return;
+        }
 
         comboStep++;
 
@@ -66,11 +70,16 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = true;
 
         // sync with animation length
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.1f);
         for (int i = 0; i < enemiesInRange.Count; i++)
         {
             EnemyHealth enemyHealth = enemiesInRange[i].GetComponent<EnemyHealth>();
             EffectHolder effectHolder = enemiesInRange[i].GetComponent<EffectHolder>();
+            if (effectHolder != null)
+            {
+                Vector2 knockbackDir = Knockback.CalculateDir(enemiesInRange[i].transform.position, transform.position);
+                effectHolder.AddEffect(new Knockback(0.1f, 20, knockbackDir));
+            }
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage(damage);
@@ -86,7 +95,10 @@ public class PlayerAttack : MonoBehaviour
         comboStep = 0;
         animator.SetInteger("ComboStep", 0);
     }
-
+    public void SetPlayerController(PlayerController playerController)
+    {
+        this.playerController = playerController;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
 

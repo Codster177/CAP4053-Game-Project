@@ -24,6 +24,11 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         EffectHolder effectHolder = GetComponent<EffectHolder>();
         effectHolder.AddEffect(new Invincibility(4));
+
+        if (playerAttack != null)
+        {
+            playerAttack.SetPlayerController(this);
+        }
     }
 
     void Update()

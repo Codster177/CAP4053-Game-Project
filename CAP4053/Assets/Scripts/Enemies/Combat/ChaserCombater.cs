@@ -37,9 +37,7 @@ public class ChaserCombater : EnemyCombater
         yield return new WaitForSeconds(attackSpeed);
         for (int i = 0; i < inRange.Count; i++)
         {
-            Vector2 knockbackDir = inRange[i].transform.position - controller.transform.position;
-            knockbackDir.Normalize();
-            knockbackDir = knockbackDir * enemyKnockback;
+            Vector2 knockbackDir = Knockback.CalculateDir(inRange[i].transform.position, controller.transform.position);
             HitWithKnockback(inRange[i], damageAmount, knockbackDir, knockbackTime, hitWhileDash);
         }
         currentAttack = null;

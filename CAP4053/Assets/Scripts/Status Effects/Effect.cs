@@ -115,7 +115,8 @@ public class Knockback : Stun
             Debug.LogError($"{effectHolder.gameObject.name}: Knockback effect cannot find rigidbody.");
         }
         Debug.Log($"Knockback: Direction: {direction}, Speed: {speed}");
-        rigidbody.AddForce((direction * speed), ForceMode2D.Impulse);
+        rigidbody.linearVelocity = new Vector3(0f, 0f, 0f);
+        rigidbody.AddForce(direction * speed, ForceMode2D.Impulse);
     }
     public override void RemoveEffect(EffectHolder effectHolder)
     {
@@ -124,6 +125,12 @@ public class Knockback : Stun
         {
             rigidbody.linearVelocity = new Vector3(0f, 0f, 0f);
         }
+    }
+    public static Vector2 CalculateDir(Vector2 attackerPos, Vector2 victimPos)
+    {
+        Vector2 knockbackDir = attackerPos - victimPos;
+        knockbackDir.Normalize();
+        return knockbackDir;
     }
 }
 
