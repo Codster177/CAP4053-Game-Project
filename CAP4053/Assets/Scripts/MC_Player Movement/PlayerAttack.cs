@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private float comboResetTime = 1f; // the combo time window
+    [SerializeField] private float[] comboResetTime; // the combo time window
     [SerializeField] private int damage = 10;
     private int comboStep = 0;
     private bool isAttacking = false, canAttack = true;
@@ -82,7 +82,7 @@ public class PlayerAttack : MonoBehaviour
 
     IEnumerator ResetComboAfterDelay()
     {
-        yield return new WaitForSeconds(comboResetTime);
+        yield return new WaitForSeconds(comboResetTime[comboStep - 1]);
         comboStep = 0;
         animator.SetInteger("ComboStep", 0);
     }
