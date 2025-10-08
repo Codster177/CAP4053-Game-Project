@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float playerHealth;
     [SerializeField] private TMP_Text healthLabel;
+    private GameObject playerGO;
+    private PlayerAttack playerAttack;
 
     // Establishes the singleton as the static variable in the scene.
     void Awake()
@@ -28,9 +30,9 @@ public class GameManager : MonoBehaviour
         healthLabel.text = "DEBUG: Health = " + playerHealth;
     }
     // Returns the player location as a vector.
-    public Vector3 GetPlayerLocation()
+    public Transform GetPlayerLocation()
     {
-        return playerTransform.position;
+        return playerTransform;
     }
     // Deals a set amount of damage to the global player health.
     public void DealDamage(float damage)
@@ -52,6 +54,22 @@ public class GameManager : MonoBehaviour
     public GameState GetGameState()
     {
         return CurrentGameState;
+    }
+
+    // USE THE FOLLOWING THREE AS LITTLE AS POSSIBLE.
+    // Returns player game object.
+    public GameObject GetPlayerGO()
+    {
+        return playerGO;
+    }
+    public PlayerAttack GetPlayerAttack()
+    {
+        return playerAttack;
+    }
+    public void SetPlayerGO(GameObject gameObject)
+    {
+        playerGO = gameObject;
+        playerAttack = playerGO.GetComponentInChildren<PlayerAttack>();
     }
     // Changes the current gamestate to a new gamestate. Activates action OnGameStateChanged.
     public void ChangeGameState(GameState Event)

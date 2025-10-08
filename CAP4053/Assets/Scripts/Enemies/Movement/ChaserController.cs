@@ -3,17 +3,26 @@ using UnityEngine.AI;
 
 public class ChaserController : EnemyController
 {
+
     // Listens to when enemy death is called.
     void Start()
     {
         GameManager.OnGameStateChanged += DeathEnemyCommand;
     }
-    // Constantly sets the chaser enemy to pursue the player.
-    void Update()
+
+    public void SetPosition(bool goToPlayer, Vector3 alternatePosition)
     {
-        if (GameManager.publicGameManager.GetGameState() != GameState.Death)
+        if (!movementEnabled)
         {
-            navMeshAgent.SetDestination(GameManager.publicGameManager.GetPlayerLocation());
+            return;
+        }
+        if (goToPlayer)
+        {
+            navMeshAgent.SetDestination(GameManager.publicGameManager.GetPlayerLocation().position);
+        }
+        else
+        {
+            navMeshAgent.SetDestination(alternatePosition);
         }
     }
     // Called OnGameStateChanged. Sets location to current location once player is dead.

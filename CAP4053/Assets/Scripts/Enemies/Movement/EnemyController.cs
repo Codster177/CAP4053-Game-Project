@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] protected EnemyCombater enemyCombater;
+    protected bool movementEnabled = true;
     protected NavMeshAgent navMeshAgent;
 
     // Sets the enemy controller up with the NavMesh and needed parameters.
@@ -18,5 +19,14 @@ public class EnemyController : MonoBehaviour
     public Vector2 GetDirection()
     {
         return navMeshAgent.velocity;
+    }
+    public void Allowmovement(bool movementBool)
+    {
+        navMeshAgent.enabled = movementBool;
+        movementEnabled = movementBool;
+    }
+    public void SetCanAttack(bool newState)
+    {
+        enemyCombater.SetCanAttack(newState);
     }
 }
