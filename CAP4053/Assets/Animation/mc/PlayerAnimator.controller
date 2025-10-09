@@ -133,9 +133,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: LightAttack
-    m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: ComboStep
     m_EventTreshold: 1
@@ -161,9 +158,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: LightAttack
-    m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: ComboStep
     m_EventTreshold: 2
@@ -343,6 +337,19 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &-3172719118787959844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c706a596ebd4f9c4fa74df62de531461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToBreak: {fileID: 0}
 --- !u!1102 &-2526171471660533843
 AnimatorState:
   serializedVersion: 6
@@ -670,9 +677,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: LightAttack
-    m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: ComboStep
     m_EventTreshold: 1
@@ -804,9 +808,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: LightAttack
-    m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: ComboStep
     m_EventTreshold: 3
@@ -819,7 +820,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 1
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -865,7 +866,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: -7880253398781733173}
   - {fileID: -8630916640546462334}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -3172719118787959844}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1

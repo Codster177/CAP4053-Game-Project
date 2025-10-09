@@ -2,9 +2,9 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class MyUIManager : MonoBehaviour
 {
-    public static UIManager publicUIManager;
+    public static MyUIManager publicUIManager;
     [SerializeField] private Animator healthbarAnimator;
     [SerializeField] private Animator dashAnimator;
     [SerializeField] private HealthbarScript healthbarScript;
