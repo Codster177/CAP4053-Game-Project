@@ -1,0 +1,519 @@
+fileFormatVersion: 2
+guid: 16641f3bb0a5fd6428864e29a92f0110
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2807803434634568213
+    second: light-attack-3_0
+  - first:
+      213: 7288123990810457771
+    second: light-attack-3_1
+  - first:
+      213: 1004649022853603559
+    second: light-attack-3_2
+  - first:
+      213: -4883438918713689284
+    second: light-attack-3_3
+  - first:
+      213: 6030517311215644674
+    second: light-attack-3_4
+  - first:
+      213: 7392731270695076960
+    second: light-attack-3_5
+  - first:
+      213: -9001811761487856902
+    second: light-attack-3_6
+  - first:
+      213: -6207281043225686634
+    second: light-attack-3_7
+  - first:
+      213: -4153883883006168497
+    second: light-attack-3_8
+  - first:
+      213: -4097958587193050343
+    second: light-attack-3_9
+  - first:
+      213: -1991376680640080498
+    second: light-attack-3_10
+  - first:
+      213: -1059957191827928311
+    second: light-attack-3_11
+  - first:
+      213: 8541379203696284689
+    second: light-attack-3_12
+  - first:
+      213: -5680676606231025215
+    second: light-attack-3_13
+  - first:
+      213: 6687416413995190999
+    second: light-attack-3_14
+  - first:
+      213: 8092526935041762821
+    second: light-attack-3_15
+  - first:
+      213: -7215238065947250888
+    second: light-attack-3_16
+  - first:
+      213: 8836762939141910212
+    second: light-attack-3_17
+  - first:
+      213: 6965205331625763018
+    second: light-attack-3_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 160
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: light-attack-3_0
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 0
+        width: 317
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 512e380f85257f620800000000000000
+      internalID: 2807803434634568213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_1
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 0
+        width: 303
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba6724fc72e942560800000000000000
+      internalID: 7288123990810457771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_2
+      rect:
+        serializedVersion: 2
+        x: 2727
+        y: 0
+        width: 327
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e0e123a6fa31fd00800000000000000
+      internalID: 1004649022853603559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_3
+      rect:
+        serializedVersion: 2
+        x: 3878
+        y: 0
+        width: 331
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3bb0cf4d2a8a3cb0800000000000000
+      internalID: -4883438918713689284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_4
+      rect:
+        serializedVersion: 2
+        x: 5046
+        y: 0
+        width: 317
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2003ad22b83b0b350800000000000000
+      internalID: 6030517311215644674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_5
+      rect:
+        serializedVersion: 2
+        x: 6183
+        y: 0
+        width: 327
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 064c3bd1ce1489660800000000000000
+      internalID: 7392731270695076960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_6
+      rect:
+        serializedVersion: 2
+        x: 7253
+        y: 0
+        width: 398
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa359585e3231380800000000000000
+      internalID: -9001811761487856902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_7
+      rect:
+        serializedVersion: 2
+        x: 8343
+        y: 0
+        width: 476
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d448d57ce4bd9a0800000000000000
+      internalID: -6207281043225686634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_8
+      rect:
+        serializedVersion: 2
+        x: 9494
+        y: 206
+        width: 33
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f42723bdd907a56c0800000000000000
+      internalID: -4153883883006168497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_9
+      rect:
+        serializedVersion: 2
+        x: 9531
+        y: 0
+        width: 428
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91bb81a70602127c0800000000000000
+      internalID: -4097958587193050343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_10
+      rect:
+        serializedVersion: 2
+        x: 10695
+        y: 0
+        width: 412
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e859370b5753d54e0800000000000000
+      internalID: -1991376680640080498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_11
+      rect:
+        serializedVersion: 2
+        x: 11850
+        y: 266
+        width: 40
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90bc9f7cc864a41f0800000000000000
+      internalID: -1059957191827928311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_12
+      rect:
+        serializedVersion: 2
+        x: 11857
+        y: 0
+        width: 404
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 114d930b123198670800000000000000
+      internalID: 8541379203696284689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_13
+      rect:
+        serializedVersion: 2
+        x: 13011
+        y: 0
+        width: 404
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c96ab169be2a21b0800000000000000
+      internalID: -5680676606231025215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: light-attack-3_14
+      rect:
+        serializedVersion: 2
+        x: 7206
+        y: 193
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dacc4d0cc97ecc50800000000000000
+      internalID: 6687416413995190999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 68b9d3713c41e884f8c09356b244be79
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      light-attack-3_0: 2807803434634568213
+      light-attack-3_1: 7288123990810457771
+      light-attack-3_10: -1991376680640080498
+      light-attack-3_11: -1059957191827928311
+      light-attack-3_12: 8541379203696284689
+      light-attack-3_13: -5680676606231025215
+      light-attack-3_14: 6687416413995190999
+      light-attack-3_2: 1004649022853603559
+      light-attack-3_3: -4883438918713689284
+      light-attack-3_4: 6030517311215644674
+      light-attack-3_5: 7392731270695076960
+      light-attack-3_6: -9001811761487856902
+      light-attack-3_7: -6207281043225686634
+      light-attack-3_8: -4153883883006168497
+      light-attack-3_9: -4097958587193050343
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

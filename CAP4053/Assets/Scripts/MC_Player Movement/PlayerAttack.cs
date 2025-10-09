@@ -29,16 +29,14 @@ public class PlayerAttack : MonoBehaviour
         //heavy attack
         if (Input.GetButtonDown("HeavyAttack"))
         {
+            HandleHeavyAttack();
             Debug.Log("Get heavy attacked... weirdo");
         }
     }
 
     private void HandleLightAttack()
     {
-        if (isAttacking)
-        {
-            return;
-        }
+        if (isAttacking) return;
 
         comboStep++;
 
@@ -58,6 +56,16 @@ public class PlayerAttack : MonoBehaviour
         }
 
         comboResetCoroutine = StartCoroutine(ResetComboAfterDelay());
+    }
+
+    private void HandleHeavyAttack()
+    {
+        if (isAttacking) return;
+
+        animator.SetTrigger("HeavyAttack");
+
+        // lock player so they cant spam cancel animations
+        StartCoroutine(AttackCoroutine());
     }
 
     public void SetCanAttack(bool newState)
