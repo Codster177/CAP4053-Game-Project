@@ -6,11 +6,11 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private float[] comboResetTime; // the combo time window
-    [SerializeField] private int damage = 10;
+    [SerializeField] private int damage = 10, triggerAnimation;
     [SerializeField] private List<GameObject> enemiesInRange = new List<GameObject>();
     private PlayerController playerController;
     private Coroutine comboResetCoroutine;
-    private int comboStep = 0;
+    [SerializeField] private List<int> animationQueue = new List<int>();
     private bool isAttacking = false, canAttack = true;
 
     void Update()
@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown("LightAttack"))
         {
             HandleLightAttack();
-            Debug.Log("You weakling... (get light attacked)");
+            // Debug.Log("You weakling... (get light attacked)");
         }
 
         //heavy attack
@@ -36,15 +36,31 @@ public class PlayerAttack : MonoBehaviour
 
     private void HandleLightAttack()
     {
-        if (isAttacking) return;
-
-        comboStep++;
+        if (isAttacking)
+        {
+            return;
+        }
+        if (animationQueue.Count != 0)
+        {
+            if (animationQueue[animationQueue.Count - 1] == 3)
+            {
+                animationQueue.Add(1);
+            }
+            else
+            {
+                animationQueue.Add(animationQueue[animationQueue.Count - 1] + 1);
+            }
+        }
+        else
+        {
+            animationQueue.Add(1);
+            StartCoroutine(TriggerAnimation());
+        }
 
         // clamp (whatever that means) combo btw 1 and 3
-        if (comboStep > 3) comboStep = 1;
 
-        animator.SetInteger("ComboStep", comboStep);
-        animator.SetTrigger("LightAttack");
+        // animator.SetInteger("ComboStep", comboStep);
+        // animator.SetTrigger("LightAttack");
 
         // lock player so they cant spam cancel animations
         StartCoroutine(AttackCoroutine());
@@ -68,6 +84,20 @@ public class PlayerAttack : MonoBehaviour
         StartCoroutine(AttackCoroutine());
     }
 
+    public IEnumerator TriggerAnimation()
+    {
+        triggerAnimation = 0;
+        if (animationQueue.Count > 0)
+        {
+            if (animationQueue.Count != 1 && animationQueue.Count != 0)
+            {
+                animationQueue.RemoveAt(0);
+            }
+            animator.SetInteger("ComboStep", animationQueue[0]);
+            yield return new WaitForSeconds(comboResetTime[animationQueue[0] - 1]);
+        }
+    }
+
     public void SetCanAttack(bool newState)
     {
         canAttack = newState;
@@ -86,7 +116,7 @@ public class PlayerAttack : MonoBehaviour
             if (effectHolder != null)
             {
                 Vector2 knockbackDir = Knockback.CalculateDir(enemiesInRange[i].transform.position, transform.position);
-                Debug.Log(knockbackDir);
+                // Debug.Log(knockbackDir);
                 effectHolder.AddEffect(new Knockback(0.1f, 20, knockbackDir));
             }
             if (enemyHealth != null)
@@ -100,9 +130,18 @@ public class PlayerAttack : MonoBehaviour
 
     IEnumerator ResetComboAfterDelay()
     {
-        yield return new WaitForSeconds(comboResetTime[comboStep - 1]);
-        comboStep = 0;
-        animator.SetInteger("ComboStep", 0);
+        int frontOfList;
+        if (animationQueue.Count != 0)
+        {
+            frontOfList = animationQueue[0];
+            yield return new WaitForSeconds(comboResetTime[frontOfList - 1]);
+            animator.SetInteger("ComboStep", 0);
+            animationQueue.Clear();
+        }
+        else
+        {
+            yield break;
+        }
     }
     public void SetPlayerController(PlayerController playerController)
     {

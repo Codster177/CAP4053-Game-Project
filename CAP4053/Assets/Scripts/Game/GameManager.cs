@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     // Deals a set amount of damage to the global player health.
     public void DealDamage(float damage)
     {
-        UIManager.publicUIManager.HealthbarDamageAnim(damage);
+        MyUIManager.publicUIManager.HealthbarDamageAnim(damage);
         float newHealth = playerHealth - damage;
         if (newHealth <= 0)
         {

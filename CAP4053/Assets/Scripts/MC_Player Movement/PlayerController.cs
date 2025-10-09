@@ -158,6 +158,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void AttackAnimation()
+    {
+        StartCoroutine(playerAttack.TriggerAnimation());
+    }
+
     /*
     // Destroys player 2.2 seconds (animation length) after coroutine is called.
     IEnumerator DeathCoroutine()
@@ -173,7 +178,7 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         movementEnabled = false;
         dashPS.playStop(true);
-        UIManager.publicUIManager.DashbarAnim();
+        MyUIManager.publicUIManager.DashbarAnim();
         rb.linearVelocity = new Vector2(movement.x * dashVelocity, movement.y * dashVelocity);
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
