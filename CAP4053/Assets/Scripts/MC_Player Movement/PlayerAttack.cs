@@ -63,7 +63,7 @@ public class PlayerAttack : MonoBehaviour
         // animator.SetTrigger("LightAttack");
 
         // lock player so they cant spam cancel animations
-        StartCoroutine(AttackCoroutine());
+        // StartCoroutine(AttackCoroutine());
 
         // reset combo timer
         if (comboResetCoroutine != null)
@@ -94,6 +94,7 @@ public class PlayerAttack : MonoBehaviour
                 animationQueue.RemoveAt(0);
             }
             animator.SetInteger("ComboStep", animationQueue[0]);
+            StartCoroutine(AttackCoroutine());
             yield return new WaitForSeconds(comboResetTime[animationQueue[0] - 1]);
         }
     }
@@ -108,7 +109,7 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = true;
 
         // sync with animation length
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         for (int i = 0; i < enemiesInRange.Count; i++)
         {
             EnemyHealth enemyHealth = enemiesInRange[i].GetComponent<EnemyHealth>();
