@@ -706,6 +706,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468087281}
   m_CullTransparentMesh: 1
+--- !u!1 &480710824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 480710826}
+  - component: {fileID: 480710825}
+  m_Layer: 0
+  m_Name: DeathScreenManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &480710825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480710824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9db3c89cfbcaed34969ee371049d008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathScreen: {fileID: 1995278818}
+  firstSelected: {fileID: 1007061381}
+  fadeDuration: 1
+--- !u!4 &480710826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480710824}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.536233, y: 9.2442875, z: -0.10266899}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &495199513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,6 +1993,7 @@ MonoBehaviour:
   dashVelocity: 15
   canDash: 1
   dashPS: {fileID: 1927955591}
+  playerHealth: 100
 --- !u!50 &975306207
 Rigidbody2D:
   serializedVersion: 5
@@ -2023,6 +2071,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectList: []
+--- !u!114 &1007061381 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5801331944065925958, guid: ba384d9380525ed4fa8b0965ce885d45, type: 3}
+  m_PrefabInstance: {fileID: 5984821457250120178}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1034588345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,7 +2930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521783576388939197, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
       propertyPath: damageAmount
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6521783576388939197, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
       propertyPath: knockbackTime
@@ -7894,6 +7953,33 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5465744495710751168, guid: ba384d9380525ed4fa8b0965ce885d45, type: 3}
   m_PrefabInstance: {fileID: 5984821457250120178}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &1995278823
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995278818}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1995278824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995278818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9db3c89cfbcaed34969ee371049d008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathScreen: {fileID: 1995278818}
+  firstSelected: {fileID: 1007061381}
+  fadeDuration: 1
 --- !u!1 &2002718717
 GameObject:
   m_ObjectHideFlags: 0
@@ -8474,10 +8560,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: death screen
       objectReference: {fileID: 0}
+    - target: {fileID: 9193383005025925774, guid: ba384d9380525ed4fa8b0965ce885d45, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9193383005025925774, guid: ba384d9380525ed4fa8b0965ce885d45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1995278823}
+    - targetCorrespondingSourceObject: {fileID: 9193383005025925774, guid: ba384d9380525ed4fa8b0965ce885d45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1995278824}
   m_SourcePrefab: {fileID: 100100000, guid: ba384d9380525ed4fa8b0965ce885d45, type: 3}
 --- !u!483693784 &6307461049149060704
 TilemapRenderer:
@@ -14526,3 +14622,4 @@ SceneRoots:
   - {fileID: 495199517}
   - {fileID: 591107621}
   - {fileID: 1451215906}
+  - {fileID: 480710826}

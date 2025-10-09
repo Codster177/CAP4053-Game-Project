@@ -103,15 +103,23 @@ public class PlayerController : MonoBehaviour
         canBeHit = newCanBeHit;
     }
 
+    [SerializeField] private float playerHealth = 100f;
+
     public void DealDamageToPlayer(float damageAmount, bool hitWhileDash)
     {
         if (isDashing && !hitWhileDash)
-        {
             return;
-        }
-        if (canBeHit)
+        if (!canBeHit)
+            return;
+
+        playerHealth -= damageAmount;
+        Debug.Log($"'Owwwww :(' (Player took {damageAmount} damage! Remaining HP: {playerHealth})");
+
+        if (playerHealth <= 0)
         {
-            GameManager.publicGameManager.DealDamage(damageAmount);
+            // canBeHit = false; // prevents hitting after death
+            Debug.Log("Player died!");
+            PlayerDeath(GameState.Death);
         }
     }
 
@@ -122,16 +130,41 @@ public class PlayerController : MonoBehaviour
         {
             AllowMovement(false);
             animator.SetTrigger("Die");
-            if (deathScreen) deathScreen.SetActive(true);
-            StartCoroutine(DeathCoroutine());
+            
+            // Start coroutine to wait for animation before showing death screen
+            StartCoroutine(ShowDeathScreenAfterDelay());
         }
     }
+
+    // Waits for the animation length before showing the death screen
+    private IEnumerator ShowDeathScreenAfterDelay()
+    {
+        yield return new WaitForSecondsRealtime(1.9f); // match death animation length
+
+        if (deathScreen != null)
+        {
+            var dsc = deathScreen.GetComponent<DeathScreenController>();
+            if (dsc != null)
+            {
+                Debug.Log("Calling ShowDeathScreen()...");
+                dsc.ShowDeathScreen();
+            }
+            else
+            {
+                // fallback if controller isn't attached
+                deathScreen.SetActive(true);
+                Time.timeScale = 0f;
+            }
+        }
+    }
+
+    /*
     // Destroys player 2.2 seconds (animation length) after coroutine is called.
     IEnumerator DeathCoroutine()
     {
         yield return new WaitForSeconds(2.2f);
         Destroy(gameObject);
-    }
+    } */
 
     // Sends the player forward for the dash while disabling movement, then enables movement after the dash
     IEnumerator Dash()
