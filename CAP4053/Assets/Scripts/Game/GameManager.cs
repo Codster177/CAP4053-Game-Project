@@ -79,8 +79,6 @@ public class GameManager : MonoBehaviour
         {
             CurrentGameState = Event;
             OnGameStateChanged?.Invoke(Event);
-            Debug.Log("Changed");
-            Debug.Log(OnGameStateChanged);
         }
     }
 }

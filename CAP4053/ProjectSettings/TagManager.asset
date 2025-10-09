@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Wall
   - Enemy
   layers:
   - Default
@@ -45,3 +44,4 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
+  - Popout

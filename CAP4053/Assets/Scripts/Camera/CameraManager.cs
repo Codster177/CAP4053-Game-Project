@@ -47,4 +47,13 @@ public class CameraManager : MonoBehaviour
         }
     }
 
+    public void FocusOnPlayer(float zoom)
+    {
+        Transform playerTransform = GameManager.publicGameManager.GetPlayerGO().transform;
+        mainCamera.Follow = playerTransform;
+        mainCamera.LookAt = playerTransform;
+
+        // mainCamera.Lens.OrthographicSize = zoom;
+    }
+
 }

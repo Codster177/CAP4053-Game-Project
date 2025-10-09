@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MyUIManager : MonoBehaviour
 {
@@ -8,13 +9,17 @@ public class MyUIManager : MonoBehaviour
     [SerializeField] private Animator healthbarAnimator;
     [SerializeField] private Animator dashAnimator;
     [SerializeField] private HealthbarScript healthbarScript;
+    [SerializeField] private GameObject deathScreen;
     private Coroutine healthBarCoroutine = null;
 
-    void Start()
+    void Awake()
     {
         publicUIManager = this;
     }
-
+    void Start()
+    {
+        GameManager.OnGameStateChanged += ActivateDeath;
+    }
     public void HealthbarDamageAnim(float damageTaken)
     {
         float startHealth = GameManager.publicGameManager.GetPlayerHealth();
@@ -46,6 +51,13 @@ public class MyUIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.01f);
         dashAnimator.SetInteger("State", 0);
+    }
+    public void ActivateDeath(GameState state)
+    {
+        if (state == GameState.Death)
+        {
+            deathScreen.SetActive(true);
+        }
     }
 
 }

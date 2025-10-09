@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private GameObject deathScreen;
+    [SerializeField] private GameOverUI deathScreen;
     [SerializeField] private PlayerAttack playerAttack;
     [SerializeField] private float moveSpeed = 5f, dashCoolDown = 3f, dashTime = 0.5f, dashVelocity = 15f;
     [SerializeField] private bool canDash = true;
@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private Vector2 movement;
     private SpriteRenderer spriteRenderer;
+    private EffectHolder effectHolder;
     private bool isDashing = false, movingUp = false, movementEnabled = true, canBeHit = true;
 
     // Start() establishes PlayerDeath as a function that listens to OnGameStateChanged, and gets
@@ -19,10 +20,12 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         GameManager.OnGameStateChanged += PlayerDeath;
+        GameManager.publicGameManager.SetPlayerGO(gameObject);
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        EffectHolder effectHolder = GetComponent<EffectHolder>();
+        effectHolder = GetComponent<EffectHolder>();
         effectHolder.AddEffect(new Invincibility(4));
 
         if (playerAttack != null)
@@ -90,6 +93,7 @@ public class PlayerController : MonoBehaviour
     // Enables or disables movement.
     public void AllowMovement(bool newState)
     {
+        Debug.Log($"Allow Movement: {newState}");
         movementEnabled = newState;
     }
 
@@ -128,33 +132,14 @@ public class PlayerController : MonoBehaviour
     {
         if (newGameState == GameState.Death)
         {
+            effectHolder.RemoveAllEffects();
+            effectHolder.DisableEffects();
             AllowMovement(false);
+            playerAttack.SetCanAttack(false);
             animator.SetTrigger("Die");
 
-            // Start coroutine to wait for animation before showing death screen
-            StartCoroutine(ShowDeathScreenAfterDelay());
-        }
-    }
-
-    // Waits for the animation length before showing the death screen
-    private IEnumerator ShowDeathScreenAfterDelay()
-    {
-        yield return new WaitForSecondsRealtime(1.9f); // match death animation length
-
-        if (deathScreen != null)
-        {
-            var dsc = deathScreen.GetComponent<DeathScreenController>();
-            if (dsc != null)
-            {
-                Debug.Log("Calling ShowDeathScreen()...");
-                dsc.ShowDeathScreen();
-            }
-            else
-            {
-                // fallback if controller isn't attached
-                deathScreen.SetActive(true);
-                Time.timeScale = 0f;
-            }
+            CameraManager.publicCameraManager.FocusOnPlayer(6f);
+            StartCoroutine(DeathCoroutine());
         }
     }
 
@@ -163,13 +148,13 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(playerAttack.TriggerAnimation());
     }
 
-    /*
+
     // Destroys player 2.2 seconds (animation length) after coroutine is called.
     IEnumerator DeathCoroutine()
     {
         yield return new WaitForSeconds(2.2f);
-        Destroy(gameObject);
-    } */
+        spriteRenderer.color = new Color(0f, 0f, 0f, 0f);
+    }
 
     // Sends the player forward for the dash while disabling movement, then enables movement after the dash
     IEnumerator Dash()

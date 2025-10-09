@@ -6,17 +6,23 @@ using UnityEngine;
 
 public class EffectHolder : MonoBehaviour
 {
-    [SerializeField] private List<Effect> effectList;
+    [SerializeField] private List<Effect> effectList = new List<Effect>();
     public void AddEffect(Effect newEffect)
     {
-        effectList.Add(newEffect);
-        newEffect.ApplyEffect(this);
+        if (effectList != null)
+        {
+            effectList.Add(newEffect);
+            newEffect.ApplyEffect(this);
+        }
     }
     public void RemoveEffectFromList(int index)
     {
         try
         {
-            effectList.RemoveAt(index);
+            if (effectList != null)
+            {
+                effectList.RemoveAt(index);
+            }
         }
         catch (IndexOutOfRangeException)
         {
@@ -36,6 +42,17 @@ public class EffectHolder : MonoBehaviour
         }
         return false;
     }
+    public void RemoveAllEffects()
+    {
+        for (int i = 0; i < effectList.Count; i++)
+        {
+            effectList[i].RemoveEffect(this);
+        }
+    }
+    public void DisableEffects()
+    {
+        effectList = null;
+    }
     public void StartEffectCountdown(Effect effect, float countdownTime)
     {
         StartCoroutine(EffectCountdown(effect, countdownTime));
@@ -43,6 +60,9 @@ public class EffectHolder : MonoBehaviour
     private IEnumerator EffectCountdown(Effect effect, float countdownTime)
     {
         yield return new WaitForSeconds(countdownTime);
-        effect.RemoveEffect(this);
+        if (effectList.Contains(effect))
+        {
+            effect.RemoveEffect(this);
+        }
     }
 }
