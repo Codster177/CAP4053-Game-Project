@@ -25,14 +25,14 @@ public class OutfitRooms : ScriptableObject
                 continue;
             }
 
-            Debug.Log(debug.LogEdge(curEdge));
+            // Debug.Log(debug.LogEdge(curEdge));
 
             GenerationDirection direction = curEdge.GetDirection();
             if (spawnNode.connectedEdges[i].node2 == spawnNode)
             {
                 direction = GenerationManager.GetOppositeDirection(direction);
             }
-            Debug.Log($"Direction = {direction}");
+            // Debug.Log($"Direction = {direction}");
             CreateDoor(tileMaps, direction);
         }
     }

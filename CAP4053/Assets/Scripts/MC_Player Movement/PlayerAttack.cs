@@ -78,6 +78,7 @@ public class PlayerAttack : MonoBehaviour
             if (effectHolder != null)
             {
                 Vector2 knockbackDir = Knockback.CalculateDir(enemiesInRange[i].transform.position, transform.position);
+                Debug.Log(knockbackDir);
                 effectHolder.AddEffect(new Knockback(0.1f, 20, knockbackDir));
             }
             if (enemyHealth != null)

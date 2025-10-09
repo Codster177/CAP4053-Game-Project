@@ -26,7 +26,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   xOffsetConst: 32
   yOffsetConst: 18
   squareBounds: 5

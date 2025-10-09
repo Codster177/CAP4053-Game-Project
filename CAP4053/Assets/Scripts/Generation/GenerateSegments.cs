@@ -159,6 +159,34 @@ public class GenerateSegments : ScriptableObject
         FindPaths(nodeList, spawnedRoomIndices, notSpawnedIndices);
         return nodeList;
     }
+    private void MakeEdges(List<SpawnNode> nodeList)
+    {
+        for (int i = 0; i < nodeList.Count; i++)
+        {
+            SpawnNode left, down, right, up;
+            left = GetNodeInDirection(nodeList, nodeList[i], GenerationDirection.left);
+            down = GetNodeInDirection(nodeList, nodeList[i], GenerationDirection.down);
+            right = GetNodeInDirection(nodeList, nodeList[i], GenerationDirection.right);
+            up = GetNodeInDirection(nodeList, nodeList[i], GenerationDirection.up);
+
+            if (left != null)
+            {
+                nodeList[i].SetEdge(left, GenerationDirection.left);
+            }
+            if (down != null)
+            {
+                nodeList[i].SetEdge(down, GenerationDirection.down);
+            }
+            if (right != null)
+            {
+                nodeList[i].SetEdge(right, GenerationDirection.right);
+            }
+            if (up != null)
+            {
+                nodeList[i].SetEdge(up, GenerationDirection.up);
+            }
+        }
+    }
     private void FindPaths(List<SpawnNode> nodeList, List<int> spawnedRoomIndices, List<int> notSpawnedIndices)
     {
         // Debug.Log($"Starting Room Coords: {ConvertGridIndex(startRoomIndex)[0]}, {ConvertGridIndex(startRoomIndex)[1]}");
@@ -247,34 +275,7 @@ public class GenerateSegments : ScriptableObject
             // Debug.Log($"Room to spawn: {spawningRoomCoords[0]}, {spawningRoomCoords[1]}");
         }
     }
-    private void MakeEdges(List<SpawnNode> nodeList)
-    {
-        for (int i = 0; i < nodeList.Count; i++)
-        {
-            SpawnNode left, down, right, up;
-            left = GetNodeInDirection(nodeList, nodeList[i], GenerationDirection.left);
-            down = GetNodeInDirection(nodeList, nodeList[i], GenerationDirection.down);
-            right = GetNodeInDirection(nodeList, nodeList[i], GenerationDirection.right);
-            up = GetNodeInDirection(nodeList, nodeList[i], GenerationDirection.up);
-
-            if (left != null)
-            {
-                nodeList[i].SetEdge(left, GenerationDirection.left);
-            }
-            if (down != null)
-            {
-                nodeList[i].SetEdge(down, GenerationDirection.down);
-            }
-            if (right != null)
-            {
-                nodeList[i].SetEdge(right, GenerationDirection.right);
-            }
-            if (up != null)
-            {
-                nodeList[i].SetEdge(up, GenerationDirection.up);
-            }
-        }
-    }
+    // private void CreateExitRoom()
     private SpawnNode GetNodeByGridCoords(List<SpawnNode> nodeList, int[] coords)
     {
         int gridIndex = ConvertGridCoords(coords);

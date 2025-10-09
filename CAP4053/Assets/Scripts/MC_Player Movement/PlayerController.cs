@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
         {
             AllowMovement(false);
             animator.SetTrigger("Die");
-            
+
             // Start coroutine to wait for animation before showing death screen
             StartCoroutine(ShowDeathScreenAfterDelay());
         }
@@ -173,6 +173,7 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         movementEnabled = false;
         dashPS.playStop(true);
+        UIManager.publicUIManager.DashbarAnim();
         rb.linearVelocity = new Vector2(movement.x * dashVelocity, movement.y * dashVelocity);
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
