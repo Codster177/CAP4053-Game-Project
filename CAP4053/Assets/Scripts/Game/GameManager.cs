@@ -1,6 +1,7 @@
 using TMPro;
 using System;
 using UnityEngine;
+using NavMeshPlus.Components;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float playerHealth;
     [SerializeField] private TMP_Text healthLabel;
+    [SerializeField] private NavMeshSurface navMeshSurface;
     private GameObject playerGO;
     private PlayerAttack playerAttack;
 
@@ -66,6 +68,10 @@ public class GameManager : MonoBehaviour
     public PlayerAttack GetPlayerAttack()
     {
         return playerAttack;
+    }
+    public void RegenerateNavMesh()
+    {
+        navMeshSurface.BuildNavMesh();
     }
     public void SetPlayerGO(GameObject gameObject)
     {

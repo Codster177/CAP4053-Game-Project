@@ -85,6 +85,10 @@ public class GenerateSegments : ScriptableObject
             roomOutfitter.OutfitRoom(nodeList[spawnedIndexList[i]], newRoom, startRoomIndex, direction, this);
             currentlyGenerating.Add(newRoom);
         }
+
+
+        // Temp
+        GameManager.publicGameManager.RegenerateNavMesh();
     }
     private RoomPrefab GenerateRoom(Vector2 position, RoomPrefab prefab)
     {

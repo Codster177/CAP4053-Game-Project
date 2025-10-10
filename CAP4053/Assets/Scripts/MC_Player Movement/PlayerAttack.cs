@@ -6,7 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private float[] comboResetTime; // the combo time window
-    [SerializeField] private int damage = 10, triggerAnimation;
+    [SerializeField] private int damage = 10;
     [SerializeField] private List<GameObject> enemiesInRange = new List<GameObject>();
     private PlayerController playerController;
     private Coroutine comboResetCoroutine;
@@ -86,7 +86,6 @@ public class PlayerAttack : MonoBehaviour
 
     public IEnumerator TriggerAnimation()
     {
-        triggerAnimation = 0;
         if (animationQueue.Count > 0)
         {
             if (animationQueue.Count != 1 && animationQueue.Count != 0)

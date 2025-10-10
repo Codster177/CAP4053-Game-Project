@@ -192,6 +192,38 @@ PrefabInstance:
       propertyPath: m_TileSpriteArray.Array.data[0].m_RefCount
       value: 480
       objectReference: {fileID: 0}
+    - target: {fileID: 8235523942020002189, guid: 452aad30437c7ec4ea571168b962febf, type: 3}
+      propertyPath: amountToSpawn
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235523942020002189, guid: 452aad30437c7ec4ea571168b962febf, type: 3}
+      propertyPath: enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235523942020002189, guid: 452aad30437c7ec4ea571168b962febf, type: 3}
+      propertyPath: spawnSquares.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235523942020002189, guid: 452aad30437c7ec4ea571168b962febf, type: 3}
+      propertyPath: enemies.Array.data[0].enemyPrefab
+      value: 
+      objectReference: {fileID: 6071255053859952349, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
+    - target: {fileID: 8235523942020002189, guid: 452aad30437c7ec4ea571168b962febf, type: 3}
+      propertyPath: enemies.Array.data[0].spawnChance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235523942020002189, guid: 452aad30437c7ec4ea571168b962febf, type: 3}
+      propertyPath: spawnSquares.Array.data[0].size.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235523942020002189, guid: 452aad30437c7ec4ea571168b962febf, type: 3}
+      propertyPath: spawnSquares.Array.data[0].size.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8235523942020002189, guid: 452aad30437c7ec4ea571168b962febf, type: 3}
+      propertyPath: spawnSquares.Array.data[0].location.x
+      value: -12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
