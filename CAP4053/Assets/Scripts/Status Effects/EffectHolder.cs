@@ -60,6 +60,10 @@ public class EffectHolder : MonoBehaviour
     private IEnumerator EffectCountdown(Effect effect, float countdownTime)
     {
         yield return new WaitForSeconds(countdownTime);
+        if ((effectList == null) || (effectList.Count == 0))
+        {
+            yield break;
+        }
         if (effectList.Contains(effect))
         {
             effect.RemoveEffect(this);
