@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5054542592063542978}
   - component: {fileID: -9135347360376336192}
   - component: {fileID: -8872945680526584079}
+  - component: {fileID: -6320097538157928201}
   m_Layer: 0
   m_Name: Enemy 1_ Chaser
   m_TagString: Enemy
@@ -83,8 +84,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9245283, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -7546116501406567678, guid: 136ab030ab206ba4880ed9db80f0e5f8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -218,6 +219,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectList: []
+--- !u!95 &-6320097538157928201
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6071255053859952349}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e19f2ab4a460c194ca86356097de0a5b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8075297384640778381
 GameObject:
   m_ObjectHideFlags: 0
