@@ -16,6 +16,9 @@ public class RoomTrigger : MonoBehaviour
         }
         roomController.QueueRoom(transform);
         roomController.SpawnEnemies();
+
+        //new line (totally didnt have this in the exit room trigger and was confused for a bit...)
+        RoomProgressionManager.Instance.RegisterRoomEntry(roomController);
     }
     void OnTriggerExit2D(Collider2D collision)
     {
@@ -24,6 +27,7 @@ public class RoomTrigger : MonoBehaviour
             return;
         }
         roomController.DequeueRoom(transform);
+
     }
     bool CheckTagForPlayer(Collider2D collision)
     {

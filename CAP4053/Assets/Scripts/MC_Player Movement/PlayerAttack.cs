@@ -167,4 +167,11 @@ public class PlayerAttack : MonoBehaviour
         }
 
     }
+    // funtion to increase damage by percentage
+    public void IncreaseDamageByPercentage(float percent)
+    {
+        damage += Mathf.RoundToInt(damage * (percent / 100f));
+        Debug.Log($"Player Attack Damage increased! New damage: {damage}");
+    }
+
 }

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1100a82fbec806c4a8e36f0dfda3d2c6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - upgradePanel: {instanceID: 0}
+  - upgradeOption1: {instanceID: 0}
+  - upgradeOption2: {instanceID: 0}
+  - playerController: {instanceID: 0}
+  - playerAttack: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -188,5 +188,11 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    //reference funtion to increase speed by percentage
+    public void IncreaseMoveSpeedByPercentage(float percent)
+    {
+        moveSpeed += moveSpeed * (percent / 100f);
+        Debug.Log($"Player move speed increased! New speed: {moveSpeed}");
+    }
 
 }
