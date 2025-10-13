@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: eb9188dd3d6ed3d4fa7da0a39ba6c13a
+guid: f3bb1d45888d76b4687cf20109e6b665
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7471059055258091913
-    second: betterPauseMenu_0
+      213: 5611469699838574752
+    second: betterPauseMenu 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: betterPauseMenu_0
+      name: betterPauseMenu 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 981cf9c90a88ea760800000000000000
-      internalID: 7471059055258091913
+      spriteID: 0a00fbe06f1ffdd40800000000000000
+      internalID: 5611469699838574752
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      betterPauseMenu_0: 7471059055258091913
+      betterPauseMenu 1_0: 5611469699838574752
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
