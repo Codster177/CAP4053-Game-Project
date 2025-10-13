@@ -17,7 +17,11 @@ public class RoomProgressionManager : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
-
+    //function to check if we're in first room
+    public bool HasVisitedAnyRooms()
+    {
+        return visitedRooms.Count > 0;
+    }
     public void RegisterRoomEntry(RoomController room)
     {
         // checks to see if rooms were visited
