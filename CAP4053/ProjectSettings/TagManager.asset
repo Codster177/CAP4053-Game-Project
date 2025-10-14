@@ -12,7 +12,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - animation stuff
   - 
   - 
   - 
@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: animation stuff
+    uniqueID: 2077663751
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
