@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -8,8 +9,8 @@ using UnityEngine.Tilemaps;
 public class GenerationManager : MonoBehaviour
 {
     public static GenerationManager publicGenerationManager;
-    [SerializeField] GenerateSegments segmentGenerator;
-    [SerializeField] private GenerationDirection testGenerationDirection;
+    [SerializeField] private GenerateSegments segmentGenerator;
+    [SerializeField] private OutfitRooms roomOutfitter;
     private System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
 
     void Awake()
@@ -17,13 +18,24 @@ public class GenerationManager : MonoBehaviour
         publicGenerationManager = this;
     }
 
-    void Start()
+    public void GenerateSegment(Vector3 location, GenerationDirection direction)
     {
-        stopwatch.Start();
-        segmentGenerator.GenerateSegment(new Vector2(0f, 0f), testGenerationDirection);
-        stopwatch.Stop();
-        Debug.Log($"GenerationManager: Time taken to generate rooms: {stopwatch.ElapsedMilliseconds} ms.");
+        segmentGenerator.GenerateSegment(location, direction);
     }
+
+    public IEnumerator LoadExitRoom(RoomPrefab exitRoom)
+    {
+        Debug.Log("Loading Next Section!");
+        roomOutfitter.DestroyNewDoor(exitRoom, exitRoom.GetExitRoomDir());
+        List<GenerationDirection> newDirections = new List<GenerationDirection>() { GenerationDirection.left, GenerationDirection.down, GenerationDirection.right, GenerationDirection.up };
+        newDirections.Remove(exitRoom.GetExitRoomDir());
+        GenerationDirection newDirection = newDirections[UnityEngine.Random.Range(0, newDirections.Count)];
+        yield return new WaitForSeconds(2f);
+        segmentGenerator.GenerateSegment(exitRoom.transform.position, newDirection);
+        segmentGenerator.AddToCurrentlyGenerating(exitRoom);
+        roomOutfitter.CreateNewDoor(exitRoom, newDirection);
+    }
+
     public static GenerationDirection GetOppositeDirection(GenerationDirection direction)
     {
         if (direction == GenerationDirection.right)

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: RoomOutfitter
   m_EditorClassIdentifier: 
   roomPrefabs:
-  - {fileID: 8576279842938940484, guid: eb5eb2d732039f84e9148e81f5c23e56, type: 3}
+  - {fileID: 3985727467706933359, guid: eb5eb2d732039f84e9148e81f5c23e56, type: 3}
+  - {fileID: 3011557817051098995, guid: 452aad30437c7ec4ea571168b962febf, type: 3}
   floorTiles:
-  - {fileID: 11400000, guid: 2f407e09f7a8bf64fa93a92a6e8b1b46, type: 2}
+  - {fileID: 11400000, guid: f7ec44e99b85b1441bd0a90712261758, type: 2}
   wallTiles:
   - {fileID: 11400000, guid: 26ab3431630437d4899e62b65d3e57fe, type: 2}

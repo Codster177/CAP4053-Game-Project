@@ -22,6 +22,10 @@ public class RoomProgressionManager : MonoBehaviour
     {
         return visitedRooms.Count > 0;
     }
+    public bool HasVisitedRoom(RoomController room)
+    {
+        return visitedRooms.Contains(room);
+    }
     public void RegisterRoomEntry(RoomController room)
     {
         // checks to see if rooms were visited
@@ -46,7 +50,7 @@ public class RoomProgressionManager : MonoBehaviour
             return;
         }
 
-        
+
         StartCoroutine(DelayedUpgradeUI());
     }
 
@@ -54,9 +58,10 @@ public class RoomProgressionManager : MonoBehaviour
     private IEnumerator DelayedUpgradeUI()
     {
         yield return new WaitForSeconds(2f); //delayed time when entering room
-        Time.timeScale = 0f; 
+        Time.timeScale = 0f;
         upgradeUI.ShowUpgradeOptions();
     }
+
 
 
     public void ResumeGame()

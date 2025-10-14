@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Generation/GenerateSegments")]
 public class GenerateSegments : ScriptableObject
 {
-    [SerializeField] private List<RoomPrefab> currentlyGenerating;
+    [SerializeField] private List<RoomPrefab> currentlyGenerating = new List<RoomPrefab>();
     [SerializeField] private float xOffsetConst = 32, yOffsetConst = 18;
     [SerializeField] private int squareBounds = 5;
     [SerializeField] private int[] minimumRoomRange;
@@ -27,10 +28,13 @@ public class GenerateSegments : ScriptableObject
         this.squareBounds = squareBounds;
         this.minimumRoomRange = minimumRoomRange;
     }
+    public void AddToCurrentlyGenerating(RoomPrefab roomPrefab)
+    {
+        currentlyGenerating.Add(roomPrefab);
+    }
     public void GenerateSegment(Vector2 startingPosition, GenerationDirection direction)
     {
-
-        currentlyGenerating = new List<RoomPrefab>();
+        ClearCurrentRooms();
         // Finds the position of the connecting room to the new segment.
         int[] connectingGridInfo = DetermineLocalOffset(direction);
 
@@ -74,26 +78,68 @@ public class GenerateSegments : ScriptableObject
         // Debug.Log($"Stopwatch time before ConnectSegment(): {stopwatch.ElapsedMilliseconds} ms.");
 
         List<SpawnNode> nodeList = ConnectSegment(spawnedIndexList, roomIndexList);
-        // DetermineRooms(nodeList, spawnedIndexList);
 
         for (int i = 0; i < spawnedIndexList.Count; i++)
         {
             int[] gridCoords = ConvertGridIndex(spawnedIndexList[i]);
 
             Vector2 roomVectorPos = CalculateVectorPos(startingPosition, localOffset, gridCoords);
-            RoomPrefab newRoom = GenerateRoom(roomVectorPos, roomOutfitter.GetRoomPrefab(nodeList[spawnedIndexList[i]]));
+            RoomPrefab newRoom = GenerateRoom(roomVectorPos, roomOutfitter.GetRoomPrefab(0));
             roomOutfitter.OutfitRoom(nodeList[spawnedIndexList[i]], newRoom, startRoomIndex, direction, this);
+            nodeList[spawnedIndexList[i]].roomPrefab = newRoom;
             currentlyGenerating.Add(newRoom);
         }
-
+        CreateExitRoom(nodeList, spawnedIndexList, startingPosition, localOffset);
 
         // Temp
         GameManager.publicGameManager.RegenerateNavMesh();
+    }
+    private void ClearCurrentRooms()
+    {
+        if (currentlyGenerating == null)
+        {
+            currentlyGenerating = new List<RoomPrefab>();
+            return;
+        }
+        for (int i = 0; i < currentlyGenerating.Count; i++)
+        {
+            if (currentlyGenerating[i] == null)
+            {
+                continue;
+            }
+            if (currentlyGenerating[i].gameObject != null)
+            {
+                Destroy(currentlyGenerating[i].gameObject);
+            }
+        }
+        currentlyGenerating = new List<RoomPrefab>();
     }
     private RoomPrefab GenerateRoom(Vector2 position, RoomPrefab prefab)
     {
         GameObject newRoom = Instantiate(prefab.roomPrefab, position, Quaternion.identity);
         return newRoom.GetComponent<RoomPrefab>();
+    }
+    private RoomPrefab GenerateRoomInDirection(Vector2 position, RoomPrefab prefab, GenerationDirection direction)
+    {
+        Vector2 offset = new Vector2(0f, 0f);
+        if (direction == GenerationDirection.left)
+        {
+            offset.x = -1f;
+        }
+        else if (direction == GenerationDirection.right)
+        {
+            offset.x = 1f;
+        }
+        else if (direction == GenerationDirection.down)
+        {
+            offset.y = -1f;
+        }
+        else if (direction == GenerationDirection.up)
+        {
+            offset.y = 1f;
+        }
+        Vector2 newPos = new Vector2(position.x + (xOffsetConst * offset.x), position.y + (yOffsetConst * offset.y));
+        return GenerateRoom(newPos, prefab);
     }
     private int[] ConvertGridIndex(int index)
     {
@@ -279,7 +325,59 @@ public class GenerateSegments : ScriptableObject
             // Debug.Log($"Room to spawn: {spawningRoomCoords[0]}, {spawningRoomCoords[1]}");
         }
     }
-    // private void CreateExitRoom()
+    private void CreateExitRoom(List<SpawnNode> nodeList, List<int> spawnedRoomIndices, Vector2 startingPos, int[] localOffset)
+    {
+        bool roomSpawned = false;
+        while (!roomSpawned)
+        {
+            int exitRoomVal = UnityEngine.Random.Range(0, spawnedRoomIndices.Count);
+            SpawnNode node = nodeList[spawnedRoomIndices[exitRoomVal]];
+            int[] nodeCoords = ConvertGridIndex(node.spawnIndex);
+            List<GenerationDirection> generationDirections = new List<GenerationDirection>() { GenerationDirection.left, GenerationDirection.down, GenerationDirection.right, GenerationDirection.up };
+            GenerationDirection direction = GenerationDirection.nullType;
+            for (int i = 0; i < node.connectedEdges.Count; i++)
+            {
+                Edge edge = node.connectedEdges[i];
+                Debug.Log(LogEdge(edge));
+                if (edge.node1 == node)
+                {
+                    if (edge.node2.activated)
+                    {
+                        generationDirections.Remove(edge.GetDirection());
+                    }
+                }
+                else
+                {
+                    if (edge.node1.activated)
+                    {
+                        generationDirections.Remove(GenerationManager.GetOppositeDirection(edge.GetDirection()));
+                    }
+                }
+            }
+            if (generationDirections.Count == 0)
+            {
+                continue;
+            }
+            else
+            {
+                for (int j = 0; j < generationDirections.Count; j++)
+                {
+                    Debug.Log($"Generation Directions [{j}]: {generationDirections[j]}");
+                }
+                int directionVal = UnityEngine.Random.Range(0, generationDirections.Count);
+                direction = generationDirections[directionVal];
+                Debug.Log($"Chosen Direction: {direction}");
+                Vector2 connectingRoomPos = CalculateVectorPos(startingPos, localOffset, nodeCoords);
+                Debug.Log($"Connection room position: {connectingRoomPos}");
+                RoomPrefab connectingRoom = node.roomPrefab;
+                RoomPrefab exitRoom = GenerateRoomInDirection(connectingRoomPos, roomOutfitter.GetRoomPrefab(1), direction);
+                exitRoom.SetExitRoomDir(GenerationManager.GetOppositeDirection(direction));
+                roomOutfitter.CreateNewDoor(connectingRoom, direction);
+                roomOutfitter.CreateNewDoor(exitRoom, GenerationManager.GetOppositeDirection(direction));
+                roomSpawned = true;
+            }
+        }
+    }
     private SpawnNode GetNodeByGridCoords(List<SpawnNode> nodeList, int[] coords)
     {
         int gridIndex = ConvertGridCoords(coords);
@@ -351,11 +449,13 @@ public class GenerateSegments : ScriptableObject
         }
         return returnDirs;
     }
+
     public class SpawnNode : IComparable
     {
         public int spawnIndex;
         public bool activated, connected;
         public List<Edge> connectedEdges;
+        public RoomPrefab roomPrefab;
         public SpawnNode(int index, bool setActivated)
         {
             spawnIndex = index;

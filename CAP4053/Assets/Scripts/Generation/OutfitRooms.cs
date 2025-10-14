@@ -36,6 +36,14 @@ public class OutfitRooms : ScriptableObject
             CreateDoor(tileMaps, direction);
         }
     }
+    public void CreateNewDoor(RoomPrefab prefab, GenerationDirection direction)
+    {
+        CreateDoor(prefab.GetTilemaps(), direction);
+    }
+    public void DestroyNewDoor(RoomPrefab prefab, GenerationDirection direction)
+    {
+        DestroyDoor(prefab.GetTilemaps(), direction);
+    }
     private void CreateDoor(Tilemap[] tileMaps, GenerationDirection direction)
     {
         if (direction == GenerationDirection.left)
@@ -67,14 +75,45 @@ public class OutfitRooms : ScriptableObject
             tileMaps[0].SetTile(new Vector3Int(0, 8), floorTiles[0]);
         }
     }
+    private void DestroyDoor(Tilemap[] tileMaps, GenerationDirection direction)
+    {
+        if (direction == GenerationDirection.left)
+        {
+            tileMaps[1].SetTile(new Vector3Int(-16, -1), wallTiles[0]);
+            tileMaps[1].SetTile(new Vector3Int(-16, 0), wallTiles[0]);
+            tileMaps[0].SetTile(new Vector3Int(-16, -1), null);
+            tileMaps[0].SetTile(new Vector3Int(-16, 0), null);
+        }
+        if (direction == GenerationDirection.down)
+        {
+            tileMaps[1].SetTile(new Vector3Int(-1, -9), wallTiles[0]);
+            tileMaps[1].SetTile(new Vector3Int(0, -9), wallTiles[0]);
+            tileMaps[0].SetTile(new Vector3Int(-1, -9), null);
+            tileMaps[0].SetTile(new Vector3Int(0, -9), null);
+        }
+        if (direction == GenerationDirection.right)
+        {
+            tileMaps[1].SetTile(new Vector3Int(15, -1), wallTiles[0]);
+            tileMaps[1].SetTile(new Vector3Int(15, 0), wallTiles[0]);
+            tileMaps[0].SetTile(new Vector3Int(15, -1), null);
+            tileMaps[0].SetTile(new Vector3Int(15, 0), null);
+        }
+        if (direction == GenerationDirection.up)
+        {
+            tileMaps[1].SetTile(new Vector3Int(-1, 8), wallTiles[0]);
+            tileMaps[1].SetTile(new Vector3Int(0, 8), wallTiles[0]);
+            tileMaps[0].SetTile(new Vector3Int(-1, 8), null);
+            tileMaps[0].SetTile(new Vector3Int(0, 8), null);
+        }
+    }
 
     // Door Locations:
     // Left: (-16, -1) (-16, 0)
     // Down: (-1, -9) (0, -9)
     // Right: (15, -1) (15, 0)
     // Up: (-1, 8) (0, 8)
-    public RoomPrefab GetRoomPrefab(GenerateSegments.SpawnNode spawnNode)
+    public RoomPrefab GetRoomPrefab(int prefabVal)
     {
-        return roomPrefabs[0];
+        return roomPrefabs[prefabVal];
     }
 }

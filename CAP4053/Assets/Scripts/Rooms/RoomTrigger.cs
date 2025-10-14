@@ -3,6 +3,7 @@ using UnityEngine;
 public class RoomTrigger : MonoBehaviour
 {
     private RoomController roomController;
+    private bool insideRoom;
 
     public void SetRoomController(RoomController newController)
     {
@@ -14,16 +15,11 @@ public class RoomTrigger : MonoBehaviour
         {
             return;
         }
+        insideRoom = true;
         roomController.QueueRoom(transform);
 
         // spawns enemies only after we left the first room
-        if (RoomProgressionManager.Instance.HasVisitedAnyRooms())
-        {
-            roomController.SpawnEnemies();
-        }
-
-        //new line (totally didnt have this in the exit room trigger and was confused for a bit...)
-        RoomProgressionManager.Instance.RegisterRoomEntry(roomController);
+        roomController.SpawnEnemies();
     }
     void OnTriggerExit2D(Collider2D collision)
     {
@@ -31,8 +27,13 @@ public class RoomTrigger : MonoBehaviour
         {
             return;
         }
+        insideRoom = false;
         roomController.DequeueRoom(transform);
 
+    }
+    public bool GetInsideRoom()
+    {
+        return insideRoom;
     }
     bool CheckTagForPlayer(Collider2D collision)
     {

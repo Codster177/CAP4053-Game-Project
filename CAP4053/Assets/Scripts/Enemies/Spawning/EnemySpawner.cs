@@ -38,6 +38,7 @@ public class EnemySpawner : MonoBehaviour
         }
         GameObject enemy = CalculateSpawnChance();
         GameObject spawnedEnemy = Instantiate(enemy, square.GetRandomPosition(), quaternion.identity);
+        EnemyManager.publicEnemyManager.AddToList(spawnedEnemy);
     }
     private GameObject CalculateSpawnChance()
     {

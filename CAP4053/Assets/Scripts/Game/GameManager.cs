@@ -2,6 +2,7 @@ using TMPro;
 using System;
 using UnityEngine;
 using NavMeshPlus.Components;
+using UnityEngine.AI;
 
 public class GameManager : MonoBehaviour
 {
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
     }
     public void RegenerateNavMesh()
     {
+        NavMesh.RemoveAllNavMeshData();
         navMeshSurface.BuildNavMesh();
     }
     public void SetPlayerGO(GameObject gameObject)
@@ -86,6 +88,10 @@ public class GameManager : MonoBehaviour
             CurrentGameState = Event;
             OnGameStateChanged?.Invoke(Event);
         }
+    }
+    public void ChooseTestMode(int testMode)
+    {
+        RoomController.ChangeTestModePrefab(testMode);
     }
 }
 
