@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
     public void ChooseTestMode(int testMode)
     {
         this.testMode = testMode;
-        RoomController.ChangeTestModePrefab(testMode);
+        GenerationManager.publicGenerationManager.ChangeTestModePrefab(testMode);
     }
 }
 

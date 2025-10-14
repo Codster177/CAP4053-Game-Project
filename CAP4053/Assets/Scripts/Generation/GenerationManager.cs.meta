@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 89de6b7c25414c84ca82adc7cf177330
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - segmentGenerator: {instanceID: 0}
+  - roomOutfitter: {instanceID: 0}
+  - navMeshSurface: {instanceID: 0}
+  - room0: {fileID: 8344301262295454653, guid: eb5eb2d732039f84e9148e81f5c23e56, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

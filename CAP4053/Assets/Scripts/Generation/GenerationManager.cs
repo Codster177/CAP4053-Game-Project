@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using NavMeshPlus.Components;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Splines.ExtrusionShapes;
 using UnityEngine.Tilemaps;
@@ -13,6 +12,7 @@ public class GenerationManager : MonoBehaviour
     [SerializeField] private GenerateSegments segmentGenerator;
     [SerializeField] private OutfitRooms roomOutfitter;
     [SerializeField] private NavMeshSurface navMeshSurface;
+    [SerializeField] private GameObject room0;
     private System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
 
     void Awake()
@@ -82,6 +82,31 @@ public class GenerationManager : MonoBehaviour
         else
         {
             return GenerationDirection.nullType;
+        }
+    }
+    public void ChangeTestModePrefab(int testVal)
+    {
+        if (room0 == null)
+        {
+            return;
+        }
+        RoomPrefab prefab = room0.GetComponent<RoomPrefab>();
+        NavMeshModifier[] navMeshModifiers = prefab.GetNavMeshModifiers();
+        if ((testVal == 1) || (testVal == 2))
+        {
+            navMeshModifiers[0].ignoreFromBuild = false;
+            navMeshModifiers[1].ignoreFromBuild = true;
+            navMeshModifiers[2].ignoreFromBuild = true;
+        }
+        else if (testVal == 3)
+        {
+            navMeshModifiers[0].ignoreFromBuild = true;
+            navMeshModifiers[1].ignoreFromBuild = false;
+            navMeshModifiers[2].ignoreFromBuild = false;
+        }
+        else
+        {
+            Debug.LogError("RoomController: ChangeTestModePrefab: TestVal != 1, 2, or 3.");
         }
     }
 }

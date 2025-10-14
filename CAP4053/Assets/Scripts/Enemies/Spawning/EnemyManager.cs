@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager publicEnemyManager;
+    [SerializeField] private GameObject enemyPrefab;
     private List<GameObject> enemyList = new List<GameObject>();
 
     // Temp:
@@ -45,7 +46,6 @@ public class EnemyManager : MonoBehaviour
     }
     private void SetEnemyDifficulty()
     {
-        GameObject enemyPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/Enemy 1_ Chaser.prefab");
         EnemyHealth health = enemyPrefab.GetComponent<EnemyHealth>();
         EnemyController controller = enemyPrefab.GetComponent<EnemyController>();
         ChaserCombater combater = controller.GetCombater() as ChaserCombater;
@@ -55,7 +55,6 @@ public class EnemyManager : MonoBehaviour
     }
     public void IncreaseEnemyDifficulty()
     {
-        GameObject enemyPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Enemies/Enemy 1_ Chaser.prefab");
         EnemyHealth health = enemyPrefab.GetComponent<EnemyHealth>();
         EnemyController controller = enemyPrefab.GetComponent<EnemyController>();
         ChaserCombater combater = controller.GetCombater() as ChaserCombater;
