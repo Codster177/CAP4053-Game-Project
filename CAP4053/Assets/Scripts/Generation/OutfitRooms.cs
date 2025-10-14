@@ -33,11 +33,13 @@ public class OutfitRooms : ScriptableObject
                 direction = GenerationManager.GetOppositeDirection(direction);
             }
             // Debug.Log($"Direction = {direction}");
+            prefab.AddDoorToList(direction);
             CreateDoor(tileMaps, direction);
         }
     }
     public void CreateNewDoor(RoomPrefab prefab, GenerationDirection direction)
     {
+        prefab.AddDoorToList(direction);
         CreateDoor(prefab.GetTilemaps(), direction);
     }
     public void DestroyNewDoor(RoomPrefab prefab, GenerationDirection direction)

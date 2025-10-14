@@ -3103,7 +3103,7 @@ MonoBehaviour:
   moveSpeed: 7
   dashCoolDown: 3
   dashTime: 0.5
-  dashVelocity: 15
+  dashVelocity: 3
   canDash: 1
   dashPS: {fileID: 1927955591}
   playerHealth: 100
@@ -4008,7 +4008,7 @@ MonoBehaviour:
   playerController: {fileID: 975306205}
   playerAttack: {fileID: 2075474377}
   attackBoostPercent: 50
-  speedBoostPercent: 50
+  speedBoostPercent: 5
 --- !u!114 &1258450878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4817,6 +4817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   segmentGenerator: {fileID: 11400000, guid: 5e4a72fce6d034545974def74bc8c619, type: 2}
   roomOutfitter: {fileID: 11400000, guid: b9b0a6134e57de4428e384c625663044, type: 2}
+  navMeshSurface: {fileID: 1110114533}
 --- !u!1 &1527094508
 GameObject:
   m_ObjectHideFlags: 0
@@ -4874,7 +4875,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +50% speed
+  m_text: +5% speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5314,10 +5315,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33524039a3e5d794c8df485e4f59cd61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testMode: 0
   playerTransform: {fileID: 975306204}
   playerHealth: 100
   healthLabel: {fileID: 60488248}
-  navMeshSurface: {fileID: 1110114533}
 --- !u!4 &1905403861
 Transform:
   m_ObjectHideFlags: 0

@@ -34,7 +34,6 @@ public class GenerateSegments : ScriptableObject
     }
     public void GenerateSegment(Vector2 startingPosition, GenerationDirection direction)
     {
-        ClearCurrentRooms();
         // Finds the position of the connecting room to the new segment.
         int[] connectingGridInfo = DetermineLocalOffset(direction);
 
@@ -90,11 +89,8 @@ public class GenerateSegments : ScriptableObject
             currentlyGenerating.Add(newRoom);
         }
         CreateExitRoom(nodeList, spawnedIndexList, startingPosition, localOffset);
-
-        // Temp
-        GameManager.publicGameManager.RegenerateNavMesh();
     }
-    private void ClearCurrentRooms()
+    public void ClearCurrentRooms()
     {
         if (currentlyGenerating == null)
         {
@@ -112,6 +108,7 @@ public class GenerateSegments : ScriptableObject
                 Destroy(currentlyGenerating[i].gameObject);
             }
         }
+        System.GC.Collect();
         currentlyGenerating = new List<RoomPrefab>();
     }
     private RoomPrefab GenerateRoom(Vector2 position, RoomPrefab prefab)

@@ -9,6 +9,14 @@ public class EnemyHealth : MonoBehaviour
     //starts enemy at max hp (duh)
     void Awake() => currentHP = maxHP;
 
+    public void SetMaxHP(int newMax)
+    {
+        maxHP = newMax;
+    }
+    public int GetMaxHP()
+    {
+        return maxHP;
+    }
     public void TakeDamage(int amount)
     {
         if (!canBeHit)
@@ -28,6 +36,7 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("deaded");
+        EnemyManager.publicEnemyManager.RemoveEnemy(gameObject);
         Destroy(gameObject);
     }
 }

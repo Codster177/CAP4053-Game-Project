@@ -21,6 +21,10 @@ public class RoomController : MonoBehaviour
         {
             ExitRoomCheck();
         }
+        if ((!safeRoom) && (GameManager.publicGameManager.testMode == 1))
+        {
+            CloseDoorTest();
+        }
     }
     public void QueueRoom(Transform cameraPos)
     {
@@ -43,6 +47,34 @@ public class RoomController : MonoBehaviour
         if (!RoomProgressionManager.Instance.HasVisitedRoom(this))
         {
             RoomProgressionManager.Instance.RegisterRoomEntry(this);
+        }
+    }
+
+    private void CloseDoorTest()
+    {
+        Debug.Log($"Enemies Left: {EnemyManager.publicEnemyManager.GetEnemyList().Count}");
+
+        if (EnemyManager.publicEnemyManager.GetEnemyList().Count > 0)
+        {
+            float distanceFromCenter = Vector3.Distance(GameManager.publicGameManager.GetPlayerLocation().position, transform.position);
+            if (distanceFromCenter < 7f)
+            {
+                GenerationManager.publicGenerationManager.CloseDoors(roomPrefab);
+            }
+        }
+        else
+        {
+            GenerationManager.publicGenerationManager.ReopenDoors(roomPrefab);
+        }
+    }
+
+    private void ExitRoomCheck()
+    {
+        float distanceFromCenter = Vector3.Distance(GameManager.publicGameManager.GetPlayerLocation().position, transform.position);
+        if (distanceFromCenter < 4f)
+        {
+            safeRoom = false;
+            StartCoroutine(GenerationManager.publicGenerationManager.LoadExitRoom(roomPrefab));
         }
     }
 
@@ -70,16 +102,6 @@ public class RoomController : MonoBehaviour
         else
         {
             Debug.LogError("RoomController: ChangeTestModePrefab: TestVal != 1, 2, or 3.");
-        }
-    }
-
-    public void ExitRoomCheck()
-    {
-        float distanceFromCenter = Vector3.Distance(GameManager.publicGameManager.GetPlayerLocation().position, transform.position);
-        if (distanceFromCenter < 6f)
-        {
-            safeRoom = false;
-            StartCoroutine(GenerationManager.publicGenerationManager.LoadExitRoom(roomPrefab));
         }
     }
 }

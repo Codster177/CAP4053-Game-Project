@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameOverUI deathScreen;
     [SerializeField] private PlayerAttack playerAttack;
-    [SerializeField] private float moveSpeed = 5f, dashCoolDown = 3f, dashTime = 0.5f, dashVelocity = 15f;
+    [SerializeField] private float moveSpeed = 5f, dashCoolDown = 3f, dashTime = 0.5f, dashVelocity = 2f;
     [SerializeField] private bool canDash = true;
     [SerializeField] private DashParticles dashPS;
     private Rigidbody2D rb;
@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
         movementEnabled = false;
         dashPS.playStop(true);
         MyUIManager.publicUIManager.DashbarAnim();
-        rb.linearVelocity = new Vector2(movement.x * dashVelocity, movement.y * dashVelocity);
+        rb.linearVelocity = new Vector2(movement.x * dashVelocity * moveSpeed, movement.y * dashVelocity * moveSpeed);
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
         movementEnabled = true;

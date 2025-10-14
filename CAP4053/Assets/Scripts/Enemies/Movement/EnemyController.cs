@@ -29,4 +29,8 @@ public class EnemyController : MonoBehaviour
     {
         enemyCombater.SetCanAttack(newState);
     }
+    public EnemyCombater GetCombater()
+    {
+        return enemyCombater;
+    }
 }

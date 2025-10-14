@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using NavMeshPlus.Components;
 using UnityEngine.AI;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,10 +15,10 @@ public class GameManager : MonoBehaviour
     public static GameManager publicGameManager;
     private GameState CurrentGameState;
     public static event Action<GameState> OnGameStateChanged;
+    public int testMode;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float playerHealth;
     [SerializeField] private TMP_Text healthLabel;
-    [SerializeField] private NavMeshSurface navMeshSurface;
     private GameObject playerGO;
     private PlayerAttack playerAttack;
 
@@ -70,11 +71,6 @@ public class GameManager : MonoBehaviour
     {
         return playerAttack;
     }
-    public void RegenerateNavMesh()
-    {
-        NavMesh.RemoveAllNavMeshData();
-        navMeshSurface.BuildNavMesh();
-    }
     public void SetPlayerGO(GameObject gameObject)
     {
         playerGO = gameObject;
@@ -91,6 +87,7 @@ public class GameManager : MonoBehaviour
     }
     public void ChooseTestMode(int testMode)
     {
+        this.testMode = testMode;
         RoomController.ChangeTestModePrefab(testMode);
     }
 }

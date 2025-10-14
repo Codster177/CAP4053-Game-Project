@@ -10,6 +10,7 @@ public class RoomPrefab : MonoBehaviour
     [SerializeField] private Grid roomGrid;
     [SerializeField] private Tilemap floormap;
     [SerializeField] private Tilemap wallmap;
+    private List<GenerationDirection> doorDirections = new List<GenerationDirection>();
     private GenerationDirection exitRoomDir = GenerationDirection.nullType;
 
     public Grid GetGrid()
@@ -31,5 +32,16 @@ public class RoomPrefab : MonoBehaviour
     public GenerationDirection GetExitRoomDir()
     {
         return exitRoomDir;
+    }
+    public void AddDoorToList(GenerationDirection direction)
+    {
+        if (!doorDirections.Contains(direction))
+        {
+            doorDirections.Add(direction);
+        }
+    }
+    public List<GenerationDirection> GetDoorDirections()
+    {
+        return doorDirections;
     }
 }

@@ -32,6 +32,15 @@ public class ChaserCombater : EnemyCombater
             chaserController.SetPosition(true, new Vector3());
         }
     }
+    public List<float> GetEnemyStats()
+    {
+        return new List<float>() { damageAmount, attackSpeed };
+    }
+    public void SetEnemyStats(float damageAmount, float attackSpeed)
+    {
+        this.damageAmount = damageAmount;
+        this.attackSpeed = attackSpeed;
+    }
     private IEnumerator StartAttack()
     {
         yield return new WaitForSeconds(attackSpeed);
