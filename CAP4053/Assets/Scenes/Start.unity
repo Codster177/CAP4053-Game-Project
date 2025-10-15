@@ -950,6 +950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241be5f941a1958448d208a2ea307638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeDuration: 1
 --- !u!4 &1364446710
 Transform:
   m_ObjectHideFlags: 0
@@ -977,6 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241be5f941a1958448d208a2ea307638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeDuration: 0.75
 --- !u!1 &2045839794
 GameObject:
   m_ObjectHideFlags: 0

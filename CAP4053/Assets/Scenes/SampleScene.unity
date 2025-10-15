@@ -2755,6 +2755,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Testing Selection
       objectReference: {fileID: 0}
+    - target: {fileID: 8448588140010366992, guid: 9934c62d4263d9f41a32ee6b413aa7c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5297,6 +5301,7 @@ GameObject:
   - component: {fileID: 1905403861}
   - component: {fileID: 1905403860}
   - component: {fileID: 1905403862}
+  - component: {fileID: 1905403863}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5348,6 +5353,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1993734263}
+--- !u!114 &1905403863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905403859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943c65866a96842418b3516b434e2aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 3
 --- !u!1 &1927955587
 GameObject:
   m_ObjectHideFlags: 0
