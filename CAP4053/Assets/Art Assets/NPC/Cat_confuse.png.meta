@@ -1,0 +1,684 @@
+fileFormatVersion: 2
+guid: a63b31c02d3853f4ab587f76cbdf73f7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -130013963773471742
+    second: Cat_confuse_0
+  - first:
+      213: 7262816748560172042
+    second: Cat_confuse_1
+  - first:
+      213: 4597263949806372879
+    second: Cat_confuse_2
+  - first:
+      213: 9185119757976549415
+    second: Cat_confuse_3
+  - first:
+      213: 6250153488597661862
+    second: Cat_confuse_4
+  - first:
+      213: 1689564918190185669
+    second: Cat_confuse_5
+  - first:
+      213: 5579865777565900416
+    second: Cat_confuse_6
+  - first:
+      213: 2625624278645730324
+    second: Cat_confuse_7
+  - first:
+      213: -5067223064267911354
+    second: Cat_confuse_8
+  - first:
+      213: 2906415770716236494
+    second: Cat_confuse_9
+  - first:
+      213: -4393259262296824567
+    second: Cat_confuse_10
+  - first:
+      213: -5778374045140798603
+    second: Cat_confuse_11
+  - first:
+      213: 4781073645340354255
+    second: Cat_confuse_12
+  - first:
+      213: -5495615009341720718
+    second: Cat_confuse_13
+  - first:
+      213: 4075769757656193536
+    second: Cat_confuse_14
+  - first:
+      213: 4210116867188768888
+    second: Cat_confuse_15
+  - first:
+      213: 6717979102347999598
+    second: Cat_confuse_16
+  - first:
+      213: 110351574321215933
+    second: Cat_confuse_17
+  - first:
+      213: 9116401767348362536
+    second: Cat_confuse_18
+  - first:
+      213: -7834556351973645450
+    second: Cat_confuse_19
+  - first:
+      213: -4386256448723870771
+    second: Cat_confuse_20
+  - first:
+      213: -1527855586483693092
+    second: Cat_confuse_21
+  - first:
+      213: -8135276607279483043
+    second: Cat_confuse_22
+  - first:
+      213: 4765261039903112444
+    second: Cat_confuse_23
+  - first:
+      213: -2124113456094853511
+    second: Cat_confuse_24
+  - first:
+      213: -7651360806326295217
+    second: Cat_confuse_25
+  - first:
+      213: -8661146895149875022
+    second: Cat_confuse_26
+  - first:
+      213: -481649849262493055
+    second: Cat_confuse_27
+  - first:
+      213: -7017570633824766022
+    second: Cat_confuse_28
+  - first:
+      213: 1825463345435051719
+    second: Cat_confuse_29
+  - first:
+      213: -2033705377955253003
+    second: Cat_confuse_30
+  - first:
+      213: 5832982332373063512
+    second: Cat_confuse_31
+  - first:
+      213: 4776909589267929334
+    second: Cat_confuse_32
+  - first:
+      213: -1990947009785352952
+    second: Cat_confuse_33
+  - first:
+      213: -3301495610800557604
+    second: Cat_confuse_34
+  - first:
+      213: -2457799965212768961
+    second: Cat_confuse_35
+  - first:
+      213: 1824471995042554570
+    second: Cat_confuse_36
+  - first:
+      213: -3245411838782526789
+    second: Cat_confuse_37
+  - first:
+      213: 3103897581649103647
+    second: Cat_confuse_38
+  - first:
+      213: -7970878920928834851
+    second: Cat_confuse_39
+  - first:
+      213: -4128120002967068283
+    second: Cat_confuse_40
+  - first:
+      213: -6805327235247292201
+    second: Cat_confuse_41
+  - first:
+      213: 7844817869112730867
+    second: Cat_confuse_42
+  - first:
+      213: 3579708624190555646
+    second: Cat_confuse_43
+  - first:
+      213: 5050009423768369556
+    second: Cat_confuse_44
+  - first:
+      213: 3744662443290659844
+    second: Cat_confuse_45
+  - first:
+      213: -5870077231514148520
+    second: Cat_confuse_46
+  - first:
+      213: -5327260376954320613
+    second: Cat_confuse_47
+  - first:
+      213: -513339205006202312
+    second: Cat_confuse_48
+  - first:
+      213: -6155741828765152303
+    second: Cat_confuse_49
+  - first:
+      213: 6250858829541350911
+    second: Cat_confuse_50
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cat_confuse_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20411712df8123ef0800000000000000
+      internalID: -130013963773471742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a04cfae4a55bac460800000000000000
+      internalID: 7262816748560172042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f080bea7433cccf30800000000000000
+      internalID: 4597263949806372879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 768
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7283d9941c9187f70800000000000000
+      internalID: 9185119757976549415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8388fab710db650800000000000000
+      internalID: 6250153488597661862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc10b5675a827710800000000000000
+      internalID: 1689564918190185669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08e9c2e7c5aaf6d40800000000000000
+      internalID: 5579865777565900416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_7
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 576
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41ce15ace57107420800000000000000
+      internalID: 2625624278645730324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64f05a8687b9da9b0800000000000000
+      internalID: -5067223064267911354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_9
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eca622f9eb9a55820800000000000000
+      internalID: 2906415770716236494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_10
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9056a983af10803c0800000000000000
+      internalID: -4393259262296824567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_11
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 384
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 573bb0ccb671fcfa0800000000000000
+      internalID: -5778374045140798603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc66e733629c95240800000000000000
+      internalID: 4781073645340354255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 277b1e91447abb3b0800000000000000
+      internalID: -5495615009341720718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a906f000b009830800000000000000
+      internalID: 4075769757656193536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_15
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870caab0cf65d6a30800000000000000
+      internalID: 4210116867188768888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6933f3766e0b3d50800000000000000
+      internalID: 6717979102347999598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat_confuse_17
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db932d31c2c088100800000000000000
+      internalID: 110351574321215933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 854a4c2bee5e90849b665238038b007c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Cat_confuse_0: -130013963773471742
+      Cat_confuse_1: 7262816748560172042
+      Cat_confuse_10: -4393259262296824567
+      Cat_confuse_11: -5778374045140798603
+      Cat_confuse_12: 4781073645340354255
+      Cat_confuse_13: -5495615009341720718
+      Cat_confuse_14: 4075769757656193536
+      Cat_confuse_15: 4210116867188768888
+      Cat_confuse_16: 6717979102347999598
+      Cat_confuse_17: 110351574321215933
+      Cat_confuse_2: 4597263949806372879
+      Cat_confuse_3: 9185119757976549415
+      Cat_confuse_4: 6250153488597661862
+      Cat_confuse_5: 1689564918190185669
+      Cat_confuse_6: 5579865777565900416
+      Cat_confuse_7: 2625624278645730324
+      Cat_confuse_8: -5067223064267911354
+      Cat_confuse_9: 2906415770716236494
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
