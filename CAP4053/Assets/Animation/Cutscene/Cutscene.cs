@@ -23,9 +23,9 @@ public class TutorialCutscene : MonoBehaviour
     
     [Header("Timing Settings")]
     [SerializeField] private float wakeUpDuration = 2f;
-    [SerializeField] private float catRiseDuration = 1f;
+    [SerializeField] private float catConfuseDuration = 1f;
     [SerializeField] private float catWalkDuration = 2f;
-    [SerializeField] private float insertDuration = 1.5f;
+    [SerializeField] private float mergeDuration = 1.5f;
 
     [Header("Bobble Settings")]
     [SerializeField] private float bobbleHeight = 10f;
@@ -39,14 +39,16 @@ public class TutorialCutscene : MonoBehaviour
     private Vector2 originalIndicatorPosition;
     private PlayerController playerController;
     private MonoBehaviour playerAttackScript;
+    private bool mergePlayed = false; // track merge once
 
     void Start()
     {
+        Debug.Log("Cutscene Start() called");
+        
         canvasGroup = dialogueBox.GetComponent<CanvasGroup>();
         if (canvasGroup == null)
             canvasGroup = dialogueBox.AddComponent<CanvasGroup>();
         
-        // Find player scripts
         playerController = FindObjectOfType<PlayerController>();
         playerAttackScript = FindObjectOfType<PlayerAttack>();
         
@@ -58,9 +60,11 @@ public class TutorialCutscene : MonoBehaviour
         
         dialogueBox.SetActive(false);
         
-        // Set initial animations
-        playerAnimator.Play("Waking_up");
-        catAnimator.Play("Cat_sit");
+        if (playerAnimator != null)
+            playerAnimator.Play("Waking_up");
+        
+        if (catAnimator != null)
+            catAnimator.Play("Idle");
         
         StartCoroutine(StartCutsceneAfterDelay(1f));
     }
@@ -81,92 +85,160 @@ public class TutorialCutscene : MonoBehaviour
     
     public void StartCutscene()
     {
-        if (dialogueLines.Length == 0) return;
+        if (dialogueLines.Length == 0)
+        {
+            Debug.LogError("No dialogue lines set in TutorialCutscene!");
+            return;
+        }
         
         cutscenePlaying = true;
         dialogueActive = true;
         currentLine = 0;
         canvasGroup.alpha = 1f;
         
-        // Disable player controls
         DisablePlayerControls();
-        
-        // Start the cutscene sequence
         StartCoroutine(CutsceneSequence());
     }
     
     private IEnumerator CutsceneSequence()
     {
-        // Step 1: Player wake up animation
-        Debug.Log("Step 1: Player waking up");
-        playerAnimator.Play("Waking_up");
-        yield return new WaitForSeconds(wakeUpDuration);
+        Debug.Log("Cutscene sequence started");
         
-        // Step 2: Player goes to idle after waking
-        playerAnimator.Play("Idle");
+        // Player wake up animation
+        if (playerAnimator != null)
+        {
+            playerAnimator.Play("Waking_up");
+            yield return new WaitForSeconds(wakeUpDuration);
+            playerAnimator.Play("Idle");
+        }
         
-        // Step 3: First dialogue line (Cat speaks while sitting)
-        Debug.Log("Step 3: First dialogue");
-        dialogueBox.SetActive(true);
-        yield return StartCoroutine(TypeLine(dialogueLines[0]));
+        // Dialogue
+        for (int i = 0; i <= 3 && i < dialogueLines.Length; i++)
+        {
+            yield return StartCoroutine(ShowDialogueLine(i));
+        }
         
-        // Wait for click to continue
-        while (isTyping || !Input.GetMouseButtonDown(0))
-            yield return null;
+        // Cat confused
+        yield return StartCoroutine(HideDialogue());
+        if (catAnimator != null)
+        {
+            catAnimator.Play("confuse");
+            yield return new WaitForSeconds(catConfuseDuration);
+            catAnimator.Play("Idle");
+        }
         
-        // Step 4: Cat confused reaction
-        Debug.Log("Step 4: Cat confused");
-        catAnimator.Play("Cat_confuse");
-        yield return new WaitForSeconds(1f);
+        // Continue dialogue lines
+        for (int i = 4; i <= 8 && i < dialogueLines.Length; i++)
+        {
+            yield return StartCoroutine(ShowDialogueLine(i));
+        }
         
-        // Step 5: Second dialogue line
-        yield return StartCoroutine(TypeLine(dialogueLines[1]));
-        
-        // Wait for click to continue
-        while (isTyping || !Input.GetMouseButtonDown(0))
-            yield return null;
-        
-        // Step 6: Cat rises
-        Debug.Log("Step 6: Cat rising");
-        catAnimator.Play("Cat_rise");
-        yield return new WaitForSeconds(catRiseDuration);
-        
-        // Step 7: Third dialogue line
-        yield return StartCoroutine(TypeLine(dialogueLines[2]));
-        
-        // Wait for click to continue
-        while (isTyping || !Input.GetMouseButtonDown(0))
-            yield return null;
-        
-        // Step 8: Cat walks to player
-        Debug.Log("Step 8: Cat walking to player");
+        // Cat walks to player
+        yield return StartCoroutine(HideDialogue());
         yield return StartCoroutine(MoveCatToPlayer());
         
-        // Step 9: Fourth dialogue line
-        yield return StartCoroutine(TypeLine(dialogueLines[3]));
+        // Merge
+        yield return StartCoroutine(PlayMergeAnimation());
         
-        // Wait for click to continue
-        while (isTyping || !Input.GetMouseButtonDown(0))
-            yield return null;
+        // Final dialogue
+        for (int i = 9; i <= 25 && i < dialogueLines.Length; i++)
+        {
+            yield return StartCoroutine(ShowDialogueLine(i));
+        }
         
-        // Step 10: Cat insert animation
-        Debug.Log("Step 10: Cat inserting into player");
-        catAnimator.Play("Insert");
-        yield return new WaitForSeconds(insertDuration);
-        
-        // Cutscene complete
         StartCoroutine(EndCutscene());
     }
-    
+
+private IEnumerator PlayMergeAnimation()
+{
+    if (mergePlayed) yield break;
+    mergePlayed = true;
+
+    if (catAnimator != null)
+    {
+        SpriteRenderer catSprite = catAnimator.GetComponent<SpriteRenderer>();
+        if (catSprite != null)
+        {
+            float fadeTime = 0.4f; 
+            float fadeElapsed = 0f;
+            Color original = catSprite.color;
+
+            catAnimator.Play("Idle");
+
+            bool insertStarted = false;
+
+            while (fadeElapsed < fadeTime)
+            {
+                fadeElapsed += Time.deltaTime;
+                float t = fadeElapsed / fadeTime;
+                catSprite.color = new Color(original.r, original.g, original.b, 1f - t);
+
+                if (!insertStarted && t >= 0.5f)
+                {
+                    insertStarted = true;
+                    if (playerAnimator != null)
+                    {
+                        playerAnimator.Play("Insert");
+                    }
+                }
+
+                yield return null;
+            }
+
+            catSprite.color = new Color(original.r, original.g, original.b, 0f);
+            catAnimator.gameObject.SetActive(false);
+        }
+        else
+        {
+            catAnimator.gameObject.SetActive(false);
+        }
+    }
+
+    if (playerAnimator != null)
+    {
+        yield return new WaitForSeconds(mergeDuration);
+        playerAnimator.Play("Idle");
+    }
+}
+
+    private IEnumerator ShowDialogueLine(int lineIndex)
+    {
+        dialogueBox.SetActive(true);
+        currentLine = lineIndex;
+        
+        if (currentLine < dialogueLines.Length)
+        {
+            yield return StartCoroutine(TypeLine(dialogueLines[currentLine]));
+        }
+        
+        yield return WaitForClick();
+    }
+
+    private IEnumerator HideDialogue()
+    {
+        dialogueBox.SetActive(false);
+        yield return new WaitForSeconds(0.3f);
+    }
+
+    private IEnumerator WaitForClick()
+    {
+        while (isTyping)
+            yield return null;
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        yield return null;
+    }
+
     private IEnumerator MoveCatToPlayer()
     {
+        if (catAnimator == null) yield break;
+        
         float elapsedTime = 0f;
         Vector3 startPos = catStartPosition.position;
         Vector3 endPos = catEndPosition.position;
         
-        // Start walking animation
-        catAnimator.Play("Cat_walk");
-        
+        catAnimator.Play("walk");
+
         while (elapsedTime < catWalkDuration)
         {
             elapsedTime += Time.deltaTime;
@@ -174,38 +246,43 @@ public class TutorialCutscene : MonoBehaviour
             catAnimator.transform.position = Vector3.Lerp(startPos, endPos, t);
             yield return null;
         }
-        
-        // Go back to idle after walking
-        catAnimator.Play("Cat_idle");
+
+        catAnimator.transform.position = endPos;
+        catAnimator.Play("Idle");
     }
-    
+
     private IEnumerator TypeLine(string line)
     {
         isTyping = true;
-        
+
         if (clickIndicator != null)
         {
             clickIndicator.SetActive(false);
             StopCoroutine("BobbleIndicator");
         }
-        
+
         dialogueText.text = "";
-        
+
         foreach (char letter in line.ToCharArray())
         {
             dialogueText.text += letter;
+            if (Input.GetMouseButton(0))
+            {
+                dialogueText.text = line;
+                break;
+            }
             yield return new WaitForSeconds(typewriterSpeed);
         }
-        
+
         if (clickIndicator != null)
         {
             clickIndicator.SetActive(true);
             StartCoroutine(BobbleIndicator());
         }
-        
+
         isTyping = false;
     }
-    
+
     private IEnumerator BobbleIndicator()
     {
         RectTransform indicatorRect = clickIndicator.GetComponent<RectTransform>();
@@ -216,35 +293,34 @@ public class TutorialCutscene : MonoBehaviour
             indicatorRect.anchoredPosition = originalIndicatorPosition + new Vector2(0, bobble);
             yield return null;
         }
-        
+
         indicatorRect.anchoredPosition = originalIndicatorPosition;
     }
-    
+
     private void HandleClick()
     {
         if (!dialogueActive) return;
-        
+
         if (isTyping)
         {
-            StopAllCoroutines();
+            StopCoroutine("TypeLine");
             dialogueText.text = dialogueLines[currentLine];
-            
+
             if (clickIndicator != null)
             {
                 clickIndicator.SetActive(true);
                 StartCoroutine(BobbleIndicator());
             }
-            
+
             isTyping = false;
         }
     }
-    
+
     private IEnumerator EndCutscene()
     {
         dialogueActive = false;
         cutscenePlaying = false;
         
-        // Fade out dialogue box
         float elapsedTime = 0f;
         float startAlpha = canvasGroup.alpha;
         
@@ -256,16 +332,10 @@ public class TutorialCutscene : MonoBehaviour
         }
         
         dialogueBox.SetActive(false);
-        
-        // Re-enable player controls
         EnablePlayerControls();
-        
-        // Hide cat after insertion
-        catAnimator.gameObject.SetActive(false);
-        
         OnCutsceneComplete();
     }
-    
+
     private void DisablePlayerControls()
     {
         if (playerController != null)
@@ -287,10 +357,9 @@ public class TutorialCutscene : MonoBehaviour
         if (playerAttackScript != null)
             playerAttackScript.enabled = true;
     }
-    
+
     private void OnCutsceneComplete()
     {
-        Debug.Log("Tutorial cutscene complete - game begins!");
-        // Add any additional game start logic here
+        Debug.Log("Tutorial cutscene finished fuckers");
     }
 }

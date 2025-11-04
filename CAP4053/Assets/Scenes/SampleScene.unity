@@ -151,24 +151,49 @@ MonoBehaviour:
   dialogueBox: {fileID: 1495650668}
   dialogueText: {fileID: 665832955}
   clickIndicator: {fileID: 1609608097}
-  playerAnimator: {fileID: 0}
+  playerAnimator: {fileID: 975306202}
   catAnimator: {fileID: 308207898}
   catStartPosition: {fileID: 683348285}
   catEndPosition: {fileID: 1240467983}
   dialogueLines:
-  - "Hey guys, did you know that in terms of male human and female Pok\xE9mon breeding,
-    Vaporeon is the most compatible Pok\xE9mon for humans?"
-  - 'Not only are they in the field egg group, which is mostly comprised of mammals, '
-  - "Vaporeon are an average of 3\u201D03\u2019 tall and 63.9 pounds"
-  - "this means they\u2019re large enough to be able handle human dicks, "
-  - and with their impressive Base Stats for HP and access to Acid Armor, you can
-    be rough with one.
+  - F*ck where am I?
+  - ...Actually who am I???
+  - Oh my god, you're finally awake, that took you forever I thought you like, drop
+    dead or something. which would be very weird considering-
+  - Why is there a talking cat?
+  - What do you mean why is there a talking cat, I have always been able to talk?
+    Did you hit your head or something?
+  - 'Not sure my head does hurt though, can you please tell me what the blippity
+    f*ck is going on and why the hell am I in the middle of nowhere? '
+  - And does hearing animal speak make me a furry?
+  - What no?! Of course not, you being a furry has nothing to do with hearing me
+    talk-
+  - I mean that's not important right now, we have better things to do right now.
+  - Did you just, go inside me??? I didn't consent to that.
+  - Consent this, consent that. It's not important right now.
+  - You need tofigure out what to do already, especially since you apparently decided
+    to go and get amesia on me.
+  - Now listen up buttercup-
+  - Don't call me that you weird ball of fur.
+  - Fine.
+  - Gojo wannabe, let's get this over with.
+  - You're currently in someone's mind and you need to beat up some inner demon and
+    try not to die immediately.
+  - What do I get out of this?
+  - Nothing, except the feeling of saving someone.
+  - Don't know if that's worth it.
+  - You get your memory back okay (maybe), also if you don't do it you will be stuck
+    here forever so stop being a failure and lets gooooooo.
+  - I heard that. But fiiiiiine.
+  - God that took forever. (insert control me no rememebr)
+  - I hope you know I hate you by the way.
+  - Don't worry, I do too, you useless prick.
   typewriterSpeed: 0.05
   fadeOutSpeed: 0.2
   wakeUpDuration: 2
-  catRiseDuration: 1
+  catConfuseDuration: 1
   catWalkDuration: 2
-  insertDuration: 1.5
+  mergeDuration: 1.5
   bobbleHeight: 10
   bobbleSpeed: 2
 --- !u!4 &41079721
@@ -1011,8 +1036,8 @@ Transform:
   m_GameObject: {fileID: 308207897}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2231.661, y: -558.6992, z: 6.6879654}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalPosition: {x: -2230.23, y: -559.15, z: 6.6879654}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 41079721}
@@ -2362,7 +2387,7 @@ Transform:
   m_GameObject: {fileID: 683348284}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2231.84, y: -559.16, z: 0}
+  m_LocalPosition: {x: -2230.23, y: -559.15, z: 6.687965}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4429,7 +4454,7 @@ Transform:
   m_GameObject: {fileID: 1240467982}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2228.01, y: -559.16, z: 0}
+  m_LocalPosition: {x: -2227.7, y: -559.15, z: 6.687965}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

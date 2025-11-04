@@ -151,10 +151,10 @@ TextureImporter:
       name: Insert_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 36
         y: 552
-        width: 276
-        height: 276
+        width: 201
+        height: 199
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +173,10 @@ TextureImporter:
       name: Insert_1
       rect:
         serializedVersion: 2
-        x: 276
+        x: 298
         y: 552
-        width: 276
-        height: 276
+        width: 208
+        height: 205
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +195,10 @@ TextureImporter:
       name: Insert_2
       rect:
         serializedVersion: 2
-        x: 552
+        x: 588
         y: 552
-        width: 276
-        height: 276
+        width: 177
+        height: 206
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +217,10 @@ TextureImporter:
       name: Insert_3
       rect:
         serializedVersion: 2
-        x: 828
-        y: 552
-        width: 276
-        height: 276
+        x: 678
+        y: 750
+        width: 12
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,10 +239,10 @@ TextureImporter:
       name: Insert_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 276
-        width: 276
-        height: 276
+        x: 864
+        y: 552
+        width: 166
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,10 +261,10 @@ TextureImporter:
       name: Insert_5
       rect:
         serializedVersion: 2
-        x: 276
-        y: 276
-        width: 276
-        height: 276
+        x: 954
+        y: 750
+        width: 12
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,10 +283,10 @@ TextureImporter:
       name: Insert_6
       rect:
         serializedVersion: 2
-        x: 552
-        y: 276
-        width: 276
-        height: 276
+        x: 228
+        y: 684
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,10 +305,10 @@ TextureImporter:
       name: Insert_7
       rect:
         serializedVersion: 2
-        x: 828
-        y: 276
-        width: 276
-        height: 276
+        x: 300
+        y: 690
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,10 +327,10 @@ TextureImporter:
       name: Insert_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 276
-        height: 276
+        x: 498
+        y: 678
+        width: 6
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,10 +349,10 @@ TextureImporter:
       name: Insert_9
       rect:
         serializedVersion: 2
-        x: 276
-        y: 0
-        width: 276
-        height: 276
+        x: 12
+        y: 408
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,6 +363,160 @@ TextureImporter:
       bones: []
       spriteID: 8d93834a15eb63020800000000000000
       internalID: 2321251915812846040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insert_10
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 276
+        width: 193
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24cfef4b8708d2a43842924b307d7bcc
+      internalID: 1941339494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insert_11
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 408
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d30715b0c53c5045823268e22a45278
+      internalID: -1474038989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insert_12
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 276
+        width: 196
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ab4081ed0e089540aadcacad0a7a95a
+      internalID: 2118957272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insert_13
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 276
+        width: 168
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71bf9c0e75f0b7647aa219a3ac7bddb3
+      internalID: 1148399909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insert_14
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 276
+        width: 168
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982ffbb1742133740b79e41792866bfe
+      internalID: 264361947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insert_15
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbc8ac0bf973344586a259b17aa9d10
+      internalID: 1141660153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insert_16
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 168
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dffe4805e00ec94c86bfce9b2e2a1cc
+      internalID: -626787165
       vertices: []
       indices: 
       edges: []
@@ -383,6 +537,13 @@ TextureImporter:
     nameFileIdTable:
       Insert_0: -8963540438776926994
       Insert_1: -3164266244149430710
+      Insert_10: 1941339494
+      Insert_11: -1474038989
+      Insert_12: 2118957272
+      Insert_13: 1148399909
+      Insert_14: 264361947
+      Insert_15: 1141660153
+      Insert_16: -626787165
       Insert_2: 716879255395561490
       Insert_3: 4767120849190245247
       Insert_4: -7412054265787385472
