@@ -10,13 +10,14 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        StartCoroutine(LoadGameWithFade());
+        StartCoroutine(LoadIntroWithFade());
     }
 
-    private IEnumerator LoadGameWithFade()
+    private IEnumerator LoadIntroWithFade()
     {
         CreateFadeOverlay();
         
+        // Fade to black
         float elapsedTime = 0f;
         while (elapsedTime < fadeDuration)
         {
@@ -26,11 +27,41 @@ public class MainMenu : MonoBehaviour
             yield return null;
         }
         
-        SceneManager.LoadScene("SampleScene");
+        // Load intro scene instead of directly to game
+        SceneManager.LoadScene("Intro");
+        
+        // Fade back in (optional - or let intro scene handle its own fade in)
+        StartCoroutine(FadeOutOverlay());
+    }
+
+    private IEnumerator FadeOutOverlay()
+    {
+        if (fadeImage != null)
+        {
+            float elapsedTime = 0f;
+            Color startColor = fadeImage.color;
+            
+            while (elapsedTime < fadeDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+                fadeImage.color = new Color(0, 0, 0, alpha);
+                yield return null;
+            }
+            
+            Destroy(fadeImage.gameObject);
+        }
     }
 
     private void CreateFadeOverlay()
     {
+        // Check if overlay already exists
+        GameObject existingFade = GameObject.Find("FadeOverlay");
+        if (existingFade != null)
+        {
+            Destroy(existingFade);
+        }
+
         GameObject fadeObject = new GameObject("FadeOverlay");
         Canvas canvas = fadeObject.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
