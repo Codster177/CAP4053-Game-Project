@@ -11,7 +11,7 @@ public class ChaserCombater : EnemyCombater
     [SerializeField] private bool hitWhileDash;
     private Coroutine currentAttack;
 
-    void Start()
+    void Awake()
     {
         chaserController = controller as ChaserController;
     }

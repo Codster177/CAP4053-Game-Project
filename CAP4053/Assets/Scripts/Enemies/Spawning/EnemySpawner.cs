@@ -13,6 +13,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private int amountToSpawn;
     void Start()
     {
+        if (enemies.Length == 0)
+        {
+            Destroy(this);
+        }
         for (int i = 0; i < spawnSquares.Length; i++)
         {
             spawnSquares[i].AdjustToPosition(transform.position);

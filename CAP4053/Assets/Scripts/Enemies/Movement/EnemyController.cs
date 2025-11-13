@@ -15,6 +15,10 @@ public class EnemyController : MonoBehaviour
         navMeshAgent.updateUpAxis = false;
         enemyCombater.SetController(this);
     }
+    void Start()
+    {
+        GameManager.OnGameStateChanged += DeathEnemyCommand;
+    }
     // Returns the velocity of the enemy.
     public Vector2 GetDirection()
     {
@@ -32,5 +36,12 @@ public class EnemyController : MonoBehaviour
     public EnemyCombater GetCombater()
     {
         return enemyCombater;
+    }
+    void DeathEnemyCommand(GameState newGameState)
+    {
+        if (newGameState == GameState.Death)
+        {
+            navMeshAgent.SetDestination(transform.position);
+        }
     }
 }

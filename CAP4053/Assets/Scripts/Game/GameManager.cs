@@ -27,11 +27,15 @@ public class GameManager : MonoBehaviour
     {
         publicGameManager = this;
         OnGameStateChanged = null;
+        ChooseTestMode(testMode);
     }
     // Quick Debug
     void Update()
     {
-        healthLabel.text = "DEBUG: Health = " + playerHealth;
+        if (healthLabel != null)
+        {
+            healthLabel.text = "DEBUG: Health = " + playerHealth;
+        }
     }
     // Returns the player location as a vector.
     public Transform GetPlayerLocation()
@@ -88,7 +92,10 @@ public class GameManager : MonoBehaviour
     public void ChooseTestMode(int testMode)
     {
         this.testMode = testMode;
-        GenerationManager.publicGenerationManager.ChangeTestModePrefab(testMode);
+        if (GenerationManager.publicGenerationManager != null)
+        {
+            GenerationManager.publicGenerationManager.ChangeTestModePrefab(testMode);
+        }
     }
 }
 
@@ -96,5 +103,6 @@ public class GameManager : MonoBehaviour
 public enum GameState
 {
     MainGameplay,
+    Testing,
     Death
 }

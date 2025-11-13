@@ -78,4 +78,8 @@ public class RoomController : MonoBehaviour
             StartCoroutine(GenerationManager.publicGenerationManager.LoadExitRoom(roomPrefab));
         }
     }
+    void OawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, 6f);
+    }
 }

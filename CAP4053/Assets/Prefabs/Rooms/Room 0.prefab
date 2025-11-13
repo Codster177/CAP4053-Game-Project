@@ -5299,7 +5299,7 @@ MonoBehaviour:
     size: {x: 24, y: 12}
   enemies:
   - enemyPrefab: {fileID: 6071255053859952349, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
-    spawnChance: 1
+    spawnChance: 0.5
   amountToSpawn: 5
 --- !u!1 &9095276271721898492
 GameObject:
