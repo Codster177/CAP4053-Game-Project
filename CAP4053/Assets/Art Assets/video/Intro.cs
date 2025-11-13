@@ -14,87 +14,72 @@ public class IntroVideoManager : MonoBehaviour
     [Header("Settings")]
     public float textDuration = 5f;
     public float shakeIntensity = 3f;
+    public float fadeStartBeforeEnd = 1f;
     
     private Image fadeImage;
     private bool isVideoFinished = false;
     private bool fadeStarted = false;
     private bool inScaryTextPhase = false;
+    private CanvasGroup scaryTextCanvasGroup;
     
     void Start()
     {
-        // Set up video completion event
         videoPlayer.loopPointReached += OnVideoFinished;
         
-        // Set up skip button - make sure it always works
         if (skipButton != null)
         {
             skipButton.onClick.AddListener(SkipIntro);
             skipButton.gameObject.SetActive(true);
         }
         
-        // Hide scary text initially
         if (scaryText != null)
         {
             scaryText.gameObject.SetActive(false);
+            scaryTextCanvasGroup = scaryText.GetComponent<CanvasGroup>();
+            if (scaryTextCanvasGroup == null)
+                scaryTextCanvasGroup = scaryText.gameObject.AddComponent<CanvasGroup>();
         }
         
-        // Clean up any existing fade overlay from menu
         GameObject existingFade = GameObject.Find("FadeOverlay");
         if (existingFade != null)
         {
             Destroy(existingFade);
         }
         
-        // Fade in the video
         StartCoroutine(FadeInVideo());
-        
-        // Start the video
         videoPlayer.Play();
-        
-        // Start checking for fade timing - SIMPLIFIED APPROACH
         StartCoroutine(StartFadeBeforeEnd());
     }
     
     private IEnumerator StartFadeBeforeEnd()
     {
-        // Wait a moment for video to start
         yield return new WaitForSeconds(0.5f);
         
-        // If we can't get video length, use a fixed time approach
-        float videoTime = 0f;
-        float targetFadeTime = 3f; // Start fading 3 seconds before end
-        
-        // Estimate video length by waiting for it to end
         while (videoPlayer.isPlaying && !isVideoFinished)
         {
-            videoTime += Time.deltaTime;
-            
-            // If we've been playing for a while and video is still going, 
-            // start fade based on frame count instead
             if (videoPlayer.frameCount > 0 && videoPlayer.frameRate > 0)
             {
                 double totalTime = videoPlayer.frameCount / videoPlayer.frameRate;
-                double timeLeft = totalTime - videoPlayer.time;
+                double currentTime = videoPlayer.time;
+                double timeLeft = totalTime - currentTime;
                 
-                // Start fade when 3 seconds left
-                if (timeLeft <= 3.0 && !fadeStarted)
+                if (timeLeft <= fadeStartBeforeEnd && !fadeStarted)
                 {
                     fadeStarted = true;
-                    StartCoroutine(FadeToBlackOverTime(3.0f));
+                    StartCoroutine(FadeToBlackOverTime(fadeStartBeforeEnd));
                     break;
                 }
             }
             
-            // Fallback: if we can't calculate, start fade after a reasonable time
-            // Adjust this based on your video length
-            else if (videoTime > 1f && !fadeStarted) // Example: if video is ~8 seconds, start fade at 5 seconds
+           
+            else if (videoPlayer.time > 10f && !fadeStarted) 
             {
                 fadeStarted = true;
-                StartCoroutine(FadeToBlackOverTime(1.0f));
+                StartCoroutine(FadeToBlackOverTime(1f));
                 break;
             }
             
-            yield return null;
+            yield return new WaitForSeconds(0.1f);
         }
     }
     
@@ -128,10 +113,8 @@ public class IntroVideoManager : MonoBehaviour
             isVideoFinished = true;
             Debug.Log("Video finished naturally");
             
-            // If we're already in scary text phase, do nothing
             if (inScaryTextPhase) return;
             
-            // If fade didn't complete, complete it quickly
             if (!fadeStarted)
             {
                 fadeStarted = true;
@@ -139,13 +122,11 @@ public class IntroVideoManager : MonoBehaviour
             }
             else
             {
-                // Fade is in progress or completed, proceed to scary text
                 StartCoroutine(PlayScaryTransition());
             }
         }
     }
     
-    // SKIP BUTTON NOW WORKS IN ALL PHASES
     public void SkipIntro()
     {
         if (!isVideoFinished || inScaryTextPhase)
@@ -155,28 +136,23 @@ public class IntroVideoManager : MonoBehaviour
             inScaryTextPhase = false;
             fadeStarted = true;
             
-            // Stop all coroutines
             StopAllCoroutines();
             
-            // Stop the video
             if (videoPlayer != null && videoPlayer.isPlaying)
             {
                 videoPlayer.Stop();
             }
             
-            // Hide scary text if it's showing
             if (scaryText != null)
             {
                 scaryText.gameObject.SetActive(false);
             }
             
-            // Hide skip button
             if (skipButton != null)
             {
                 skipButton.gameObject.SetActive(false);
             }
             
-            // Load game immediately
             LoadGameScene();
         }
     }
@@ -188,11 +164,9 @@ public class IntroVideoManager : MonoBehaviour
         
         fadeImage.color = new Color(0, 0, 0, 0);
         
-        // KEEP SKIP BUTTON VISIBLE AND WORKING DURING FADE
         if (skipButton != null) 
         {
             skipButton.gameObject.SetActive(true);
-            // Make sure skip button stays on top of fade
             skipButton.transform.SetAsLastSibling();
         }
         
@@ -206,7 +180,6 @@ public class IntroVideoManager : MonoBehaviour
             yield return null;
         }
         
-        // Ensure it's completely black if fade completed naturally
         if (fadeImage != null && !isVideoFinished)
         {
             fadeImage.color = Color.black;
@@ -214,7 +187,6 @@ public class IntroVideoManager : MonoBehaviour
         
         Debug.Log("Fade to black completed");
         
-        // Only proceed if we weren't skipped
         if (!isVideoFinished)
         {
             StartCoroutine(PlayScaryTransition());
@@ -223,7 +195,6 @@ public class IntroVideoManager : MonoBehaviour
     
     private IEnumerator CompleteTransitionQuickly()
     {
-        // Do a quick fade to black
         yield return StartCoroutine(FadeToBlackOverTime(1.0f));
         
         if (!isVideoFinished)
@@ -233,79 +204,87 @@ public class IntroVideoManager : MonoBehaviour
     }
     
     private IEnumerator PlayScaryTransition()
+{
+    inScaryTextPhase = true;
+    Debug.Log("Starting scary text phase");
+
+    EnsureBlackBackground();
+
+    if (skipButton != null) 
     {
-        if (isVideoFinished) yield break;
-        
-        inScaryTextPhase = true;
-        Debug.Log("Starting scary text phase");
-        
-        // KEEP SKIP BUTTON VISIBLE AND WORKING DURING SCARY TEXT
-        if (skipButton != null) 
+        skipButton.gameObject.SetActive(true);
+        skipButton.transform.SetAsLastSibling();
+    }
+
+    yield return StartCoroutine(ShowShakingText());
+
+    if (inScaryTextPhase)
+    {
+        LoadGameScene();
+    }
+}
+
+    
+    private void EnsureBlackBackground()
+    {
+        CreateFadeOverlay();
+        if (fadeImage != null)
         {
-            skipButton.gameObject.SetActive(true);
-            skipButton.transform.SetAsLastSibling();
-        }
-        
-        // Show and shake the scary text
-        yield return StartCoroutine(ShowShakingText());
-        
-        // Only load game if we weren't skipped during scary text
-        if (inScaryTextPhase)
-        {
-            LoadGameScene();
+            fadeImage.color = Color.black;
+            fadeImage.transform.SetSiblingIndex(0);
         }
     }
     
     private IEnumerator ShowShakingText()
+{
+    if (scaryText == null) yield break;
+
+    scaryText.gameObject.SetActive(true);
+    scaryText.color = Color.red;
+    scaryText.text = GetRandomScaryText();
+    scaryText.alignment = TextAlignmentOptions.Center;
+
+    RectTransform rect = scaryText.rectTransform;
+
+    float elapsed = 0f;
+
+    while (elapsed < textDuration && inScaryTextPhase)
     {
-        if (scaryText != null && !isVideoFinished)
+        elapsed += Time.deltaTime;
+
+        float shakeX = Random.Range(-shakeIntensity, shakeIntensity);
+        float shakeY = Random.Range(-shakeIntensity, shakeIntensity);
+        rect.anchoredPosition = new Vector2(shakeX, shakeY);
+
+        float alpha = Mathf.PingPong(Time.time * 4f, 0.5f) + 0.5f;
+        scaryText.color = new Color(1, 0, 0, alpha);
+
+        if (Random.Range(0f, 1f) < 0.03f)
         {
-            // Set up the text
-            scaryText.gameObject.SetActive(true);
-            scaryText.color = Color.red;
-            scaryText.text = "WARNING\nDANGER AHEAD\nPROCEED WITH CAUTION";
-            scaryText.alignment = TextAlignmentOptions.Center;
-            
-            // Make sure text is above fade but below skip button
-            scaryText.transform.SetSiblingIndex(transform.childCount - 2);
-            
-            // Get original position
-            Vector3 originalPos = scaryText.transform.localPosition;
-            
-            float elapsedTime = 0f;
-            
-            while (elapsedTime < textDuration && inScaryTextPhase)
-            {
-                elapsedTime += Time.deltaTime;
-                
-                // Shake effect
-                float shakeX = Random.Range(-1f, 1f) * shakeIntensity;
-                float shakeY = Random.Range(-1f, 1f) * shakeIntensity;
-                scaryText.transform.localPosition = originalPos + new Vector3(shakeX, shakeY, 0);
-                
-                // Pulsing effect
-                float pulse = Mathf.PingPong(elapsedTime * 2f, 0.3f) + 0.7f;
-                scaryText.color = new Color(1f, 0f, 0f, pulse);
-                
-                yield return null;
-            }
-            
-            if (inScaryTextPhase)
-            {
-                // Reset position
-                scaryText.transform.localPosition = originalPos;
-            }
+            scaryText.text = GetRandomScaryText();
         }
-        else
-        {
-            // If no text object, just wait (unless skipped)
-            float elapsedTime = 0f;
-            while (elapsedTime < textDuration && inScaryTextPhase)
-            {
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-        }
+
+        yield return null;
+    }
+
+    rect.anchoredPosition = Vector2.zero;
+}
+
+    
+    private string GetRandomScaryText()
+    {
+        string[] scaryTexts = {
+            "WAKE UP",
+            "YOU FAILED US\n YOU FAILED EVERYONE",
+            "WAKE UP\n WAKE UP\n WAKE UP",
+            "IT'S TOO LATE\nYOU WILL NEVER AMOUNT TO ANYTHING",
+            "WAKE UP BEFORE IT'S TOO LATE",
+            "YOU COULDN'T SAVE ANYONE",
+            "WHY ARE YOU HERE",
+            "DON'T LISTEN TO THEM AND WAKE THE FUCK UP!!!"
+        };
+        
+        return scaryTexts[Random.Range(0, scaryTexts.Length)];
     }
     
     void LoadGameScene()
@@ -328,7 +307,7 @@ public class IntroVideoManager : MonoBehaviour
         GameObject fadeObject = new GameObject("FadeOverlay");
         Canvas canvas = fadeObject.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        canvas.sortingOrder = 9998; // Lower than skip button
+        canvas.sortingOrder = 100; 
         
         fadeImage = fadeObject.AddComponent<Image>();
         fadeImage.color = new Color(0, 0, 0, 0);
@@ -344,7 +323,6 @@ public class IntroVideoManager : MonoBehaviour
     
     void OnDestroy()
     {
-        // Clean up
         if (videoPlayer != null)
         {
             videoPlayer.loopPointReached -= OnVideoFinished;
