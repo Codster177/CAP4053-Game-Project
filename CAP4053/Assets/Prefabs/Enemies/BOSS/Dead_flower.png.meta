@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 9556ef7dfceb0053bbf44ec88cb42d6f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7664927255044110182
+    second: Dead_flower_0
+  - first:
+      213: -7791494084394775531
+    second: Dead_flower_1
+  - first:
+      213: 6209897204345289117
+    second: Dead_flower_2
+  - first:
+      213: 4023126416325330589
+    second: Dead_flower_3
+  - first:
+      213: -4395108712120635168
+    second: Dead_flower_4
+  - first:
+      213: 7280251826873805710
+    second: Dead_flower_5
+  - first:
+      213: 6018488010407695697
+    second: Dead_flower_6
+  - first:
+      213: -7822781578091165126
+    second: Dead_flower_7
+  - first:
+      213: 5209946175441455521
+    second: Dead_flower_8
+  - first:
+      213: 8115719216753874520
+    second: Dead_flower_9
+  - first:
+      213: 435090009334886205
+    second: Dead_flower_10
+  - first:
+      213: 248470937921079196
+    second: Dead_flower_11
+  - first:
+      213: 1091142902791580914
+    second: Dead_flower_12
+  - first:
+      213: 906360406556595825
+    second: Dead_flower_13
+  - first:
+      213: 3123442197163782811
+    second: Dead_flower_14
+  - first:
+      213: -1841635207343676231
+    second: Dead_flower_15
+  - first:
+      213: -3721570853910499218
+    second: Dead_flower_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dead_flower_0
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 515
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6673d1a5aba4f5a60800000000000000
+      internalID: 7664927255044110182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_1
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 467
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51c871e496d0fd390800000000000000
+      internalID: -7791494084394775531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_2
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 455
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9931bc1b9cfd2650800000000000000
+      internalID: 6209897204345289117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_3
+      rect:
+        serializedVersion: 2
+        x: 1667
+        y: 479
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d96cf83092405d730800000000000000
+      internalID: 4023126416325330589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_4
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 431
+        width: 14
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e033d0a9ef6103c0800000000000000
+      internalID: -4395108712120635168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_5
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 455
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8ba330d676a80560800000000000000
+      internalID: 7280251826873805710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_6
+      rect:
+        serializedVersion: 2
+        x: 1667
+        y: 455
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1555c4945f6f58350800000000000000
+      internalID: 6018488010407695697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_7
+      rect:
+        serializedVersion: 2
+        x: 2639
+        y: 443
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a08620a95ef6390800000000000000
+      internalID: -7822781578091165126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 950
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a9c71e61727d4840800000000000000
+      internalID: 5209946175441455521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_9
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 0
+        width: 950
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8561d63f0a3d0a070800000000000000
+      internalID: 8115719216753874520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_10
+      rect:
+        serializedVersion: 2
+        x: 1931
+        y: 0
+        width: 950
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3f2abbee00c90600800000000000000
+      internalID: 435090009334886205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_11
+      rect:
+        serializedVersion: 2
+        x: 2891
+        y: 0
+        width: 950
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c974bc7600fb27300800000000000000
+      internalID: 248470937921079196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_12
+      rect:
+        serializedVersion: 2
+        x: 3851
+        y: 0
+        width: 950
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fca41060b4842f00800000000000000
+      internalID: 1091142902791580914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_13
+      rect:
+        serializedVersion: 2
+        x: 4811
+        y: 0
+        width: 950
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 176d847dcf9049c00800000000000000
+      internalID: 906360406556595825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_14
+      rect:
+        serializedVersion: 2
+        x: 5771
+        y: 0
+        width: 950
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b92b96e2122b85b20800000000000000
+      internalID: 3123442197163782811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_15
+      rect:
+        serializedVersion: 2
+        x: 6731
+        y: 0
+        width: 950
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b46d6c49823176e0800000000000000
+      internalID: -1841635207343676231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dead_flower_16
+      rect:
+        serializedVersion: 2
+        x: 7691
+        y: 0
+        width: 949
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e60b73ea6035a5cc0800000000000000
+      internalID: -3721570853910499218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Dead_flower_0: 7664927255044110182
+      Dead_flower_1: -7791494084394775531
+      Dead_flower_10: 435090009334886205
+      Dead_flower_11: 248470937921079196
+      Dead_flower_12: 1091142902791580914
+      Dead_flower_13: 906360406556595825
+      Dead_flower_14: 3123442197163782811
+      Dead_flower_15: -1841635207343676231
+      Dead_flower_16: -3721570853910499218
+      Dead_flower_2: 6209897204345289117
+      Dead_flower_3: 4023126416325330589
+      Dead_flower_4: -4395108712120635168
+      Dead_flower_5: 7280251826873805710
+      Dead_flower_6: 6018488010407695697
+      Dead_flower_7: -7822781578091165126
+      Dead_flower_8: 5209946175441455521
+      Dead_flower_9: 8115719216753874520
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,2977 @@
+fileFormatVersion: 2
+guid: f328a9bdc3ccdbd9591404d37a1fdaa4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7203098118917256451
+    second: Crow_Dead_0
+  - first:
+      213: -8076539748385703608
+    second: Crow_Dead_1
+  - first:
+      213: -1970994051395456398
+    second: Crow_Dead_2
+  - first:
+      213: -546515272101310996
+    second: Crow_Dead_3
+  - first:
+      213: 4946276768124574372
+    second: Crow_Dead_4
+  - first:
+      213: -3212633787019600820
+    second: Crow_Dead_5
+  - first:
+      213: -383562031279437436
+    second: Crow_Dead_6
+  - first:
+      213: 1313759603603187783
+    second: Crow_Dead_7
+  - first:
+      213: 5263015229757828029
+    second: Crow_Dead_8
+  - first:
+      213: 7895310875847229588
+    second: Crow_Dead_9
+  - first:
+      213: -7233411697749611082
+    second: Crow_Dead_10
+  - first:
+      213: 7745240479209068939
+    second: Crow_Dead_11
+  - first:
+      213: 7140896089537540795
+    second: Crow_Dead_12
+  - first:
+      213: -4815158795966197576
+    second: Crow_Dead_13
+  - first:
+      213: 3025850854071928611
+    second: Crow_Dead_14
+  - first:
+      213: 1434652287209888170
+    second: Crow_Dead_15
+  - first:
+      213: -320345336455637307
+    second: Crow_Dead_16
+  - first:
+      213: 6629704289347067435
+    second: Crow_Dead_17
+  - first:
+      213: -8867570348848253806
+    second: Crow_Dead_18
+  - first:
+      213: 2528403669991267739
+    second: Crow_Dead_19
+  - first:
+      213: -6052208164041275377
+    second: Crow_Dead_20
+  - first:
+      213: 5718004845192512316
+    second: Crow_Dead_21
+  - first:
+      213: 8689526821394936692
+    second: Crow_Dead_22
+  - first:
+      213: -705518073875869031
+    second: Crow_Dead_23
+  - first:
+      213: -8439693363563965493
+    second: Crow_Dead_24
+  - first:
+      213: 8752282749178072384
+    second: Crow_Dead_25
+  - first:
+      213: 3710034388264619146
+    second: Crow_Dead_26
+  - first:
+      213: 8265818635533350245
+    second: Crow_Dead_27
+  - first:
+      213: -1602808831667943896
+    second: Crow_Dead_28
+  - first:
+      213: 2028526366147002359
+    second: Crow_Dead_29
+  - first:
+      213: -4713999259050446467
+    second: Crow_Dead_30
+  - first:
+      213: -7823784079121759777
+    second: Crow_Dead_31
+  - first:
+      213: 878735262040387836
+    second: Crow_Dead_32
+  - first:
+      213: 1389320590045555498
+    second: Crow_Dead_33
+  - first:
+      213: 929999635950219854
+    second: Crow_Dead_34
+  - first:
+      213: 5836781797119585212
+    second: Crow_Dead_35
+  - first:
+      213: 2817299348872908997
+    second: Crow_Dead_36
+  - first:
+      213: 6709771123440857981
+    second: Crow_Dead_37
+  - first:
+      213: 6949370389424716470
+    second: Crow_Dead_38
+  - first:
+      213: 1558971183602794520
+    second: Crow_Dead_39
+  - first:
+      213: -7469589606721352741
+    second: Crow_Dead_40
+  - first:
+      213: 903232756907891671
+    second: Crow_Dead_41
+  - first:
+      213: -2902359741012917213
+    second: Crow_Dead_42
+  - first:
+      213: 2844258233600694066
+    second: Crow_Dead_43
+  - first:
+      213: 4694335953537071874
+    second: Crow_Dead_44
+  - first:
+      213: -7964313320889809977
+    second: Crow_Dead_45
+  - first:
+      213: -3656168298313875632
+    second: Crow_Dead_46
+  - first:
+      213: 5912098680799819739
+    second: Crow_Dead_47
+  - first:
+      213: -8291036358439231735
+    second: Crow_Dead_48
+  - first:
+      213: 122564753064897370
+    second: Crow_Dead_49
+  - first:
+      213: -8149597662130082772
+    second: Crow_Dead_50
+  - first:
+      213: 1028809098930710729
+    second: Crow_Dead_51
+  - first:
+      213: -5028770731795799200
+    second: Crow_Dead_52
+  - first:
+      213: 8521287898364766362
+    second: Crow_Dead_53
+  - first:
+      213: -4699563847006666321
+    second: Crow_Dead_54
+  - first:
+      213: -4435465700253122565
+    second: Crow_Dead_55
+  - first:
+      213: 5923071614424789123
+    second: Crow_Dead_56
+  - first:
+      213: 5572852442744858025
+    second: Crow_Dead_57
+  - first:
+      213: 43905916109536784
+    second: Crow_Dead_58
+  - first:
+      213: -523834673533987307
+    second: Crow_Dead_59
+  - first:
+      213: 2581508244614060124
+    second: Crow_Dead_60
+  - first:
+      213: 5514830830128248136
+    second: Crow_Dead_61
+  - first:
+      213: -2859976252136327651
+    second: Crow_Dead_62
+  - first:
+      213: -8763234504878950418
+    second: Crow_Dead_63
+  - first:
+      213: 1747823036416027244
+    second: Crow_Dead_64
+  - first:
+      213: 7133358500850768761
+    second: Crow_Dead_65
+  - first:
+      213: -8931905633911005118
+    second: Crow_Dead_66
+  - first:
+      213: -5738749393004269657
+    second: Crow_Dead_67
+  - first:
+      213: 6965190693309655592
+    second: Crow_Dead_68
+  - first:
+      213: -579806733230906413
+    second: Crow_Dead_69
+  - first:
+      213: 7676195836411165946
+    second: Crow_Dead_70
+  - first:
+      213: -614413125555169980
+    second: Crow_Dead_71
+  - first:
+      213: 7572404953094241237
+    second: Crow_Dead_72
+  - first:
+      213: -2362220712554581571
+    second: Crow_Dead_73
+  - first:
+      213: 2206905977644623932
+    second: Crow_Dead_74
+  - first:
+      213: 3649955917147537056
+    second: Crow_Dead_75
+  - first:
+      213: -7862283253001697622
+    second: Crow_Dead_76
+  - first:
+      213: -3698808899834665372
+    second: Crow_Dead_77
+  - first:
+      213: -6198587335567885444
+    second: Crow_Dead_78
+  - first:
+      213: -817921407237381039
+    second: Crow_Dead_79
+  - first:
+      213: -3851801095632218825
+    second: Crow_Dead_80
+  - first:
+      213: -3342991288886934240
+    second: Crow_Dead_81
+  - first:
+      213: 5035012564380511107
+    second: Crow_Dead_82
+  - first:
+      213: -1108762150927084094
+    second: Crow_Dead_83
+  - first:
+      213: 8325401525995373129
+    second: Crow_Dead_84
+  - first:
+      213: 2891300278882883324
+    second: Crow_Dead_85
+  - first:
+      213: 4450987916309647582
+    second: Crow_Dead_86
+  - first:
+      213: 5525878615364922477
+    second: Crow_Dead_87
+  - first:
+      213: -3528659620034941937
+    second: Crow_Dead_88
+  - first:
+      213: -6155835091819722398
+    second: Crow_Dead_89
+  - first:
+      213: -7498997822863450784
+    second: Crow_Dead_90
+  - first:
+      213: 927351528637881108
+    second: Crow_Dead_91
+  - first:
+      213: -3966237367628325722
+    second: Crow_Dead_92
+  - first:
+      213: -3003389767803219029
+    second: Crow_Dead_93
+  - first:
+      213: -457941285608656476
+    second: Crow_Dead_94
+  - first:
+      213: -6948268902361187058
+    second: Crow_Dead_95
+  - first:
+      213: -2672532570080762773
+    second: Crow_Dead_96
+  - first:
+      213: 7149051444843551836
+    second: Crow_Dead_97
+  - first:
+      213: -3408631330012328417
+    second: Crow_Dead_98
+  - first:
+      213: -5674944051966833378
+    second: Crow_Dead_99
+  - first:
+      213: 1253627535963222720
+    second: Crow_Dead_100
+  - first:
+      213: -8283271302288711602
+    second: Crow_Dead_101
+  - first:
+      213: -1486435299106944681
+    second: Crow_Dead_102
+  - first:
+      213: 2600352678338901729
+    second: Crow_Dead_103
+  - first:
+      213: 7846666059886574954
+    second: Crow_Dead_104
+  - first:
+      213: -8707272375594014303
+    second: Crow_Dead_105
+  - first:
+      213: 8645263307236157117
+    second: Crow_Dead_106
+  - first:
+      213: -8278184536685455303
+    second: Crow_Dead_107
+  - first:
+      213: -8353969390554483335
+    second: Crow_Dead_108
+  - first:
+      213: -7654220208360367955
+    second: Crow_Dead_109
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Crow_Dead_0
+      rect:
+        serializedVersion: 2
+        x: 5951
+        y: 707
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 305f854539b86f360800000000000000
+      internalID: 7203098118917256451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_1
+      rect:
+        serializedVersion: 2
+        x: 5591
+        y: 671
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 849b523e3ed5aef80800000000000000
+      internalID: -8076539748385703608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_2
+      rect:
+        serializedVersion: 2
+        x: 5927
+        y: 671
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2727a206a5f95a4e0800000000000000
+      internalID: -1970994051395456398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_3
+      rect:
+        serializedVersion: 2
+        x: 5963
+        y: 647
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ced431e61436a68f0800000000000000
+      internalID: -546515272101310996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_4
+      rect:
+        serializedVersion: 2
+        x: 6011
+        y: 671
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa15dc9384b4a440800000000000000
+      internalID: 4946276768124574372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_5
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 443
+        width: 290
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4c574b879e6a63d0800000000000000
+      internalID: -3212633787019600820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_6
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 431
+        width: 314
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48903406d505daaf0800000000000000
+      internalID: -383562031279437436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_7
+      rect:
+        serializedVersion: 2
+        x: 5243
+        y: 611
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 748a60d16696b3210800000000000000
+      internalID: 1313759603603187783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_8
+      rect:
+        serializedVersion: 2
+        x: 5543
+        y: 635
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbbaf21877cf90940800000000000000
+      internalID: 5263015229757828029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_9
+      rect:
+        serializedVersion: 2
+        x: 5567
+        y: 611
+        width: 38
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49007221967c19d60800000000000000
+      internalID: 7895310875847229588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_10
+      rect:
+        serializedVersion: 2
+        x: 5903
+        y: 635
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bdaa799262cd9b90800000000000000
+      internalID: -7233411697749611082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_11
+      rect:
+        serializedVersion: 2
+        x: 5927
+        y: 611
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b899b370e2f9c7b60800000000000000
+      internalID: 7745240479209068939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_12
+      rect:
+        serializedVersion: 2
+        x: 5999
+        y: 611
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb27cdac82f891360800000000000000
+      internalID: 7140896089537540795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_13
+      rect:
+        serializedVersion: 2
+        x: 5519
+        y: 599
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0565d369e1d2db0800000000000000
+      internalID: -4815158795966197576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_14
+      rect:
+        serializedVersion: 2
+        x: 5975
+        y: 611
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3270544f15bfdf920800000000000000
+      internalID: 3025850854071928611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_15
+      rect:
+        serializedVersion: 2
+        x: 5099
+        y: 575
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa9d85377a8e8e310800000000000000
+      internalID: 1434652287209888170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_16
+      rect:
+        serializedVersion: 2
+        x: 5171
+        y: 575
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c6db1f1d97ed8bf0800000000000000
+      internalID: -320345336455637307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_17
+      rect:
+        serializedVersion: 2
+        x: 5219
+        y: 575
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2e5a6cece0710c50800000000000000
+      internalID: 6629704289347067435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_18
+      rect:
+        serializedVersion: 2
+        x: 5291
+        y: 575
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294fc1800cf00f480800000000000000
+      internalID: -8867570348848253806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_19
+      rect:
+        serializedVersion: 2
+        x: 5507
+        y: 575
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9d9f96edb1b61320800000000000000
+      internalID: 2528403669991267739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_20
+      rect:
+        serializedVersion: 2
+        x: 5579
+        y: 575
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08c993adbc320ca0800000000000000
+      internalID: -6052208164041275377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_21
+      rect:
+        serializedVersion: 2
+        x: 5627
+        y: 587
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3389a58c1f6a5f40800000000000000
+      internalID: 5718004845192512316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_22
+      rect:
+        serializedVersion: 2
+        x: 5651
+        y: 587
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473797fda96679870800000000000000
+      internalID: 8689526821394936692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_23
+      rect:
+        serializedVersion: 2
+        x: 5867
+        y: 563
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 992d200cc0f7536f0800000000000000
+      internalID: -705518073875869031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_24
+      rect:
+        serializedVersion: 2
+        x: 5915
+        y: 587
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc35c8be99f20ea80800000000000000
+      internalID: -8439693363563965493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_25
+      rect:
+        serializedVersion: 2
+        x: 5939
+        y: 575
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04dc98ee9ca567970800000000000000
+      internalID: 8752282749178072384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_26
+      rect:
+        serializedVersion: 2
+        x: 5987
+        y: 587
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c0ff89e90bc7330800000000000000
+      internalID: 3710034388264619146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_27
+      rect:
+        serializedVersion: 2
+        x: 6035
+        y: 587
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 565f4cc314616b270800000000000000
+      internalID: 8265818635533350245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_28
+      rect:
+        serializedVersion: 2
+        x: 6059
+        y: 587
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 826c2911cdda1c9e0800000000000000
+      internalID: -1602808831667943896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_29
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 443
+        width: 278
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ffb4bf7bf5c62c10800000000000000
+      internalID: 2028526366147002359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_30
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 443
+        width: 278
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71f7d456a2849eb0800000000000000
+      internalID: -4713999259050446467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_31
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 443
+        width: 278
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd1479c05d55c6390800000000000000
+      internalID: -7823784079121759777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_32
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 443
+        width: 278
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf0f689a015e13c00800000000000000
+      internalID: 878735262040387836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_33
+      rect:
+        serializedVersion: 2
+        x: 2363
+        y: 443
+        width: 278
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b2dc837bbd74310800000000000000
+      internalID: 1389320590045555498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_34
+      rect:
+        serializedVersion: 2
+        x: 2747
+        y: 443
+        width: 278
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e423e06ddb508ec00800000000000000
+      internalID: 929999635950219854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_35
+      rect:
+        serializedVersion: 2
+        x: 3131
+        y: 443
+        width: 290
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb67c0be1a600150800000000000000
+      internalID: 5836781797119585212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_36
+      rect:
+        serializedVersion: 2
+        x: 3515
+        y: 443
+        width: 290
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c05283c4de091720800000000000000
+      internalID: 2817299348872908997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_37
+      rect:
+        serializedVersion: 2
+        x: 3899
+        y: 443
+        width: 290
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d73bdd07945ed1d50800000000000000
+      internalID: 6709771123440857981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_38
+      rect:
+        serializedVersion: 2
+        x: 4307
+        y: 443
+        width: 266
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ba3742cc8f117060800000000000000
+      internalID: 6949370389424716470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_39
+      rect:
+        serializedVersion: 2
+        x: 4667
+        y: 443
+        width: 290
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81007bd180492a510800000000000000
+      internalID: 1558971183602794520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_40
+      rect:
+        serializedVersion: 2
+        x: 5075
+        y: 443
+        width: 266
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdb8c6904dfa65890800000000000000
+      internalID: -7469589606721352741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_41
+      rect:
+        serializedVersion: 2
+        x: 5447
+        y: 491
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dbddf8286de88c00800000000000000
+      internalID: 903232756907891671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_42
+      rect:
+        serializedVersion: 2
+        x: 5447
+        y: 467
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 324c782613fb8b7d0800000000000000
+      internalID: -2902359741012917213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_43
+      rect:
+        serializedVersion: 2
+        x: 5459
+        y: 443
+        width: 254
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 237df3f3bc5d87720800000000000000
+      internalID: 2844258233600694066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_44
+      rect:
+        serializedVersion: 2
+        x: 5819
+        y: 443
+        width: 290
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20bfbe69da1a52140800000000000000
+      internalID: 4694335953537071874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_45
+      rect:
+        serializedVersion: 2
+        x: 5051
+        y: 467
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c3837c3b33197190800000000000000
+      internalID: -7964313320889809977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_46
+      rect:
+        serializedVersion: 2
+        x: 4283
+        y: 443
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05ff4fbcd4ea24dc0800000000000000
+      internalID: -3656168298313875632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_47
+      rect:
+        serializedVersion: 2
+        x: 5051
+        y: 443
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd7f0223d6efb0250800000000000000
+      internalID: 5912098680799819739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_48
+      rect:
+        serializedVersion: 2
+        x: 5435
+        y: 431
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f916b1c5250fc80800000000000000
+      internalID: -8291036358439231735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_49
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 323
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5baa685eff63b100800000000000000
+      internalID: 122564753064897370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_50
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 323
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2ce16eca10d6ee80800000000000000
+      internalID: -8149597662130082772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_51
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 323
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c86473bc60174e00800000000000000
+      internalID: 1028809098930710729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_52
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 299
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0632e6ab9a7363ab0800000000000000
+      internalID: -5028770731795799200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_53
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 287
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98edd22232b14670800000000000000
+      internalID: 8521287898364766362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_54
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 287
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa146eb949bc7ceb0800000000000000
+      internalID: -4699563847006666321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_55
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 287
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bffbbfa127f0272c0800000000000000
+      internalID: -4435465700253122565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_56
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 251
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3803df4604af23250800000000000000
+      internalID: 5923071614424789123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_57
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 263
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a5a97b35cfb65d40800000000000000
+      internalID: 5572852442744858025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_58
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 251
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01e3f35b23cfb9000800000000000000
+      internalID: 43905916109536784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_59
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 263
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51659fac327fab8f0800000000000000
+      internalID: -523834673533987307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_60
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 227
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5896f0321c53d320800000000000000
+      internalID: 2581508244614060124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_61
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 227
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 845ba22db6d988c40800000000000000
+      internalID: 5514830830128248136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_62
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 227
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d167c5160c25f48d0800000000000000
+      internalID: -2859976252136327651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_63
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 239
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee77e3db5acb26680800000000000000
+      internalID: -8763234504878950418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_64
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 203
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6a62df8ac3814810800000000000000
+      internalID: 1747823036416027244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_65
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 191
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97b19ba23c7cef260800000000000000
+      internalID: 7133358500850768761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_66
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 191
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 240ac63362f7b0480800000000000000
+      internalID: -8931905633911005118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_67
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 203
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7afedfe05dddb50b0800000000000000
+      internalID: -5738749393004269657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_68
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 203
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82a249b480459a060800000000000000
+      internalID: 6965190693309655592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_69
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 191
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d3646b19dc14f7f0800000000000000
+      internalID: -579806733230906413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_70
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 191
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afcbe976173578a60800000000000000
+      internalID: 7676195836411165946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_71
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 203
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44552f1848a2977f0800000000000000
+      internalID: -614413125555169980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_72
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 203
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5db379c3f26961960800000000000000
+      internalID: 7572404953094241237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_73
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 179
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db13d1b07c4b73fd0800000000000000
+      internalID: -2362220712554581571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_74
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 155
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c38a1324b4180ae10800000000000000
+      internalID: 2206905977644623932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_75
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 143
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aef96f719f37a230800000000000000
+      internalID: 3649955917147537056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_76
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 167
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa6c45d990f83e290800000000000000
+      internalID: -7862283253001697622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_77
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 179
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4662d4917e03bacc0800000000000000
+      internalID: -3698808899834665372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_78
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 143
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7bbd3ae8a13af9a0800000000000000
+      internalID: -6198587335567885444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_79
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 179
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 154ad6b40d826a4f0800000000000000
+      internalID: -817921407237381039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_80
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 179
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 735916daf47ab8ac0800000000000000
+      internalID: -3851801095632218825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_81
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 119
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0254baa722f4b91d0800000000000000
+      internalID: -3342991288886934240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_82
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 71
+        width: 62
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b678b2045ffd540800000000000000
+      internalID: 5035012564380511107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_83
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 71
+        width: 146
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c5d79db2b2ec90f0800000000000000
+      internalID: -1108762150927084094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_84
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 119
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9420379f394c98370800000000000000
+      internalID: 8325401525995373129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_85
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 131
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf65dcde846ff1820800000000000000
+      internalID: 2891300278882883324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_86
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 131
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed051337de515cd30800000000000000
+      internalID: 4450987916309647582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_87
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 143
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6ce0c4c25ddfac40800000000000000
+      internalID: 5525878615364922477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_88
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 131
+        width: 38
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0c6d8e65cea70fc0800000000000000
+      internalID: -3528659620034941937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_89
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 143
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26983385994129aa0800000000000000
+      internalID: -6155835091819722398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_90
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 143
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06ddbc426353ee790800000000000000
+      internalID: -7498997822863450784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_91
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 143
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41b506e4d4d9edc00800000000000000
+      internalID: 927351528637881108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_92
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 95
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ac12afc02815f8c0800000000000000
+      internalID: -3966237367628325722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_93
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 95
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba3db083be0d156d0800000000000000
+      internalID: -3003389767803219029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_94
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 71
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a17f47b3d015a9f0800000000000000
+      internalID: -457941285608656476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_95
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 83
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d3ede2f3ac29f90800000000000000
+      internalID: -6948268902361187058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_96
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 71
+        width: 134
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b64aca589c149ead0800000000000000
+      internalID: -2672532570080762773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_97
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 107
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c94ea6968863360800000000000000
+      internalID: 7149051444843551836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_98
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 95
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1e09547ddb12b0d0800000000000000
+      internalID: -3408631330012328417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_99
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 83
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1d0d4ea37c8e31b0800000000000000
+      internalID: -5674944051966833378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_100
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 95
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c27cb91a97c56110800000000000000
+      internalID: 1253627535963222720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_101
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 59
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e40e4e023a8eb0d80800000000000000
+      internalID: -8283271302288711602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_102
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 59
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759012f88fe1f5be0800000000000000
+      internalID: -1486435299106944681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_103
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 83
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e63023dbfe461420800000000000000
+      internalID: 2600352678338901729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_104
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 71
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d37a24535f4ec60800000000000000
+      internalID: 7846666059886574954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_105
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 71
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a9a52258ed892780800000000000000
+      internalID: -8707272375594014303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_106
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 71
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db6a7816c252af770800000000000000
+      internalID: 8645263307236157117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_107
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 71
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9385bb9060bfd1d80800000000000000
+      internalID: -8278184536685455303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_108
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 59
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 975738bb91db01c80800000000000000
+      internalID: -8353969390554483335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crow_Dead_109
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 59
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da85018364fb6c590800000000000000
+      internalID: -7654220208360367955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Crow_Dead_0: 7203098118917256451
+      Crow_Dead_1: -8076539748385703608
+      Crow_Dead_10: -7233411697749611082
+      Crow_Dead_100: 1253627535963222720
+      Crow_Dead_101: -8283271302288711602
+      Crow_Dead_102: -1486435299106944681
+      Crow_Dead_103: 2600352678338901729
+      Crow_Dead_104: 7846666059886574954
+      Crow_Dead_105: -8707272375594014303
+      Crow_Dead_106: 8645263307236157117
+      Crow_Dead_107: -8278184536685455303
+      Crow_Dead_108: -8353969390554483335
+      Crow_Dead_109: -7654220208360367955
+      Crow_Dead_11: 7745240479209068939
+      Crow_Dead_12: 7140896089537540795
+      Crow_Dead_13: -4815158795966197576
+      Crow_Dead_14: 3025850854071928611
+      Crow_Dead_15: 1434652287209888170
+      Crow_Dead_16: -320345336455637307
+      Crow_Dead_17: 6629704289347067435
+      Crow_Dead_18: -8867570348848253806
+      Crow_Dead_19: 2528403669991267739
+      Crow_Dead_2: -1970994051395456398
+      Crow_Dead_20: -6052208164041275377
+      Crow_Dead_21: 5718004845192512316
+      Crow_Dead_22: 8689526821394936692
+      Crow_Dead_23: -705518073875869031
+      Crow_Dead_24: -8439693363563965493
+      Crow_Dead_25: 8752282749178072384
+      Crow_Dead_26: 3710034388264619146
+      Crow_Dead_27: 8265818635533350245
+      Crow_Dead_28: -1602808831667943896
+      Crow_Dead_29: 2028526366147002359
+      Crow_Dead_3: -546515272101310996
+      Crow_Dead_30: -4713999259050446467
+      Crow_Dead_31: -7823784079121759777
+      Crow_Dead_32: 878735262040387836
+      Crow_Dead_33: 1389320590045555498
+      Crow_Dead_34: 929999635950219854
+      Crow_Dead_35: 5836781797119585212
+      Crow_Dead_36: 2817299348872908997
+      Crow_Dead_37: 6709771123440857981
+      Crow_Dead_38: 6949370389424716470
+      Crow_Dead_39: 1558971183602794520
+      Crow_Dead_4: 4946276768124574372
+      Crow_Dead_40: -7469589606721352741
+      Crow_Dead_41: 903232756907891671
+      Crow_Dead_42: -2902359741012917213
+      Crow_Dead_43: 2844258233600694066
+      Crow_Dead_44: 4694335953537071874
+      Crow_Dead_45: -7964313320889809977
+      Crow_Dead_46: -3656168298313875632
+      Crow_Dead_47: 5912098680799819739
+      Crow_Dead_48: -8291036358439231735
+      Crow_Dead_49: 122564753064897370
+      Crow_Dead_5: -3212633787019600820
+      Crow_Dead_50: -8149597662130082772
+      Crow_Dead_51: 1028809098930710729
+      Crow_Dead_52: -5028770731795799200
+      Crow_Dead_53: 8521287898364766362
+      Crow_Dead_54: -4699563847006666321
+      Crow_Dead_55: -4435465700253122565
+      Crow_Dead_56: 5923071614424789123
+      Crow_Dead_57: 5572852442744858025
+      Crow_Dead_58: 43905916109536784
+      Crow_Dead_59: -523834673533987307
+      Crow_Dead_6: -383562031279437436
+      Crow_Dead_60: 2581508244614060124
+      Crow_Dead_61: 5514830830128248136
+      Crow_Dead_62: -2859976252136327651
+      Crow_Dead_63: -8763234504878950418
+      Crow_Dead_64: 1747823036416027244
+      Crow_Dead_65: 7133358500850768761
+      Crow_Dead_66: -8931905633911005118
+      Crow_Dead_67: -5738749393004269657
+      Crow_Dead_68: 6965190693309655592
+      Crow_Dead_69: -579806733230906413
+      Crow_Dead_7: 1313759603603187783
+      Crow_Dead_70: 7676195836411165946
+      Crow_Dead_71: -614413125555169980
+      Crow_Dead_72: 7572404953094241237
+      Crow_Dead_73: -2362220712554581571
+      Crow_Dead_74: 2206905977644623932
+      Crow_Dead_75: 3649955917147537056
+      Crow_Dead_76: -7862283253001697622
+      Crow_Dead_77: -3698808899834665372
+      Crow_Dead_78: -6198587335567885444
+      Crow_Dead_79: -817921407237381039
+      Crow_Dead_8: 5263015229757828029
+      Crow_Dead_80: -3851801095632218825
+      Crow_Dead_81: -3342991288886934240
+      Crow_Dead_82: 5035012564380511107
+      Crow_Dead_83: -1108762150927084094
+      Crow_Dead_84: 8325401525995373129
+      Crow_Dead_85: 2891300278882883324
+      Crow_Dead_86: 4450987916309647582
+      Crow_Dead_87: 5525878615364922477
+      Crow_Dead_88: -3528659620034941937
+      Crow_Dead_89: -6155835091819722398
+      Crow_Dead_9: 7895310875847229588
+      Crow_Dead_90: -7498997822863450784
+      Crow_Dead_91: 927351528637881108
+      Crow_Dead_92: -3966237367628325722
+      Crow_Dead_93: -3003389767803219029
+      Crow_Dead_94: -457941285608656476
+      Crow_Dead_95: -6948268902361187058
+      Crow_Dead_96: -2672532570080762773
+      Crow_Dead_97: 7149051444843551836
+      Crow_Dead_98: -3408631330012328417
+      Crow_Dead_99: -5674944051966833378
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
