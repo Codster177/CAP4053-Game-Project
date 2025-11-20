@@ -76,7 +76,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -114,7 +114,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,10 +142,10 @@ TextureImporter:
       name: Crow_attack_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 11
-        width: 338
-        height: 314
+        x: 0
+        y: 0
+        width: 384
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,10 +164,10 @@ TextureImporter:
       name: Crow_attack_1
       rect:
         serializedVersion: 2
-        x: 407
-        y: 11
-        width: 326
-        height: 254
+        x: 384
+        y: 0
+        width: 384
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,10 +186,10 @@ TextureImporter:
       name: Crow_attack_2
       rect:
         serializedVersion: 2
-        x: 1463
-        y: 203
-        width: 14
-        height: 14
+        x: 768
+        y: 0
+        width: 384
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,10 +208,10 @@ TextureImporter:
       name: Crow_attack_3
       rect:
         serializedVersion: 2
-        x: 1499
-        y: 167
-        width: 26
-        height: 38
+        x: 1152
+        y: 0
+        width: 384
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,10 +230,10 @@ TextureImporter:
       name: Crow_attack_4
       rect:
         serializedVersion: 2
-        x: 1847
-        y: 203
-        width: 14
-        height: 14
+        x: 1536
+        y: 0
+        width: 384
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: Crow_attack_5
       rect:
         serializedVersion: 2
-        x: 2231
-        y: 203
-        width: 14
-        height: 14
+        x: 1920
+        y: 0
+        width: 384
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -274,10 +274,10 @@ TextureImporter:
       name: Crow_attack_6
       rect:
         serializedVersion: 2
-        x: 2615
-        y: 203
-        width: 14
-        height: 14
+        x: 2304
+        y: 0
+        width: 384
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,10 +296,10 @@ TextureImporter:
       name: Crow_attack_7
       rect:
         serializedVersion: 2
-        x: 2699
-        y: 11
-        width: 350
-        height: 254
+        x: 2688
+        y: 0
+        width: 384
+        height: 384
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,143 +314,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Crow_attack_8
-      rect:
-        serializedVersion: 2
-        x: 791
-        y: 11
-        width: 314
-        height: 182
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c042cb8c3c729cd80800000000000000
-      internalID: -8230003122202991604
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crow_attack_9
-      rect:
-        serializedVersion: 2
-        x: 1163
-        y: 11
-        width: 350
-        height: 182
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 02cb1e2c3611ca040800000000000000
-      internalID: 4660118834590628896
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crow_attack_10
-      rect:
-        serializedVersion: 2
-        x: 1559
-        y: 11
-        width: 338
-        height: 182
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9341a06ae693bfce0800000000000000
-      internalID: -1370438514209319879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crow_attack_11
-      rect:
-        serializedVersion: 2
-        x: 1943
-        y: 23
-        width: 338
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bd1cbbc02ca7e5970800000000000000
-      internalID: 8745562500255957467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crow_attack_12
-      rect:
-        serializedVersion: 2
-        x: 2315
-        y: 11
-        width: 338
-        height: 182
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0324dc62035c88ba0800000000000000
-      internalID: -6086398085791137232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crow_attack_13
-      rect:
-        serializedVersion: 2
-        x: 2651
-        y: 59
-        width: 14
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 011f61e6d72b2c670800000000000000
-      internalID: 8557598493745017104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: aa748cdfaec149396968c52aefd0a5d3
     internalID: 0
     vertices: []
     indices: 
@@ -462,18 +330,12 @@ TextureImporter:
     nameFileIdTable:
       Crow_attack_0: 7216301412561747238
       Crow_attack_1: -3373580843353386109
-      Crow_attack_10: -1370438514209319879
-      Crow_attack_11: 8745562500255957467
-      Crow_attack_12: -6086398085791137232
-      Crow_attack_13: 8557598493745017104
       Crow_attack_2: -9138532425921131977
       Crow_attack_3: 8391410230265722117
       Crow_attack_4: -4094905180284880886
       Crow_attack_5: -1759697193505896448
       Crow_attack_6: 4180423113218831135
       Crow_attack_7: 719899458833689945
-      Crow_attack_8: -8230003122202991604
-      Crow_attack_9: 4660118834590628896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

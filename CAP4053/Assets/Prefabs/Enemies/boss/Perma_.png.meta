@@ -1,25 +1,157 @@
 fileFormatVersion: 2
-guid: 66a699126b1869028a7c55386fabbda2
+guid: e9c5a5da9d1b216b28fecdc5bc34a3e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2525194902377515458
-    second: Crow_Hurt_0
+      213: -7252552396884991931
+    second: Perma__0
   - first:
-      213: -7347169022496238880
-    second: Crow_Hurt_1
+      213: -6232062152097885932
+    second: Perma__1
   - first:
-      213: 54357803408073284
-    second: Crow_Hurt_2
+      213: 3998447686333277762
+    second: Perma__2
   - first:
-      213: -1171530196023839494
-    second: Crow_Hurt_3
+      213: 7504232000745404844
+    second: Perma__3
   - first:
-      213: -7213983528762175000
-    second: Crow_Hurt_4
+      213: -8827919629252960281
+    second: Perma__4
   - first:
-      213: -7267050591786516152
-    second: Crow_Hurt_5
+      213: -8190117387546375516
+    second: Perma__5
+  - first:
+      213: -5832008802660117200
+    second: Perma__6
+  - first:
+      213: -849469237076195162
+    second: Perma__7
+  - first:
+      213: -6130516524710012853
+    second: Perma__8
+  - first:
+      213: 2467039287059112736
+    second: Perma__9
+  - first:
+      213: -7825490539061806363
+    second: Perma__10
+  - first:
+      213: -5423141051674726276
+    second: Perma__11
+  - first:
+      213: -3084422100427277683
+    second: Perma__12
+  - first:
+      213: -4996351155124512058
+    second: Perma__13
+  - first:
+      213: -3286637293866245541
+    second: Perma__14
+  - first:
+      213: -7835552974786969176
+    second: Perma__15
+  - first:
+      213: 2398341192203279681
+    second: Perma__16
+  - first:
+      213: -8675261642091469626
+    second: Perma__17
+  - first:
+      213: 1870777347603897352
+    second: Perma__18
+  - first:
+      213: -2423585973697862327
+    second: Perma__19
+  - first:
+      213: -3901453698949045287
+    second: Perma__20
+  - first:
+      213: 1355655494962159731
+    second: Perma__21
+  - first:
+      213: -6791135452313643837
+    second: Perma__22
+  - first:
+      213: 3496020594127520148
+    second: Perma__23
+  - first:
+      213: -7555955666796783579
+    second: Perma__24
+  - first:
+      213: -2333202816787068071
+    second: Perma__25
+  - first:
+      213: -5240306402038926907
+    second: Perma__26
+  - first:
+      213: 7633224802465519035
+    second: Perma__27
+  - first:
+      213: 8676168439536113071
+    second: Perma__28
+  - first:
+      213: -866119889802831232
+    second: Perma__29
+  - first:
+      213: -3965640921560217903
+    second: Perma__30
+  - first:
+      213: 4304273043839217459
+    second: Perma__31
+  - first:
+      213: 6289465909021733915
+    second: Perma__32
+  - first:
+      213: -8851608781468564432
+    second: Perma__33
+  - first:
+      213: 5771297327804163189
+    second: Perma__34
+  - first:
+      213: 4524273127287964748
+    second: Perma__35
+  - first:
+      213: -8367883733208760067
+    second: Perma__36
+  - first:
+      213: 5496902466364326881
+    second: Perma__37
+  - first:
+      213: 8432265083419721697
+    second: Perma__38
+  - first:
+      213: -4625667271645248576
+    second: Perma__39
+  - first:
+      213: -7135703036107373655
+    second: Perma__40
+  - first:
+      213: 134574389204183529
+    second: Perma__41
+  - first:
+      213: 6972677921653477788
+    second: Perma__42
+  - first:
+      213: -3020868000199801572
+    second: Perma__43
+  - first:
+      213: -1293311545404159794
+    second: Perma__44
+  - first:
+      213: -5046952359653253149
+    second: Perma__45
+  - first:
+      213: -2341191345234673957
+    second: Perma__46
+  - first:
+      213: 6160432047698044729
+    second: Perma__47
+  - first:
+      213: 8113609164886220328
+    second: Perma__48
+  - first:
+      213: 4507307743451260303
+    second: Perma__49
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,13 +247,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crow_Hurt_0
+      name: Perma__0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 384
-        height: 384
+        width: 960
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +262,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c9c6d8726b4b0320800000000000000
-      internalID: 2525194902377515458
+      spriteID: 54023cc4502c95b90800000000000000
+      internalID: -7252552396884991931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_Hurt_1
+      name: Perma__1
       rect:
         serializedVersion: 2
-        x: 384
+        x: 960
         y: 0
-        width: 384
-        height: 384
+        width: 960
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,86 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e29b5573bc990a90800000000000000
-      internalID: -7347169022496238880
+      spriteID: 4119c06dd744389a0800000000000000
+      internalID: -6232062152097885932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_Hurt_2
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 384
-        height: 384
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 442a8ea522e11c000800000000000000
-      internalID: 54357803408073284
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crow_Hurt_3
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 384
-        height: 384
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af4fa566e73edbfe0800000000000000
-      internalID: -1171530196023839494
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crow_Hurt_4
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 384
-        height: 384
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8e19c90b338c2eb90800000000000000
-      internalID: -7213983528762175000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crow_Hurt_5
+      name: Perma__2
       rect:
         serializedVersion: 2
         x: 1920
         y: 0
-        width: 384
-        height: 384
+        width: 960
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,8 +306,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 841c5cf3dff362b90800000000000000
-      internalID: -7267050591786516152
+      spriteID: 246a0ec6cf65d7730800000000000000
+      internalID: 3998447686333277762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perma__3
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 960
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca97c8cde33642860800000000000000
+      internalID: 7504232000745404844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Perma__4
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 960
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7efdda89eddec7580800000000000000
+      internalID: -8827919629252960281
       vertices: []
       indices: 
       edges: []
@@ -250,7 +360,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: eec8da2f1234cbbeda0f4e56e009e2af
+    spriteID: bd1eceaceaad6efcca8b3bb603441d14
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +370,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Crow_Hurt_0: 2525194902377515458
-      Crow_Hurt_1: -7347169022496238880
-      Crow_Hurt_2: 54357803408073284
-      Crow_Hurt_3: -1171530196023839494
-      Crow_Hurt_4: -7213983528762175000
-      Crow_Hurt_5: -7267050591786516152
+      Perma__0: -7252552396884991931
+      Perma__1: -6232062152097885932
+      Perma__2: 3998447686333277762
+      Perma__3: 7504232000745404844
+      Perma__4: -8827919629252960281
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

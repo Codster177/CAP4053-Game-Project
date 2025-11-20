@@ -1,25 +1,34 @@
 fileFormatVersion: 2
-guid: 66a699126b1869028a7c55386fabbda2
+guid: ff2c9bbed705aa92b98cb0dd6f290190
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2525194902377515458
-    second: Crow_Hurt_0
+      213: -2048800907179887802
+    second: Hurt_0
   - first:
-      213: -7347169022496238880
-    second: Crow_Hurt_1
+      213: 490842205202310979
+    second: Hurt_1
   - first:
-      213: 54357803408073284
-    second: Crow_Hurt_2
+      213: -3720053754089064719
+    second: Hurt_2
   - first:
-      213: -1171530196023839494
-    second: Crow_Hurt_3
+      213: 5649970053243570431
+    second: Hurt_3
   - first:
-      213: -7213983528762175000
-    second: Crow_Hurt_4
+      213: -371187646486735994
+    second: Hurt_4
   - first:
-      213: -7267050591786516152
-    second: Crow_Hurt_5
+      213: 1177448812329152706
+    second: Hurt_5
+  - first:
+      213: 7933592967420663305
+    second: Hurt_6
+  - first:
+      213: 7273187483062910031
+    second: Hurt_7
+  - first:
+      213: -1817361991890795262
+    second: Hurt_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crow_Hurt_0
+      name: Hurt_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 384
-        height: 384
+        width: 960
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2c9c6d8726b4b0320800000000000000
-      internalID: 2525194902377515458
+      spriteID: 6437b001e623193e0800000000000000
+      internalID: -2048800907179887802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_Hurt_1
+      name: Hurt_1
       rect:
         serializedVersion: 2
-        x: 384
+        x: 960
         y: 0
-        width: 384
-        height: 384
+        width: 960
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,86 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0e29b5573bc990a90800000000000000
-      internalID: -7347169022496238880
+      spriteID: 3476ad19262dfc600800000000000000
+      internalID: 490842205202310979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crow_Hurt_2
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 384
-        height: 384
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 442a8ea522e11c000800000000000000
-      internalID: 54357803408073284
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crow_Hurt_3
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 384
-        height: 384
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af4fa566e73edbfe0800000000000000
-      internalID: -1171530196023839494
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crow_Hurt_4
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 384
-        height: 384
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8e19c90b338c2eb90800000000000000
-      internalID: -7213983528762175000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crow_Hurt_5
+      name: Hurt_2
       rect:
         serializedVersion: 2
         x: 1920
         y: 0
-        width: 384
-        height: 384
+        width: 960
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,8 +183,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 841c5cf3dff362b90800000000000000
-      internalID: -7267050591786516152
+      spriteID: 1f6b92202d6bf5cc0800000000000000
+      internalID: -3720053754089064719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt_3
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 960
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff88d2f14d9b86e40800000000000000
+      internalID: 5649970053243570431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt_4
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 960
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 683152a5dc649daf0800000000000000
+      internalID: -371187646486735994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt_5
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 960
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c0b518d473275010800000000000000
+      internalID: 1177448812329152706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt_6
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 0
+        width: 960
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90655a715c8c91e60800000000000000
+      internalID: 7933592967420663305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt_7
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 0
+        width: 960
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4c38c81b7d8fe460800000000000000
+      internalID: 7273187483062910031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hurt_8
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 0
+        width: 960
+        height: 768
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2058d0da5ee67c6e0800000000000000
+      internalID: -1817361991890795262
       vertices: []
       indices: 
       edges: []
@@ -250,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: eec8da2f1234cbbeda0f4e56e009e2af
+    spriteID: e688d812c25556a4f83b75ca937f7d2c
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +335,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Crow_Hurt_0: 2525194902377515458
-      Crow_Hurt_1: -7347169022496238880
-      Crow_Hurt_2: 54357803408073284
-      Crow_Hurt_3: -1171530196023839494
-      Crow_Hurt_4: -7213983528762175000
-      Crow_Hurt_5: -7267050591786516152
+      Hurt_0: -2048800907179887802
+      Hurt_1: 490842205202310979
+      Hurt_2: -3720053754089064719
+      Hurt_3: 5649970053243570431
+      Hurt_4: -371187646486735994
+      Hurt_5: 1177448812329152706
+      Hurt_6: 7933592967420663305
+      Hurt_7: 7273187483062910031
+      Hurt_8: -1817361991890795262
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
