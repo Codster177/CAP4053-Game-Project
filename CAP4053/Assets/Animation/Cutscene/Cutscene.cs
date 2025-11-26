@@ -10,6 +10,19 @@ public class TutorialCutscene : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private GameObject clickIndicator;
     
+    [Header("Character Profiles")]
+    [SerializeField] private Image leftCharacterImage;
+    [SerializeField] private Image rightCharacterImage;
+    [SerializeField] private TextMeshProUGUI leftNameText;
+    [SerializeField] private TextMeshProUGUI rightNameText;
+    [SerializeField] private GameObject leftCharacterPanel;
+    [SerializeField] private GameObject rightCharacterPanel;
+    
+    [Header("Character Sprites")]
+    [SerializeField] private Sprite playerSprite;
+    [SerializeField] private Sprite catSprite;
+    [SerializeField] private Sprite bossSprite; // Add other NPC sprites as needed
+    
     [Header("Characters")]
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private Animator catAnimator;
@@ -39,7 +52,36 @@ public class TutorialCutscene : MonoBehaviour
     private Vector2 originalIndicatorPosition;
     private PlayerController playerController;
     private MonoBehaviour playerAttackScript;
-    private bool mergePlayed = false; // track merge once
+    private bool mergePlayed = false;
+
+    private bool[] isPlayerSpeaking = {
+
+        true, // Line 0: Player
+        true,  // Line 1: Player
+        false, // Line 2: NPC (Cat)
+        true,  // Line 3: Player
+        false, // Line 4: NPC (Cat)
+        true, // Line 5: Player
+        true,  // Line 6: Player
+        false, // Line 7: NPC (Cat)
+        false, // Line 8: NPC (Cat)
+        true,  // Line 9: Player
+        false, // Line 10: NPC (Cat)
+        false,  // Line 11: NPC (Cat)
+        false, // Line 12: NPC (Cat)
+        true,  // Line 13: Player
+        false, // Line 14: NPC (Cat)
+        false,  // Line 15:NPC (Cat)
+        false, // Line 16: NPC (Cat)
+        true,  // Line 17: Player
+        false, // Line 18: NPC (Cat)
+        true,  // Line 19: Player
+        false, // Line 20: NPC (Cat)
+        true,  // Line 21: Player
+        false, // Line 22: NPC (Cat)
+        true,  // Line 23: Player
+        false, // Line 24: NPC (Cat)
+    };
 
     void Start()
     {
@@ -57,6 +99,10 @@ public class TutorialCutscene : MonoBehaviour
             clickIndicator.SetActive(false);
             originalIndicatorPosition = clickIndicator.GetComponent<RectTransform>().anchoredPosition;
         }
+        
+        // Initialize character panels
+        if (leftCharacterPanel != null) leftCharacterPanel.SetActive(false);
+        if (rightCharacterPanel != null) rightCharacterPanel.SetActive(false);
         
         dialogueBox.SetActive(false);
         
@@ -149,62 +195,13 @@ public class TutorialCutscene : MonoBehaviour
         StartCoroutine(EndCutscene());
     }
 
-private IEnumerator PlayMergeAnimation()
-{
-    if (mergePlayed) yield break;
-    mergePlayed = true;
-
-    if (catAnimator != null)
-    {
-        SpriteRenderer catSprite = catAnimator.GetComponent<SpriteRenderer>();
-        if (catSprite != null)
-        {
-            float fadeTime = 0.4f; 
-            float fadeElapsed = 0f;
-            Color original = catSprite.color;
-
-            catAnimator.Play("Idle");
-
-            bool insertStarted = false;
-
-            while (fadeElapsed < fadeTime)
-            {
-                fadeElapsed += Time.deltaTime;
-                float t = fadeElapsed / fadeTime;
-                catSprite.color = new Color(original.r, original.g, original.b, 1f - t);
-
-                if (!insertStarted && t >= 0.5f)
-                {
-                    insertStarted = true;
-                    if (playerAnimator != null)
-                    {
-                        playerAnimator.Play("Insert");
-                    }
-                }
-
-                yield return null;
-            }
-
-            catSprite.color = new Color(original.r, original.g, original.b, 0f);
-            catAnimator.gameObject.SetActive(false);
-        }
-        else
-        {
-            catAnimator.gameObject.SetActive(false);
-        }
-    }
-
-    if (playerAnimator != null)
-    {
-        yield return new WaitForSeconds(mergeDuration);
-        playerAnimator.Play("Idle");
-    }
-}
-
     private IEnumerator ShowDialogueLine(int lineIndex)
     {
         dialogueBox.SetActive(true);
         currentLine = lineIndex;
+        
+        // Set up character profile based on who's speaking
+        SetupCharacterProfile(lineIndex);
         
         if (currentLine < dialogueLines.Length)
         {
@@ -214,8 +211,108 @@ private IEnumerator PlayMergeAnimation()
         yield return WaitForClick();
     }
 
+    private void SetupCharacterProfile(int lineIndex)
+    {
+        // Hide both panels first
+        if (leftCharacterPanel != null) leftCharacterPanel.SetActive(false);
+        if (rightCharacterPanel != null) rightCharacterPanel.SetActive(false);
+        
+        if (lineIndex < isPlayerSpeaking.Length && isPlayerSpeaking[lineIndex])
+        {
+            // Player speaking - show on right side
+            if (rightCharacterPanel != null)
+            {
+                rightCharacterPanel.SetActive(true);
+                if (rightCharacterImage != null && playerSprite != null)
+                    rightCharacterImage.sprite = playerSprite;
+                if (rightNameText != null)
+                    rightNameText.text = "Laeseo";
+            }
+        }
+        else
+        {
+            // NPC speaking - show on left side
+            if (leftCharacterPanel != null)
+            {
+                leftCharacterPanel.SetActive(true);
+                if (leftCharacterImage != null)
+                {
+                    // Determine which NPC sprite to use
+                    if (lineIndex <= 8) // First part - cat speaking
+                    {
+                        leftCharacterImage.sprite = catSprite;
+                        if (leftNameText != null)
+                            leftNameText.text = "???";
+                    }
+                    else // Later parts - could be different NPC
+                    {
+                        leftCharacterImage.sprite = catSprite; // Use cat or other NPC sprite
+                        if (leftNameText != null)
+                            leftNameText.text = "???";
+                    }
+                }
+            }
+        }
+    }
+
+    private IEnumerator PlayMergeAnimation()
+    {
+        if (mergePlayed) yield break;
+        mergePlayed = true;
+
+        if (catAnimator != null)
+        {
+            SpriteRenderer catSprite = catAnimator.GetComponent<SpriteRenderer>();
+            if (catSprite != null)
+            {
+                float fadeTime = 0.4f; 
+                float fadeElapsed = 0f;
+                Color original = catSprite.color;
+
+                catAnimator.Play("Idle");
+
+                bool insertStarted = false;
+
+                while (fadeElapsed < fadeTime)
+                {
+                    fadeElapsed += Time.deltaTime;
+                    float t = fadeElapsed / fadeTime;
+                    catSprite.color = new Color(original.r, original.g, original.b, 1f - t);
+
+                    if (!insertStarted && t >= 0.5f)
+                    {
+                        insertStarted = true;
+                        if (playerAnimator != null)
+                        {
+                            playerAnimator.Play("Insert");
+                        }
+                    }
+
+                    yield return null;
+                }
+
+                catSprite.color = new Color(original.r, original.g, original.b, 0f);
+                catAnimator.gameObject.SetActive(false);
+            }
+            else
+            {
+                catAnimator.gameObject.SetActive(false);
+            }
+        }
+
+        if (playerAnimator != null)
+        {
+            yield return new WaitForSeconds(mergeDuration);
+            playerAnimator.Play("Idle");
+        }
+    }
+
     private IEnumerator HideDialogue()
     {
+        // Hide character panels when dialogue is hidden
+        if (leftCharacterPanel != null) leftCharacterPanel.SetActive(false);
+        if (rightCharacterPanel != null) rightCharacterPanel.SetActive(false);
+        
         dialogueBox.SetActive(false);
         yield return new WaitForSeconds(0.3f);
     }
@@ -321,6 +418,10 @@ private IEnumerator PlayMergeAnimation()
         dialogueActive = false;
         cutscenePlaying = false;
         
+        // Hide character panels
+        if (leftCharacterPanel != null) leftCharacterPanel.SetActive(false);
+        if (rightCharacterPanel != null) rightCharacterPanel.SetActive(false);
+        
         float elapsedTime = 0f;
         float startAlpha = canvasGroup.alpha;
         
@@ -360,6 +461,6 @@ private IEnumerator PlayMergeAnimation()
 
     private void OnCutsceneComplete()
     {
-        Debug.Log("Tutorial cutscene finished fuckers");
+        Debug.Log("Tutorial cutscene finished");
     }
 }
