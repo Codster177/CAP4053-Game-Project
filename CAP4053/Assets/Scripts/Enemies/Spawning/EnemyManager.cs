@@ -5,12 +5,8 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager publicEnemyManager;
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private EnemyStatManager enemyStatManager;
     private List<GameObject> enemyList = new List<GameObject>();
-
-    // Temp:
-    private int baseHealth = 30;
-    private float baseDamage = 5, baseAttackSpeed = 1;
 
     void Awake()
     {
@@ -46,21 +42,10 @@ public class EnemyManager : MonoBehaviour
     }
     private void SetEnemyDifficulty()
     {
-        EnemyHealth health = enemyPrefab.GetComponent<EnemyHealth>();
-        EnemyController controller = enemyPrefab.GetComponent<EnemyController>();
-        ChaserCombater combater = controller.GetCombater() as ChaserCombater;
-
-        health.SetMaxHP(baseHealth);
-        combater.SetEnemyStats(baseDamage, baseAttackSpeed);
+        enemyStatManager.SetAllStartingStats();
     }
     public void IncreaseEnemyDifficulty()
     {
-        EnemyHealth health = enemyPrefab.GetComponent<EnemyHealth>();
-        EnemyController controller = enemyPrefab.GetComponent<EnemyController>();
-        ChaserCombater combater = controller.GetCombater() as ChaserCombater;
-
-        health.SetMaxHP((int)(health.GetMaxHP() * 1.1));
-        List<float> combatStats = combater.GetEnemyStats();
-        combater.SetEnemyStats(combatStats[0] * 1.1f, combatStats[1] * 0.95f);
+        enemyStatManager.IncreaseAllStats();
     }
 }
