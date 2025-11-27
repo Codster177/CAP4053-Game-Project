@@ -1,4 +1,5 @@
 using System;
+using Stopwatch = System.Diagnostics.Stopwatch;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
@@ -82,7 +83,7 @@ public class GenerateSegments : ScriptableObject
             int[] gridCoords = ConvertGridIndex(spawnedIndexList[i]);
 
             Vector2 roomVectorPos = CalculateVectorPos(startingPosition, localOffset, gridCoords);
-            RoomPrefab newRoom = GenerateRoom(roomVectorPos, roomOutfitter.GetRoomPrefab(0));
+            RoomPrefab newRoom = GenerateRoom(roomVectorPos, roomOutfitter.GetRoomPrefab("Forest Rooms"));
             roomOutfitter.OutfitRoom(nodeList[spawnedIndexList[i]], newRoom, startRoomIndex, direction, this);
             nodeList[spawnedIndexList[i]].roomPrefab = newRoom;
             currentlyGenerating.Add(newRoom);
@@ -366,7 +367,7 @@ public class GenerateSegments : ScriptableObject
                 Vector2 connectingRoomPos = CalculateVectorPos(startingPos, localOffset, nodeCoords);
                 Debug.Log($"Connection room position: {connectingRoomPos}");
                 RoomPrefab connectingRoom = node.roomPrefab;
-                RoomPrefab exitRoom = GenerateRoomInDirection(connectingRoomPos, roomOutfitter.GetRoomPrefab(1), direction);
+                RoomPrefab exitRoom = GenerateRoomInDirection(connectingRoomPos, roomOutfitter.GetRoomPrefab("Spawn Rooms"), direction);
                 exitRoom.SetExitRoomDir(GenerationManager.GetOppositeDirection(direction));
                 roomOutfitter.CreateNewDoor(connectingRoom, direction);
                 roomOutfitter.CreateNewDoor(exitRoom, GenerationManager.GetOppositeDirection(direction));

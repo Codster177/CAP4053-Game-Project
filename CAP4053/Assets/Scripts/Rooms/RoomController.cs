@@ -53,7 +53,7 @@ public class RoomController : MonoBehaviour
 
     private void CloseDoorTest()
     {
-        Debug.Log($"Enemies Left: {EnemyManager.publicEnemyManager.GetEnemyList().Count}");
+        // Debug.Log($"Enemies Left: {EnemyManager.publicEnemyManager.GetEnemyList().Count}");
 
         if (EnemyManager.publicEnemyManager.GetEnemyList().Count > 0)
         {

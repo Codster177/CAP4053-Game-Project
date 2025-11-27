@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Stopwatch = System.Diagnostics.Stopwatch;
 using NavMeshPlus.Components;
 using UnityEngine;
 using UnityEngine.Splines.ExtrusionShapes;
@@ -18,11 +19,6 @@ public class GenerationManager : MonoBehaviour
     void Awake()
     {
         publicGenerationManager = this;
-    }
-
-    public void GenerateSegment(Vector3 location, GenerationDirection direction)
-    {
-        segmentGenerator.GenerateSegment(location, direction);
     }
 
     public void CloseDoors(RoomPrefab prefab)
@@ -54,7 +50,11 @@ public class GenerationManager : MonoBehaviour
         navMeshSurface.RemoveData();
         segmentGenerator.ClearCurrentRooms();
         yield return new WaitForSeconds(2f);
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
         segmentGenerator.GenerateSegment(exitRoom.transform.position, newDirection);
+        stopwatch.Stop();
+        Debug.Log($"Time to generate: {stopwatch.ElapsedMilliseconds} ms");
         yield return new WaitForEndOfFrame();
         navMeshSurface.BuildNavMesh();
         segmentGenerator.AddToCurrentlyGenerating(exitRoom);

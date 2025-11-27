@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -5,7 +6,7 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "Scriptable Objects/Generation/OutfitRooms")]
 public class OutfitRooms : ScriptableObject
 {
-    [SerializeField] private List<RoomPrefab> roomPrefabs;
+    [SerializeField] private List<RoomList> roomLists = new List<RoomList>(){new RoomList("Forest Rooms"), new RoomList("Spawn Rooms")};
     [SerializeField] private List<Tile> floorTiles, wallTiles;
 
     public void OutfitRoom(GenerateSegments.SpawnNode spawnNode, RoomPrefab prefab, int startRoomIndex, GenerationDirection startDir, GenerateSegments debug)
@@ -113,8 +114,32 @@ public class OutfitRooms : ScriptableObject
     // Down: (-1, -9) (0, -9)
     // Right: (15, -1) (15, 0)
     // Up: (-1, 8) (0, 8)
-    public RoomPrefab GetRoomPrefab(int prefabVal)
+    public RoomPrefab GetRoomPrefab(string listName)
     {
-        return roomPrefabs[prefabVal];
+        for (int i = 0; i < roomLists.Count; i++)
+        {
+            if (roomLists[i].listName == listName)
+            {
+                return roomLists[i].GetRandomPrefab();
+            }
+        }
+        return null;
+    }
+
+    [Serializable]
+    private class RoomList
+    {
+        public string listName;
+        public List<RoomPrefab> roomPrefabs;
+
+        public RoomList(string listName)
+        {
+            this.listName = listName;
+        }
+        public RoomPrefab GetRandomPrefab()
+        {
+            int randomIndex = UnityEngine.Random.Range(0, roomPrefabs.Count);
+            return roomPrefabs[randomIndex];
+        }
     }
 }
