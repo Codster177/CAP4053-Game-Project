@@ -11,6 +11,7 @@ public class EnemyCombater : MonoBehaviour
     // Sets the controller that the combater uses to a specific controller.
     public void SetController(EnemyController newController)
     {
+        Debug.Log("Setting new controller");
         controller = newController;
     }
     public void SetCanAttack(bool newState)
@@ -19,7 +20,7 @@ public class EnemyCombater : MonoBehaviour
     }
 
     // Hits the player, knocks them back, and does damage to them.
-    protected void HitWithKnockback(GameObject EntityGO, float damageAmount, Vector2 knockbackDir, float knockbackTime, bool hitWhileDash)
+    protected void HitWithKnockback(GameObject EntityGO, float damageAmount, Vector2 knockbackDir, float knockbackSpeed, float knockbackTime, bool hitWhileDash)
     {
         // Checks if the player is being hit. Returns if the player is currently being hit.
         Debug.Log($"isBeingHit: {isBeingHit}, canAttack: {canAttack}");
@@ -35,7 +36,7 @@ public class EnemyCombater : MonoBehaviour
         StartCoroutine(AttackCooldown());
         // playerCon.DealDamageToPlayer(damageAmount, hitWhileDash);
         GameManager.publicGameManager.DealDamage(damageAmount);
-        playerEH.AddEffect(new Knockback(knockbackTime, 20, knockbackDir));
+        playerEH.AddEffect(new Knockback(knockbackTime, knockbackSpeed, knockbackDir));
     }
 
     private IEnumerator AttackCooldown()

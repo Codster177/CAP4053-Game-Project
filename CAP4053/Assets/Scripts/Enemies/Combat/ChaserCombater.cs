@@ -11,9 +11,13 @@ public class ChaserCombater : EnemyCombater
     [SerializeField] private bool hitWhileDash;
     private Coroutine currentAttack;
 
-    void Awake()
+    void Start()
     {
         chaserController = controller as ChaserController;
+        if (controller == null)
+        {
+            Debug.Log($"Chaser Controller = null");
+        }
     }
     // Recognizes the player when encountering them in the enemies trigger collider.
     void Update()
@@ -46,7 +50,7 @@ public class ChaserCombater : EnemyCombater
         for (int i = 0; i < inRange.Count; i++)
         {
             Vector2 knockbackDir = Knockback.CalculateDir(inRange[i].transform.position, controller.transform.position);
-            HitWithKnockback(inRange[i], damageAmount, knockbackDir, knockbackTime, hitWhileDash);
+            HitWithKnockback(inRange[i], damageAmount, knockbackDir, enemyKnockback, knockbackTime, hitWhileDash);
         }
         currentAttack = null;
     }

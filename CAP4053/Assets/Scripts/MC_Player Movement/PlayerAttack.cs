@@ -106,11 +106,12 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator AttackCoroutine()
     {
         isAttacking = true;
-
+        Debug.Log("Enemies in range:");
         // sync with animation length
         yield return new WaitForSeconds(0.05f);
         for (int i = 0; i < enemiesInRange.Count; i++)
         {
+            Debug.Log(enemiesInRange[i]);
             EnemyHealth enemyHealth = enemiesInRange[i].GetComponent<EnemyHealth>();
             EffectHolder effectHolder = enemiesInRange[i].GetComponent<EffectHolder>();
             if (effectHolder != null)
