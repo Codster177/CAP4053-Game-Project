@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int maxHP = 30;
+    [SerializeField] private EnemyController enemyController;
     private bool canBeHit = true;
     private int currentHP;
 
@@ -17,12 +18,17 @@ public class EnemyHealth : MonoBehaviour
     {
         return maxHP;
     }
+    public int GetCurrentHP()
+    {
+        return currentHP;
+    }
     public void TakeDamage(int amount)
     {
         if (!canBeHit)
         {
             return;
         }
+        enemyController.RecieveDamage();
         currentHP -= amount;
         Debug.Log($"took dmg and current HP: {currentHP}/{maxHP}");
 

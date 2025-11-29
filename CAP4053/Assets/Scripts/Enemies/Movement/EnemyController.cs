@@ -54,6 +54,10 @@ public class EnemyController : MonoBehaviour
     {
         return enemyCombater;
     }
+    public void RecieveDamage()
+    {
+        return;
+    }
     void DeathEnemyCommand(GameState newGameState)
     {
         if (newGameState == GameState.Death)

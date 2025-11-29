@@ -7,10 +7,6 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    // Hey guys uhhhhhhh
-    // I got a little carried away with making the GameManager efficient
-    // If you have any questions about it ask but it'll probably take me
-    // a bit to explain.
 
     public static GameManager publicGameManager;
     private GameState CurrentGameState;
