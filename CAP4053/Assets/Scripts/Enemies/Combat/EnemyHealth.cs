@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int maxHP = 30;
-    [SerializeField] private EnemyController enemyController;
+    private EnemyController enemyController;
     private bool canBeHit = true;
     private int currentHP;
 
@@ -18,6 +18,10 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public void SetEnemyController(EnemyController newEnemyController)
+    {
+        enemyController = newEnemyController;
+    }
     public void SetMaxHP(int newMax)
     {
         maxHP = newMax;

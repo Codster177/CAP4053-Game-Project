@@ -6,12 +6,12 @@ using UnityEngine;
 public class ChaserCombater : EnemyCombater
 {
     protected ChaserController chaserController;
-    [SerializeField] private List<GameObject> inRange;
-    [SerializeField] private float damageAmount, attackSpeed, enemyKnockback, knockbackTime;
-    [SerializeField] private bool hitWhileDash;
-    private Coroutine currentAttack;
+    [SerializeField] protected List<GameObject> inRange;
+    [SerializeField] protected float damageAmount, attackSpeed, enemyKnockback, knockbackTime;
+    [SerializeField] protected bool hitWhileDash;
+    protected Coroutine currentAttack;
 
-    void Start()
+    protected void Start()
     {
         //looks for parent
         chaserController = controller as ChaserController;
@@ -35,7 +35,11 @@ public class ChaserCombater : EnemyCombater
         }
     }
     // Recognizes the player when encountering them in the enemies trigger collider.
-    void Update()
+    protected void Update()
+    {
+        ChaserAttack();
+    }
+    protected void ChaserAttack()
     {
        //updated this
         if (chaserController == null) return;
@@ -64,7 +68,7 @@ public class ChaserCombater : EnemyCombater
         this.damageAmount = damageAmount;
         this.attackSpeed = attackSpeed;
     }
-    private IEnumerator StartAttack()
+    protected IEnumerator StartAttack()
     {
         yield return new WaitForSeconds(attackSpeed);
         for (int i = 0; i < inRange.Count; i++)
@@ -74,7 +78,7 @@ public class ChaserCombater : EnemyCombater
         }
         currentAttack = null;
     }
-    void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         // Checks tag to be player.
         if (collision.tag == "Player")
@@ -90,7 +94,7 @@ public class ChaserCombater : EnemyCombater
             return;
         }
     }
-    void OnTriggerExit2D(Collider2D collision)
+    protected void OnTriggerExit2D(Collider2D collision)
     {
         // Checks tag to be player.
         if (collision.tag == "Player")

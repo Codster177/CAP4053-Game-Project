@@ -1,20 +1,44 @@
+using System.Collections;
 using UnityEngine;
 
 public class BossController : ChaserController
 {
-    [SerializeField] private Animator bossAnimator;
-    private BossAnimationState animationState;
-    private EnemyHealth bossHealth;
+    public EnemyAnimator enemyAnimator;
 
-    void Awake()
+    new void Update()
     {
-        bossHealth = GetComponent<EnemyHealth>();   
+        base.Update();
+        DecideAction();
     }
-
+    public override void RecieveDamage()
+    {
+        Debug.Log("Damaged!");
+        enemyAnimator.ChangeAnimation("hurt", true);
+        StartCoroutine(RecieveDamageWait());
+    }
+    private bool CheckHurtAnimation()
+    {
+        return enemyAnimator.CheckCurrentAnimation() != "hurt";
+    }
+    private IEnumerator RecieveDamageWait()
+    {
+        enemyCombater.SetCanAttack(false);
+        yield return new WaitUntil(CheckHurtAnimation);
+        enemyCombater.SetCanAttack(true);
+    }
     private void DecideAction()
     {
         float playerHealth = GameManager.publicGameManager.GetPlayerHealth();
-        float currentHealth = bossHealth.GetCurrentHP();
+        float currentHealth = enemyHealth.GetCurrentHP();
+
+        if (GetDirection().x != 0 || GetDirection().y != 0)
+        {
+            enemyAnimator.ChangeAnimation("walking");
+        }
+        else
+        {
+            enemyAnimator.ChangeAnimation("idle");
+        }
 
         if (playerHealth > 50 && currentHealth > 50)
         {
@@ -23,22 +47,4 @@ public class BossController : ChaserController
         // Left off here ^^
     }
 
-    public void SetAnimationState(BossAnimationState newAnimationState)
-    {
-        animationState = newAnimationState;
-        bossAnimator.SetInteger("State", (int)animationState);
-    }
-
-}
-public enum BossAnimationState
-{
-    Idle,
-    Walking,
-    Hurt,
-    LightAttack,
-    SpinAttack,
-    LightningAttack,
-    Death,
-    FlowerAvailable,
-    FlowerGone
 }

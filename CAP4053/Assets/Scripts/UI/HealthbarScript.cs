@@ -12,7 +12,6 @@ public class HealthbarScript : MonoBehaviour
     private float currentTime, tempHealth;
     void Start()
     {
-        Debug.Log(currentTime);
         tempHealth = GameManager.publicGameManager.GetPlayerHealth();
     }
 

@@ -8,9 +8,10 @@ public class EnemyController : MonoBehaviour
     protected bool movementEnabled = true;
     protected NavMeshAgent navMeshAgent;
     protected SpriteRenderer spriteRenderer;
+    protected EnemyHealth enemyHealth;
 
     // Sets the enemy controller up with the NavMesh and needed parameters.
-    void Awake()
+    protected void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         //checks for navmesh
@@ -34,11 +35,11 @@ public class EnemyController : MonoBehaviour
             enemyCombater.SetController(this);
         }
     }
-    void Start()
+    protected void Start()
     {
         GameManager.OnGameStateChanged += DeathEnemyCommand;
     }
-    void Update()
+    protected void Update()
     {
         if (GetDirection().x < 0)
         {
@@ -68,11 +69,11 @@ public class EnemyController : MonoBehaviour
     {
         return enemyCombater;
     }
-    public void RecieveDamage()
+    public virtual void RecieveDamage()
     {
         return;
     }
-    void DeathEnemyCommand(GameState newGameState)
+    protected void DeathEnemyCommand(GameState newGameState)
     {
         if (newGameState == GameState.Death)
         {

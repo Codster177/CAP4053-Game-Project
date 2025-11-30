@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7914556629386681993}
   - component: {fileID: 3057887934761051786}
   - component: {fileID: -967798053214423749}
+  - component: {fileID: 5322576078428274170}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -129,8 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1bd0448cff5684aa388e0d320a12f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCombater: {fileID: 2540156930419300704}
-  enemyHealth: {fileID: 5649798338142558824}
+  enemyCombater: {fileID: 2711476984369955615}
+  enemyAnimator: {fileID: 5322576078428274170}
 --- !u!114 &5649798338142558824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,18 +211,18 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3465646540833252055}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -242,6 +243,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectList: []
+--- !u!114 &5322576078428274170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3465646540833252055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cee24d2ad83cd248ab89235895f90fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animatorController: {fileID: 1259644516761640183}
+  animationList:
+  - name: idle
+    playFull: 0
+    nextAnimationName: 
+  - name: walking
+    playFull: 0
+    nextAnimationName: 
+  - name: attack_1
+    playFull: 1
+    nextAnimationName: 
+  - name: hurt
+    playFull: 1
+    nextAnimationName: 
 --- !u!1 &5911256636988709394
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7071927814405642676}
   - component: {fileID: 8993108190298477697}
-  - component: {fileID: 2540156930419300704}
+  - component: {fileID: 2711476984369955615}
   m_Layer: 0
   m_Name: Damage Collider
   m_TagString: Untagged
@@ -310,8 +337,8 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 4
---- !u!114 &2540156930419300704
+  m_Radius: 6
+--- !u!114 &2711476984369955615
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -320,13 +347,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5911256636988709394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd7cf01a45009e546a602aa95feaed77, type: 3}
+  m_Script: {fileID: 11500000, guid: a6f7fc87f2aa1a14bbacd45300536306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownTime: 2
   inRange: []
   damageAmount: 17
-  attackSpeed: 1
+  attackSpeed: 0.8666667
   enemyKnockback: 40
   knockbackTime: 0.2
   hitWhileDash: 0
