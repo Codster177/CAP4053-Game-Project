@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OverrideArea: 1
   m_Area: 0
-  m_IgnoreFromBuild: 1
+  m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
 --- !u!1 &7270777001965392500
 GameObject:
@@ -5207,7 +5207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OverrideArea: 1
   m_Area: 0
-  m_IgnoreFromBuild: 0
+  m_IgnoreFromBuild: 1
   m_AffectedAgents: ffffffff
 --- !u!1 &8344301262295454653
 GameObject:
@@ -5299,6 +5299,8 @@ MonoBehaviour:
     size: {x: 24, y: 12}
   enemies:
   - enemyPrefab: {fileID: 6071255053859952349, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
+    spawnChance: 0.5
+  - enemyPrefab: {fileID: 5034858136452230052, guid: d9f97f650e212c1759fc3b268efbbc5c, type: 3}
     spawnChance: 0.5
   amountToSpawn: 5
 --- !u!1 &9095276271721898492
@@ -6424,7 +6426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OverrideArea: 1
   m_Area: 1
-  m_IgnoreFromBuild: 0
+  m_IgnoreFromBuild: 1
   m_AffectedAgents: ffffffff
 --- !u!19719996 &517839078334599097
 TilemapCollider2D:

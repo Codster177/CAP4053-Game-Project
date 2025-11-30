@@ -8,7 +8,15 @@ public class EnemyHealth : MonoBehaviour
     private int currentHP;
 
     //starts enemy at max hp (duh)
-    void Awake() => currentHP = maxHP;
+    void Awake()
+    {
+        currentHP = maxHP;
+        //added this so enemies could be attacked again
+        if (enemyController == null)
+        {
+            enemyController = GetComponent<EnemyController>();
+        }
+    }
 
     public void SetMaxHP(int newMax)
     {

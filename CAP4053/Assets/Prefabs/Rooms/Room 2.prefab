@@ -6094,6 +6094,8 @@ MonoBehaviour:
   enemies:
   - enemyPrefab: {fileID: 6071255053859952349, guid: f14cd9d8a93436c4b8885861917a1505, type: 3}
     spawnChance: 0.5
+  - enemyPrefab: {fileID: 5034858136452230052, guid: d9f97f650e212c1759fc3b268efbbc5c, type: 3}
+    spawnChance: 0.5
   amountToSpawn: 5
 --- !u!1 &8610996608544542068
 GameObject:

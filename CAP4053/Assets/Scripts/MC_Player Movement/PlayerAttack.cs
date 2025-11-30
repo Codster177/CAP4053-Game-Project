@@ -112,6 +112,12 @@ public class PlayerAttack : MonoBehaviour
         for (int i = 0; i < enemiesInRange.Count; i++)
         {
             Debug.Log(enemiesInRange[i]);
+            //added check for enemy if their dead
+            if (enemiesInRange[i] == null)
+            {
+                enemiesInRange.RemoveAt(i);
+                continue;
+            }
             EnemyHealth enemyHealth = enemiesInRange[i].GetComponent<EnemyHealth>();
             EffectHolder effectHolder = enemiesInRange[i].GetComponent<EffectHolder>();
             if (effectHolder != null)

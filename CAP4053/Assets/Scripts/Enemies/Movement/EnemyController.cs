@@ -13,12 +13,26 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.updateRotation = false;
-        navMeshAgent.updateUpAxis = false;
+        //checks for navmesh
+        if (navMeshAgent != null)
+        {
+            navMeshAgent.updateRotation = false;
+            navMeshAgent.updateUpAxis = false;
+        }
 
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        enemyCombater.SetController(this);
+        //looks for combater
+        if (enemyCombater == null)
+        {
+            enemyCombater = GetComponent<EnemyCombater>();
+        }
+
+        //sets up combater
+        if (enemyCombater != null)
+        {
+            enemyCombater.SetController(this);
+        }
     }
     void Start()
     {

@@ -13,25 +13,45 @@ public class ChaserCombater : EnemyCombater
 
     void Start()
     {
+        //looks for parent
         chaserController = controller as ChaserController;
-        if (controller == null)
+
+        //looks for this gameObject
+        if (chaserController == null)
         {
-            Debug.Log($"Chaser Controller = null");
+            chaserController = GetComponent<ChaserController>();
+        }
+
+        //checks parents objects
+        if (chaserController == null)
+        {
+            chaserController = GetComponentInParent<ChaserController>();
+        }
+
+        //debug
+        if (chaserController == null)
+        {
+            Debug.LogError("CRITICAL ERROR: ChaserCombater could not find a ChaserController component!");
         }
     }
     // Recognizes the player when encountering them in the enemies trigger collider.
     void Update()
     {
+       //updated this
+        if (chaserController == null) return;
+
         if (currentAttack == null)
         {
             currentAttack = StartCoroutine(StartAttack());
         }
+
         if (inRange.Count != 0)
         {
             chaserController.SetPosition(false, transform.position);
         }
         else
         {
+            
             chaserController.SetPosition(true, new Vector3());
         }
     }

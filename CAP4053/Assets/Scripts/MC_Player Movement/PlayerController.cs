@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
         canBeHit = newCanBeHit;
     }
 
-    [SerializeField] private float playerHealth = 100f;
+    [SerializeField] private float playerHealth = 50f;
 
     public void DealDamageToPlayer(float damageAmount, bool hitWhileDash)
     {
