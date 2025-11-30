@@ -163,7 +163,7 @@ MonoBehaviour:
   dashVelocity: 3
   canDash: 1
   dashPS: {fileID: 9019185860351526525}
-  playerHealth: 100
+  playerHealth: 50
 --- !u!70 &3197000693320497716
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -37,7 +37,6 @@ public class MyUIManager : MonoBehaviour
     }
     public void DashbarAnim()
     {
-        Debug.Log("Dashbar Animation!");
         dashAnimator.SetInteger("State", 1);
         StartCoroutine(DashCoroutine());
     }

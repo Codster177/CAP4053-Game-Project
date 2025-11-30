@@ -113,7 +113,6 @@ public class Knockback : Stun
         {
             Debug.LogError($"{effectHolder.gameObject.name}: Knockback effect cannot find rigidbody.");
         }
-        Debug.Log($"Knockback: Direction: {direction}, Speed: {speed}");
         rigidbody.linearVelocity = direction * speed;
     }
     public override void RemoveEffect(EffectHolder effectHolder)

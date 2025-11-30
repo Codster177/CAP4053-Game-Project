@@ -23,14 +23,12 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown("LightAttack"))
         {
             HandleLightAttack();
-            // Debug.Log("You weakling... (get light attacked)");
         }
 
         //heavy attack
         if (Input.GetButtonDown("HeavyAttack"))
         {
             HandleHeavyAttack();
-            Debug.Log("Get heavy attacked... weirdo");
         }
     }
 
@@ -106,7 +104,6 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator AttackCoroutine()
     {
         isAttacking = true;
-        Debug.Log("Enemies in range:");
         // sync with animation length
         yield return new WaitForSeconds(0.05f);
         for (int i = 0; i < enemiesInRange.Count; i++)

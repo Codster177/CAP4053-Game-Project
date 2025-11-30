@@ -65,7 +65,6 @@ public class PlayerController : MonoBehaviour
         {
             // animator.SetTrigger("mc-dash");
             StartCoroutine(Dash());
-            Debug.Log("Left shift was pressed and Rainbowdash is saved!");
         }
     }
 
@@ -93,7 +92,6 @@ public class PlayerController : MonoBehaviour
     // Enables or disables movement.
     public void AllowMovement(bool newState)
     {
-        Debug.Log($"Allow Movement: {newState}");
         movementEnabled = newState;
     }
 
@@ -117,7 +115,6 @@ public class PlayerController : MonoBehaviour
             return;
 
         playerHealth -= damageAmount;
-        Debug.Log($"'Owwwww :(' (Player took {damageAmount} damage! Remaining HP: {playerHealth})");
 
         if (playerHealth <= 0)
         {

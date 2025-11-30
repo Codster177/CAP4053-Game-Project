@@ -11,7 +11,6 @@ public class EnemyCombater : MonoBehaviour
     // Sets the controller that the combater uses to a specific controller.
     public void SetController(EnemyController newController)
     {
-        Debug.Log("Setting new controller");
         controller = newController;
     }
     public void SetCanAttack(bool newState)
@@ -23,7 +22,6 @@ public class EnemyCombater : MonoBehaviour
     protected void HitWithKnockback(GameObject EntityGO, float damageAmount, Vector2 knockbackDir, float knockbackSpeed, float knockbackTime, bool hitWhileDash)
     {
         // Checks if the player is being hit. Returns if the player is currently being hit.
-        Debug.Log($"isBeingHit: {isBeingHit}, canAttack: {canAttack}");
         if (isBeingHit || !canAttack)
         {
             return;
