@@ -165,38 +165,35 @@ MonoBehaviour:
   catStartPosition: {fileID: 683348285}
   catEndPosition: {fileID: 1240467983}
   dialogueLines:
-  - F*ck where am I?
-  - ...Actually who am I???
-  - Oh my god, you're finally awake, that took you forever I thought you like, drop
-    dead or something. which would be very weird considering-
+  - ...Where am I?
+  - Actually... who am I?
+  - Oh, you're FINALLY awake. You took forever to wake up, I thought you died or
+    something! Which actually would be very weird considering-
   - Why is there a talking cat?
-  - What do you mean why is there a talking cat, I have always been able to talk?
+  - What do you mean, "Why is there a talking cat," I've always been able to talk?
     Did you hit your head or something?
-  - 'Not sure my head does hurt though, can you please tell me what the blippity
-    f*ck is going on and why the hell am I in the middle of nowhere? '
-  - And does hearing animal speak make me a furry?
-  - What no?! Of course not, you being a furry has nothing to do with hearing me
-    talk-
-  - I mean that's not important right now, we have better things to do right now.
-  - Did you just, go inside me??? I didn't consent to that.
-  - Consent this, consent that. It's not important right now.
-  - You need to figure out what to do already, especially since you apparently decided
-    to go and get amesia on me.
-  - Now listen up buttercup-
+  - 'I don''t know... my head does hurt though. Do you have any idea what''s going
+    on? '
+  - Where the heck am I?
+  - I'll explain, don't worry. Just hold on a sec...
+  - Did you just... enter my body? How??
+  - Don't worry about it. Anyways, listen up Gojo wannabe-
   - Don't call me that you weird ball of fur.
   - Fine.
-  - Gojo wannabe, let's get this over with.
-  - You're currently in someone's mind and you need to beat up some inner demon and
-    try not to die immediately.
+  - 'But here''s what''s going on: you''re currently in someone''s mind and they''ve
+    got some inner monsters and struggles they''re dealing with. You gotta find and
+    defeat those monsters.'
   - What do I get out of this?
-  - Nothing, except the feeling of saving someone.
+  - You get to feel like a good person for helping someone!
   - Don't know if that's worth it.
-  - You get your memory back okay (maybe), also if you don't do it you will be stuck
-    here forever so stop being a failure and lets gooooooo.
-  - I heard that. But fiiiiiine.
-  - God that took forever. (insert control me no rememebr)
-  - I hope you know I hate you by the way.
-  - Don't worry, I do too, you useless prick.
+  - Jeez, alright. Well, you don't have much of a choice right now; you're stuck
+    here with no memory. Might as well try to help these people out and see how that
+    goes.
+  - I guess so. How do I beat these monsters, anyway?
+  - Wow, did you really forget how to fight, too?? You have a light attack ("O"/left-click)
+    and a heavy attack ("P"/right-click), you can use those to attack the monsters.
+    And if you wanna quickly get away from them, you can dash (left-shift).
+  - Alright, time to start fighting. Good luck!
   typewriterSpeed: 0.05
   fadeOutSpeed: 0.2
   wakeUpDuration: 2
