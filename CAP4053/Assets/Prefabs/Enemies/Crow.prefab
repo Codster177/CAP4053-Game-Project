@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3280116807353814392}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.46, y: 14.52, z: 0.0068925098}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -68,7 +68,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.85
+  m_Radius: 1.1
 --- !u!114 &3882653847146979064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +100,11 @@ GameObject:
   - component: {fileID: 933051598845342221}
   - component: {fileID: 2617304224539100401}
   - component: {fileID: 4053749840587718468}
+  - component: {fileID: 8461337655464190843}
   - component: {fileID: 4333641727330214630}
+  - component: {fileID: 3894177036617230268}
+  - component: {fileID: 2654293694746495889}
+  - component: {fileID: 713895681310920737}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Enemy
@@ -117,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 5034858136452230052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.23, y: -3.26, z: -0.0034462549}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -213,7 +217,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cbdde526b134c74b81b959a4a6ae102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCombater: {fileID: 0}
+  enemyCombater: {fileID: 3882653847146979064}
+--- !u!114 &8461337655464190843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5034858136452230052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75b92b2936a42c44b2168d2111ac172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 15
 --- !u!195 &4333641727330214630
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -236,3 +253,79 @@ NavMeshAgent:
   m_BaseOffset: 1.9218749
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3894177036617230268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5034858136452230052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f23c6f16fbb7d14388eadf6009b56ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectList: []
+--- !u!50 &2654293694746495889
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5034858136452230052}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!58 &713895681310920737
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5034858136452230052}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1.17

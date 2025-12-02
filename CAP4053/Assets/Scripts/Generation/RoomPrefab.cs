@@ -11,9 +11,10 @@ public class RoomPrefab : MonoBehaviour
     [SerializeField] private NavMeshModifier[] navMeshModifiers;
     [SerializeField] private Grid roomGrid;
     [SerializeField] private Tilemap floormap;
+    [SerializeField] private Tilemap doormap;
     [SerializeField] private Tilemap wallmap;
     [SerializeField] private List<DirectionTrashList> removeObjects = new List<DirectionTrashList>() { new DirectionTrashList(GenerationDirection.up), new DirectionTrashList(GenerationDirection.down), new DirectionTrashList(GenerationDirection.right), new DirectionTrashList(GenerationDirection.left) };
-    [SerializeField] private List<GenerationDirection> doorDirections = new List<GenerationDirection>();
+    private List<GenerationDirection> doorDirections = new List<GenerationDirection>();
     private GenerationDirection exitRoomDir = GenerationDirection.nullType;
 
     public Grid GetGrid()
@@ -85,7 +86,6 @@ public class RoomPrefab : MonoBehaviour
         {
             for (int i = 0; i < deletables.Count; i++)
             {
-                Debug.Log("Got Here");
                 deletables[i].SetActive(enabled);
             }
         }

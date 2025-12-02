@@ -143,5 +143,6 @@ public class OutfitRooms : ScriptableObject
             int randomIndex = UnityEngine.Random.Range(0, roomPrefabs.Count);
             return roomPrefabs[randomIndex];
         }
+
     }
 }

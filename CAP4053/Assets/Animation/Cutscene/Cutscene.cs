@@ -64,18 +64,23 @@ public class TutorialCutscene : MonoBehaviour
         true, // Line 5: Player
         true,  // Line 6: Player
         false, // Line 7: NPC (Cat)
-        true,  // Line 8: Player
-        false, // Line 9: NPC (Cat)
-        true,  // Line 10: Player
-        false, // Line 11: NPC (Cat)
+        false, // Line 8: NPC (Cat)
+        true,  // Line 9: Player
+        false, // Line 10: NPC (Cat)
+        false,  // Line 11: NPC (Cat)
         false, // Line 12: NPC (Cat)
         true,  // Line 13: Player
         false, // Line 14: NPC (Cat)
-        true,  // Line 15: Player
+        false,  // Line 15:NPC (Cat)
         false, // Line 16: NPC (Cat)
         true,  // Line 17: Player
         false, // Line 18: NPC (Cat)
-        false, // Line 19: NPC (Cat)
+        true,  // Line 19: Player
+        false, // Line 20: NPC (Cat)
+        true,  // Line 21: Player
+        false, // Line 22: NPC (Cat)
+        true,  // Line 23: Player
+        false, // Line 24: NPC (Cat)
     };
 
     void Start()
