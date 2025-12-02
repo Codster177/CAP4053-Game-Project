@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "Scriptable Objects/Generation/OutfitRooms")]
 public class OutfitRooms : ScriptableObject
 {
-    [SerializeField] private List<RoomList> roomLists = new List<RoomList>(){new RoomList("Forest Rooms"), new RoomList("Spawn Rooms")};
+    [SerializeField] private List<RoomList> roomLists = new List<RoomList>() { new RoomList("Forest Rooms"), new RoomList("Spawn Rooms") };
     [SerializeField] private List<Tile> floorTiles, wallTiles;
 
     public void OutfitRoom(GenerateSegments.SpawnNode spawnNode, RoomPrefab prefab, int startRoomIndex, GenerationDirection startDir, GenerateSegments debug)
@@ -14,7 +14,9 @@ public class OutfitRooms : ScriptableObject
         Tilemap[] tileMaps = prefab.GetTilemaps();
         if (spawnNode.spawnIndex == startRoomIndex)
         {
+
             CreateDoor(tileMaps, GenerationManager.GetOppositeDirection(startDir));
+            prefab.AddDoorToList(GenerationManager.GetOppositeDirection(startDir));
         }
 
         for (int i = 0; i < spawnNode.connectedEdges.Count; i++)

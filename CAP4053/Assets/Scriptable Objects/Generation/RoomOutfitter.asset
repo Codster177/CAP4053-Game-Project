@@ -15,7 +15,7 @@ MonoBehaviour:
   roomLists:
   - listName: Forest Rooms
     roomPrefabs:
-    - {fileID: 3985727467706933359, guid: eb5eb2d732039f84e9148e81f5c23e56, type: 3}
+    - {fileID: 4570668633861453876, guid: c38e45e610f90734282ba7904f8d0d58, type: 3}
   - listName: Spawn Rooms
     roomPrefabs:
     - {fileID: 3011557817051098995, guid: 452aad30437c7ec4ea571168b962febf, type: 3}

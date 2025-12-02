@@ -60,11 +60,13 @@ public class RoomController : MonoBehaviour
             float distanceFromCenter = Vector3.Distance(GameManager.publicGameManager.GetPlayerLocation().position, transform.position);
             if (distanceFromCenter < 6f)
             {
+                roomPrefab.OpenOrCloseObjects(true);
                 GenerationManager.publicGenerationManager.CloseDoors(roomPrefab);
             }
         }
         else
         {
+            roomPrefab.OpenOrCloseObjects(false);
             GenerationManager.publicGenerationManager.ReopenDoors(roomPrefab);
         }
     }
