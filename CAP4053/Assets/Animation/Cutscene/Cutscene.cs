@@ -43,6 +43,9 @@ public class TutorialCutscene : MonoBehaviour
     [SerializeField] private float bobbleHeight = 10f;
     [SerializeField] private float bobbleSpeed = 2f;
 
+    // Static variable that persists during gameplay but resets when game restarts
+    private static bool _cutsceneCompleted = false;
+    
     private int currentLine = 0;
     private bool dialogueActive = false;
     private bool cutscenePlaying = false;
@@ -52,6 +55,10 @@ public class TutorialCutscene : MonoBehaviour
     private MonoBehaviour playerAttackScript;
     private bool mergePlayed = false;
 
+    // Reference to the cat GameObject so we can hide it
+    private GameObject catObject;
+    private Vector3 catOriginalPosition;
+    
     private bool[] isPlayerSpeaking = {
         true,  // Line 0: Player
         true,  // Line 1: Player
@@ -77,19 +84,93 @@ public class TutorialCutscene : MonoBehaviour
         true,  // Line 21: Player
         false, // Line 22: NPC (Cat)
         false, // Line 23: NPC (Cat)
-        false, // Line 24: NPC (Cat)
+        false, // Line 24: NPC (Cat),
     };
+
+    void Awake()
+    {
+        // Store reference to cat object early
+        if (catAnimator != null)
+        {
+            catObject = catAnimator.gameObject;
+            catOriginalPosition = catObject.transform.position;
+        }
+    }
 
     void Start()
     {
-        Debug.Log("Cutscene Start() called");
+        Debug.Log("Cutscene Start() called. Cutscene completed: " + _cutsceneCompleted);
         
+        // Check if cutscene has already been completed in this play session
+        if (_cutsceneCompleted)
+        {
+            Debug.Log("Cutscene already completed this session, skipping...");
+            
+            // IMPORTANT: Hide the cat immediately
+            if (catObject != null)
+            {
+                catObject.SetActive(false);
+                Debug.Log("Cat hidden because cutscene was already completed");
+            }
+            
+            // Clean up any cutscene objects that might be active
+            CleanupCutsceneObjects();
+            
+            // Ensure player controls are enabled
+            EnablePlayerControlsImmediately();
+            
+            // Disable this script to prevent it from running again
+            this.enabled = false;
+            return;
+        }
+        
+        InitializeCutscene();
+    }
+    
+    private void InitializeCutscene()
+    {
         canvasGroup = dialogueBox.GetComponent<CanvasGroup>();
         if (canvasGroup == null)
             canvasGroup = dialogueBox.AddComponent<CanvasGroup>();
         
         playerController = FindObjectOfType<PlayerController>();
         playerAttackScript = FindObjectOfType<PlayerAttack>();
+        
+        // Make sure cat is at start position and active
+        if (catObject != null)
+        {
+            catObject.SetActive(true);
+            
+            // Reset to original position
+            if (catStartPosition != null)
+            {
+                catObject.transform.position = catStartPosition.position;
+            }
+            else
+            {
+                catObject.transform.position = catOriginalPosition;
+            }
+            
+            // Reset cat sprite alpha if it was faded out
+            SpriteRenderer catSpriteRenderer = catObject.GetComponent<SpriteRenderer>();
+            if (catSpriteRenderer != null)
+            {
+                catSpriteRenderer.color = new Color(catSpriteRenderer.color.r, catSpriteRenderer.color.g, catSpriteRenderer.color.b, 1f);
+            }
+            
+            // Reset cat animator to idle
+            if (catAnimator != null)
+            {
+                catAnimator.Play("Idle");
+                catAnimator.Rebind();
+                catAnimator.Update(0f);
+            }
+            
+            Debug.Log("Cat initialized for cutscene");
+        }
+        
+        // Reset merge flag
+        mergePlayed = false;
         
         if (clickIndicator != null)
         {
@@ -104,12 +185,50 @@ public class TutorialCutscene : MonoBehaviour
         dialogueBox.SetActive(false);
         
         if (playerAnimator != null)
+        {
             playerAnimator.Play("Waking_up");
-        
-        if (catAnimator != null)
-            catAnimator.Play("Idle");
+            playerAnimator.Rebind();
+            playerAnimator.Update(0f);
+        }
         
         StartCoroutine(StartCutsceneAfterDelay(1f));
+    }
+    
+    private void CleanupCutsceneObjects()
+    {
+        Debug.Log("Cleaning up cutscene objects");
+        
+        // Hide dialogue box and panels
+        if (dialogueBox != null) 
+        {
+            dialogueBox.SetActive(false);
+            Debug.Log("Dialogue box hidden");
+        }
+        
+        if (leftCharacterPanel != null) 
+        {
+            leftCharacterPanel.SetActive(false);
+            Debug.Log("Left panel hidden");
+        }
+        
+        if (rightCharacterPanel != null) 
+        {
+            rightCharacterPanel.SetActive(false);
+            Debug.Log("Right panel hidden");
+        }
+        
+        if (clickIndicator != null) 
+        {
+            clickIndicator.SetActive(false);
+            Debug.Log("Click indicator hidden");
+        }
+        
+        // Make sure player is in idle state
+        if (playerAnimator != null)
+        {
+            playerAnimator.Play("Idle");
+            Debug.Log("Player set to idle");
+        }
     }
     
     private IEnumerator StartCutsceneAfterDelay(float delay)
@@ -123,6 +242,13 @@ public class TutorialCutscene : MonoBehaviour
         if (cutscenePlaying && Input.GetMouseButtonDown(0))
         {
             HandleClick();
+        }
+        
+        // Optional debug: Press F5 to reset cutscene
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            ResetCutsceneState();
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
     }
     
@@ -184,7 +310,7 @@ public class TutorialCutscene : MonoBehaviour
         yield return StartCoroutine(PlayMergeAnimation());
         
         // Final dialogue
-        for (int i = 9; i <= 25 && i < dialogueLines.Length; i++)
+        for (int i = 9; i < dialogueLines.Length && i <= 25; i++)
         {
             yield return StartCoroutine(ShowDialogueLine(i));
         }
@@ -267,12 +393,12 @@ public class TutorialCutscene : MonoBehaviour
 
         if (catAnimator != null)
         {
-            SpriteRenderer catSprite = catAnimator.GetComponent<SpriteRenderer>();
-            if (catSprite != null)
+            SpriteRenderer catSpriteRenderer = catAnimator.GetComponent<SpriteRenderer>();
+            if (catSpriteRenderer != null)
             {
                 float fadeTime = 0.4f; 
                 float fadeElapsed = 0f;
-                Color original = catSprite.color;
+                Color original = catSpriteRenderer.color;
 
                 catAnimator.Play("Idle");
 
@@ -282,7 +408,7 @@ public class TutorialCutscene : MonoBehaviour
                 {
                     fadeElapsed += Time.deltaTime;
                     float t = fadeElapsed / fadeTime;
-                    catSprite.color = new Color(original.r, original.g, original.b, 1f - t);
+                    catSpriteRenderer.color = new Color(original.r, original.g, original.b, 1f - t);
 
                     if (!insertStarted && t >= 0.5f)
                     {
@@ -296,12 +422,17 @@ public class TutorialCutscene : MonoBehaviour
                     yield return null;
                 }
 
-                catSprite.color = new Color(original.r, original.g, original.b, 0f);
+                catSpriteRenderer.color = new Color(original.r, original.g, original.b, 0f);
+                
+                // IMPORTANT: Disable the cat object after fade
                 catAnimator.gameObject.SetActive(false);
+                Debug.Log("Cat disabled after merge animation");
             }
             else
             {
+                // If no sprite renderer, just disable the object
                 catAnimator.gameObject.SetActive(false);
+                Debug.Log("Cat disabled (no sprite renderer found)");
             }
         }
 
@@ -400,6 +531,17 @@ public class TutorialCutscene : MonoBehaviour
         }
         
         dialogueBox.SetActive(false);
+        
+        // FINAL STEP: Make absolutely sure the cat is hidden
+        if (catObject != null)
+        {
+            catObject.SetActive(false);
+            Debug.Log("Cat finally hidden at end of cutscene");
+        }
+        
+        // Mark cutscene as completed for this play session
+        _cutsceneCompleted = true;
+        
         EnablePlayerControls();
         OnCutsceneComplete();
     }
@@ -425,9 +567,33 @@ public class TutorialCutscene : MonoBehaviour
         if (playerAttackScript != null)
             playerAttackScript.enabled = true;
     }
+    
+    private void EnablePlayerControlsImmediately()
+    {
+        // Find components if they're not already found
+        if (playerController == null)
+            playerController = FindObjectOfType<PlayerController>();
+        
+        if (playerAttackScript == null)
+            playerAttackScript = FindObjectOfType<PlayerAttack>();
+        
+        // Enable them
+        if (playerController != null)
+            playerController.enabled = true;
+        
+        if (playerAttackScript != null)
+            playerAttackScript.enabled = true;
+    }
 
     private void OnCutsceneComplete()
     {
         Debug.Log("Tutorial cutscene finished");
+    }
+    
+    // Static method to manually reset the cutscene (for debugging/testing)
+    public static void ResetCutsceneState()
+    {
+        _cutsceneCompleted = false;
+        Debug.Log("Cutscene state reset - will play on next start");
     }
 }
