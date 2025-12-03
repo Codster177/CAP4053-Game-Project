@@ -31,7 +31,6 @@ public class TutorialCutscene : MonoBehaviour
     
     [Header("Cutscene Settings")]
     [SerializeField] private string[] dialogueLines;
-    [SerializeField] private float typewriterSpeed = 0.05f;
     [SerializeField] private float fadeOutSpeed = 1f;
     
     [Header("Timing Settings")]
@@ -45,7 +44,6 @@ public class TutorialCutscene : MonoBehaviour
     [SerializeField] private float bobbleSpeed = 2f;
 
     private int currentLine = 0;
-    private bool isTyping = false;
     private bool dialogueActive = false;
     private bool cutscenePlaying = false;
     private CanvasGroup canvasGroup;
@@ -55,31 +53,30 @@ public class TutorialCutscene : MonoBehaviour
     private bool mergePlayed = false;
 
     private bool[] isPlayerSpeaking = {
-
-        true, // Line 0: Player
+        true,  // Line 0: Player
         true,  // Line 1: Player
         false, // Line 2: NPC (Cat)
         true,  // Line 3: Player
         false, // Line 4: NPC (Cat)
-        true, // Line 5: Player
+        true,  // Line 5: Player
         true,  // Line 6: Player
         false, // Line 7: NPC (Cat)
         false, // Line 8: NPC (Cat)
         true,  // Line 9: Player
         false, // Line 10: NPC (Cat)
-        false,  // Line 11: NPC (Cat)
-        false, // Line 12: NPC (Cat)
-        true,  // Line 13: Player
+        false, // Line 11: NPC (Cat)
+        true,  // Line 12: Player
+        false, // Line 13: NPC (Cat)
         false, // Line 14: NPC (Cat)
-        false,  // Line 15:NPC (Cat)
-        false, // Line 16: NPC (Cat)
-        true,  // Line 17: Player
-        false, // Line 18: NPC (Cat)
-        true,  // Line 19: Player
+        false, // Line 15: NPC (Cat)
+        true,  // Line 16: Player
+        false, // Line 17: NPC (Cat)
+        true,  // Line 18: Player
+        false, // Line 19: NPC (Cat)
         false, // Line 20: NPC (Cat)
         true,  // Line 21: Player
         false, // Line 22: NPC (Cat)
-        true,  // Line 23: Player
+        false, // Line 23: NPC (Cat)
         false, // Line 24: NPC (Cat)
     };
 
@@ -203,9 +200,17 @@ public class TutorialCutscene : MonoBehaviour
         // Set up character profile based on who's speaking
         SetupCharacterProfile(lineIndex);
         
+        // Display full text immediately
         if (currentLine < dialogueLines.Length)
         {
-            yield return StartCoroutine(TypeLine(dialogueLines[currentLine]));
+            dialogueText.text = dialogueLines[currentLine];
+            
+            // Show click indicator immediately
+            if (clickIndicator != null)
+            {
+                clickIndicator.SetActive(true);
+                StartCoroutine(BobbleIndicator());
+            }
         }
         
         yield return WaitForClick();
@@ -313,15 +318,16 @@ public class TutorialCutscene : MonoBehaviour
         if (leftCharacterPanel != null) leftCharacterPanel.SetActive(false);
         if (rightCharacterPanel != null) rightCharacterPanel.SetActive(false);
         
+        // Hide click indicator
+        if (clickIndicator != null)
+            clickIndicator.SetActive(false);
+            
         dialogueBox.SetActive(false);
         yield return new WaitForSeconds(0.3f);
     }
 
     private IEnumerator WaitForClick()
     {
-        while (isTyping)
-            yield return null;
-
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
         yield return null;
     }
@@ -348,38 +354,6 @@ public class TutorialCutscene : MonoBehaviour
         catAnimator.Play("Idle");
     }
 
-    private IEnumerator TypeLine(string line)
-    {
-        isTyping = true;
-
-        if (clickIndicator != null)
-        {
-            clickIndicator.SetActive(false);
-            StopCoroutine("BobbleIndicator");
-        }
-
-        dialogueText.text = "";
-
-        foreach (char letter in line.ToCharArray())
-        {
-            dialogueText.text += letter;
-            if (Input.GetMouseButton(0))
-            {
-                dialogueText.text = line;
-                break;
-            }
-            yield return new WaitForSeconds(typewriterSpeed);
-        }
-
-        if (clickIndicator != null)
-        {
-            clickIndicator.SetActive(true);
-            StartCoroutine(BobbleIndicator());
-        }
-
-        isTyping = false;
-    }
-
     private IEnumerator BobbleIndicator()
     {
         RectTransform indicatorRect = clickIndicator.GetComponent<RectTransform>();
@@ -397,20 +371,9 @@ public class TutorialCutscene : MonoBehaviour
     private void HandleClick()
     {
         if (!dialogueActive) return;
-
-        if (isTyping)
-        {
-            StopCoroutine("TypeLine");
-            dialogueText.text = dialogueLines[currentLine];
-
-            if (clickIndicator != null)
-            {
-                clickIndicator.SetActive(true);
-                StartCoroutine(BobbleIndicator());
-            }
-
-            isTyping = false;
-        }
+        
+        // No typing to interrupt, so clicks will just advance the dialogue
+        // The waiting is handled in WaitForClick() coroutine
     }
 
     private IEnumerator EndCutscene()
@@ -422,6 +385,10 @@ public class TutorialCutscene : MonoBehaviour
         if (leftCharacterPanel != null) leftCharacterPanel.SetActive(false);
         if (rightCharacterPanel != null) rightCharacterPanel.SetActive(false);
         
+        // Hide click indicator
+        if (clickIndicator != null)
+            clickIndicator.SetActive(false);
+            
         float elapsedTime = 0f;
         float startAlpha = canvasGroup.alpha;
         

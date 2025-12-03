@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &41079720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,39 +165,41 @@ MonoBehaviour:
   catStartPosition: {fileID: 683348285}
   catEndPosition: {fileID: 1240467983}
   dialogueLines:
-  - F*ck where am I?
+  - ...Where am I?
   - ...Actually who am I???
-  - Oh my god, you're finally awake, that took you forever I thought you like, drop
-    dead or something. which would be very weird considering-
+  - Oh, you're FINALLY awake. You took forever to wake up, I thought you died or
+    something! Which would be very weird considering-
   - Why is there a talking cat?
-  - What do you mean why is there a talking cat, I have always been able to talk?
+  - What do you mean "Why is there a talking cat?" I've always been able to talk?
     Did you hit your head or something?
-  - 'Not sure my head does hurt though, can you please tell me what the blippity
-    f*ck is going on and why the hell am I in the middle of nowhere? '
-  - And does hearing animal speak make me a furry?
-  - What no?! Of course not, you being a furry has nothing to do with hearing me
-    talk-
-  - I mean that's not important right now, we have better things to do right now.
-  - Did you just, go inside me??? I didn't consent to that.
-  - Consent this, consent that. It's not important right now.
-  - You need to figure out what to do already, especially since you apparently decided
-    to go and get amesia on me.
-  - Now listen up buttercup-
+  - Not sure my head does hurt though. Do you have any idea what's going on?
+  - 'Also why am I in the middle of nowhere? '
+  - 'Okay okay, calm down jeez, I will explain everything in due time. '
+  - Now just hold on for a sec and don't move...
+  - Did you just... enter my body??? How???
+  - 'Don''t worry about that. '
+  - Just listen to me so you can know what to do already, gojo wannabe-
   - Don't call me that you weird ball of fur.
-  - Fine.
-  - Gojo wannabe, let's get this over with.
-  - You're currently in someone's mind and you need to beat up some inner demon and
-    try not to die immediately.
-  - What do I get out of this?
-  - Nothing, except the feeling of saving someone.
-  - Don't know if that's worth it.
-  - You get your memory back okay (maybe), also if you don't do it you will be stuck
-    here forever so stop being a failure and lets gooooooo.
-  - I heard that. But fiiiiiine.
-  - God that took forever. (insert control me no rememebr)
-  - I hope you know I hate you by the way.
-  - Don't worry, I do too, you useless prick.
-  typewriterSpeed: 0.05
+  - Okay, fine.
+  - 'But here''s what''s going on: You''re currently in someone''s mind and they''ve
+    some inner monsters and struggle that they''re dealing with.'
+  - And you my good sir, have to defeat those monster without dying. Easy, really.
+  - Um... okay... What do I get out of this?
+  - Well, nothing. Except for the validation of saving some poor soul from systematic
+    failure.
+  - I... don't know if that's worth it.
+  - Well...unless you want to be stuck here forever with no memory of your past,
+    you don't really have a choice.
+  - So you might as well help out some people and see what happens. Maybe you will
+    get your memory back, who knows.
+  - Okay fine. How do I defeat them?
+  - Did you really forget how to fight too??? That rock must have hit you pretty
+    hard...
+  - Actually that's beside the point for now. Just know you have a light attack ("o"
+    / left-click), a heavy attack ("p"/right click) , you can use those to attack
+    the monsters. And if you want to get away from the enemies quickly you can dash
+    (left-shift).
+  - Now get going and beat up some monsters, and try not to die!
   fadeOutSpeed: 0.2
   wakeUpDuration: 2
   catConfuseDuration: 1
@@ -15043,7 +15045,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.97617, y: 161}
+  m_AnchoredPosition: {x: 0.97617, y: 142.2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1999399014
