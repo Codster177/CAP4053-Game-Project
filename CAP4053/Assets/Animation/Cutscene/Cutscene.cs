@@ -89,6 +89,7 @@ public class TutorialCutscene : MonoBehaviour
 
     void Awake()
     {
+       
         // Store reference to cat object early
         if (catAnimator != null)
         {

@@ -7150,7 +7150,7 @@ MonoBehaviour:
   dashVelocity: 3
   canDash: 1
   dashPS: {fileID: 1927955591}
-  playerHealth: 50
+  playerHealth: 100
 --- !u!50 &975306207
 Rigidbody2D:
   serializedVersion: 5

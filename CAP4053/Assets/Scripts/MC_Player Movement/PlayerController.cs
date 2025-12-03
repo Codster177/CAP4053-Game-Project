@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
         canBeHit = newCanBeHit;
     }
 
-    [SerializeField] private float playerHealth = 50f;
+    [SerializeField] private float playerHealth = 100f;
 
     public void DealDamageToPlayer(float damageAmount, bool hitWhileDash)
     {
@@ -113,15 +113,23 @@ public class PlayerController : MonoBehaviour
             return;
         if (!canBeHit)
             return;
+        
+        if (GameManager.publicGameManager != null)
+        {
+            GameManager.publicGameManager.DealDamage(damageAmount);
+            Debug.Log($"Hit! Damage: {damageAmount}");
+        }
 
         playerHealth -= damageAmount;
 
-        if (playerHealth <= 0)
-        {
-            // canBeHit = false; // prevents hitting after death
-            Debug.Log("Player died!");
-            PlayerDeath(GameState.Death);
-        }
+        //commented out for testing purposes
+
+        //if (playerHealth <= 0)
+        //{
+        //    // canBeHit = false; // prevents hitting after death
+        //    Debug.Log("Player died!");
+        //    PlayerDeath(GameState.Death);
+        //}
     }
 
     // Called OnGameStateChanged. Activates the player death. Triggers animation.

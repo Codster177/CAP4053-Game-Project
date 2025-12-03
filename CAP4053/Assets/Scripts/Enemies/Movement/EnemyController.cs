@@ -80,4 +80,13 @@ public class EnemyController : MonoBehaviour
             navMeshAgent.SetDestination(transform.position);
         }
     }
+
+    //needed so it stops calling the script after being destroyed
+    protected void OnDestroy()
+    {
+        if (GameManager.publicGameManager != null)
+        {
+            GameManager.OnGameStateChanged -= DeathEnemyCommand;
+        }
+    }
 }
