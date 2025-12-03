@@ -105,7 +105,6 @@ public class PlayerController : MonoBehaviour
         canBeHit = newCanBeHit;
     }
 
-    [SerializeField] private float playerHealth = 100f;
 
     public void DealDamageToPlayer(float damageAmount, bool hitWhileDash)
     {
@@ -113,14 +112,12 @@ public class PlayerController : MonoBehaviour
             return;
         if (!canBeHit)
             return;
-        
+
         if (GameManager.publicGameManager != null)
         {
             GameManager.publicGameManager.DealDamage(damageAmount);
             Debug.Log($"Hit! Damage: {damageAmount}");
         }
-
-        playerHealth -= damageAmount;
 
         //commented out for testing purposes
 

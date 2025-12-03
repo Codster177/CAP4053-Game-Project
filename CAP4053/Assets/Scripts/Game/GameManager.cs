@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public static event Action<GameState> OnGameStateChanged;
     public int testMode;
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private float playerHealth;
+    [SerializeField] private float playerHealth, maxPlayerHealth;
     [SerializeField] private TMP_Text healthLabel;
     private GameObject playerGO;
     private PlayerAttack playerAttack;
@@ -54,6 +54,22 @@ public class GameManager : MonoBehaviour
     public float GetPlayerHealth()
     {
         return playerHealth;
+    }
+    public void HealHealth(float healAmount)
+    {
+        MyUIManager.publicUIManager.HealthbarDamageAnim(-healAmount);
+        float newHealth = playerHealth + healAmount;
+
+        playerHealth = newHealth;
+    }
+    public void HealFull()
+    {
+        float healVal = GetMaxHealth() - GetPlayerHealth();
+        HealHealth(healVal);
+    }
+    public float GetMaxHealth()
+    {
+        return maxPlayerHealth;
     }
     // Returns the current gamestate. 
     public GameState GetGameState()

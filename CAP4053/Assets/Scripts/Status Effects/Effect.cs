@@ -120,6 +120,7 @@ public class Knockback : Stun
         base.RemoveEffect(effectHolder);
         if (rigidbody != null)
         {
+            Debug.Log($"Set linear velocity to 0.");
             rigidbody.linearVelocity = new Vector3(0f, 0f, 0f);
         }
     }

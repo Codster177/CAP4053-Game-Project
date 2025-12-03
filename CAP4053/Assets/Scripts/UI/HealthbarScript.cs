@@ -12,7 +12,7 @@ public class HealthbarScript : MonoBehaviour
     private float currentTime, tempHealth;
     void Start()
     {
-        tempHealth = GameManager.publicGameManager.GetPlayerHealth();
+        tempHealth = GameManager.publicGameManager.GetMaxHealth();
     }
 
     public IEnumerator BarTakeDamage(float curHealth, float targetHealth, Action setCoroutineToNull)
