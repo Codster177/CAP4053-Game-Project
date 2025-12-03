@@ -11,9 +11,9 @@ public class RoomPrefab : MonoBehaviour
     [SerializeField] private NavMeshModifier[] navMeshModifiers;
     [SerializeField] private Grid roomGrid;
     [SerializeField] private Tilemap floormap;
-    [SerializeField] private Tilemap doormap;
     [SerializeField] private Tilemap wallmap;
     [SerializeField] private List<DirectionTrashList> removeObjects = new List<DirectionTrashList>() { new DirectionTrashList(GenerationDirection.up), new DirectionTrashList(GenerationDirection.down), new DirectionTrashList(GenerationDirection.right), new DirectionTrashList(GenerationDirection.left) };
+    [SerializeField] private List<DirectionTrashList> doorIndicators = new List<DirectionTrashList>() { new DirectionTrashList(GenerationDirection.up), new DirectionTrashList(GenerationDirection.down), new DirectionTrashList(GenerationDirection.right), new DirectionTrashList(GenerationDirection.left) };
     private List<GenerationDirection> doorDirections = new List<GenerationDirection>();
     private GenerationDirection exitRoomDir = GenerationDirection.nullType;
 
@@ -57,6 +57,7 @@ public class RoomPrefab : MonoBehaviour
             if (removeObjects[i].direction == directionToOpen)
             {
                 removeObjects[i].EnableObjects(enabled);
+                doorIndicators[i].EnableObjects(!enabled);
             }
         }
     }
@@ -69,6 +70,7 @@ public class RoomPrefab : MonoBehaviour
                 if (removeObjects[j].direction == doorDirections[i])
                 {
                     removeObjects[j].EnableObjects(enabled);
+                    doorIndicators[j].EnableObjects(!enabled);
                 }
             }
         }

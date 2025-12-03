@@ -8,6 +8,7 @@ public class RoomController : MonoBehaviour
     [SerializeField] private RoomPrefab roomPrefab;
     [SerializeField] private EnemySpawner enemySpawner;
     [SerializeField] private RoomTrigger roomTrigger;
+    [SerializeField] private EnemySpawnTrigger enemySpawnTrigger;
     [SerializeField] private bool safeRoom;
     [SerializeField] private static GameObject room0;
     private CameraManager cameraManager;
@@ -15,6 +16,10 @@ public class RoomController : MonoBehaviour
     {
         cameraManager = CameraManager.publicCameraManager;
         roomTrigger.SetRoomController(this);
+        if (!safeRoom)
+        {
+            enemySpawnTrigger.SetRoomController(this);
+        }
     }
     void Update()
     {
