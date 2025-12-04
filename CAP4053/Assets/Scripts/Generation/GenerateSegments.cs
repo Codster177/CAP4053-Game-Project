@@ -32,6 +32,17 @@ public class GenerateSegments : ScriptableObject
     {
         currentlyGenerating.Add(roomPrefab);
     }
+    public bool CurrentlyGeneratingEmpty()
+    {
+        if (currentlyGenerating == null | currentlyGenerating.Count == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     public void GenerateSegment(Vector2 startingPosition, GenerationDirection direction)
     {
         // Finds the position of the connecting room to the new segment.

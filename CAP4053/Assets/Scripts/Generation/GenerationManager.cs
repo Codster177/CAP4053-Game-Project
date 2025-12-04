@@ -13,7 +13,6 @@ public class GenerationManager : MonoBehaviour
     [SerializeField] private GenerateSegments segmentGenerator;
     [SerializeField] private OutfitRooms roomOutfitter;
     [SerializeField] private NavMeshSurface navMeshSurface;
-    [SerializeField] private GameObject room0;
     private System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
 
     void Awake()
@@ -48,8 +47,11 @@ public class GenerationManager : MonoBehaviour
         EnemyManager.publicEnemyManager.ClearList();
         EnemyManager.publicEnemyManager.IncreaseEnemyDifficulty();
         navMeshSurface.RemoveData();
-        segmentGenerator.ClearCurrentRooms();
-        yield return new WaitForSeconds(2f);
+        if (!segmentGenerator.CurrentlyGeneratingEmpty())
+        {
+            segmentGenerator.ClearCurrentRooms();
+            yield return new WaitForSeconds(2f);
+        }
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
         segmentGenerator.GenerateSegment(exitRoom.transform.position, newDirection);

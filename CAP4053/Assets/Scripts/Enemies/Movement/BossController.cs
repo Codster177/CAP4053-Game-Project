@@ -4,7 +4,8 @@ using UnityEngine;
 public class BossController : ChaserController
 {
     public EnemyAnimator enemyAnimator;
-
+    protected int attackState = 0;
+    private Vector3 randomLocation;
     new void Update()
     {
         base.Update();
@@ -15,6 +16,10 @@ public class BossController : ChaserController
         Debug.Log("Damaged!");
         enemyAnimator.ChangeAnimation("hurt", true);
         StartCoroutine(RecieveDamageWait());
+    }
+    public int GetAttackState()
+    {
+        return attackState;
     }
     private bool CheckHurtAnimation()
     {
@@ -42,9 +47,50 @@ public class BossController : ChaserController
 
         if (playerHealth > 50 && currentHealth > 50)
         {
+            attackState = 1;
+        }
+        else if (currentHealth <= 50 && attackState != 2 && attackState != 3)
+        {
+            attackState = 2;
+        }
+
+        if (attackState == 2)
+        {
+            if (Vector3.Distance(transform.position, GameManager.publicGameManager.GetPlayerLocation().position) > 14f)
+            {
+                SetPosition(true, new Vector3());
+            }
+            else
+            {
+                SetPosition(false, transform.position);
+                StartCoroutine(SecondAttackCoroutine());
+            }
+        }
+
+        Debug.Log($"Attack State: {attackState}");
+        // Left off here ^^
+    }
+    private IEnumerator SecondAttackCoroutine()
+    {
+        attackState = 3;
+        yield return new WaitForSeconds(1.3f);
+        attackState = 2;
+    }
+
+    public new void SetPosition(bool goToPlayer, Vector3 alternatePosition)
+    {
+        if (!movementEnabled)
+        {
             return;
         }
-        // Left off here ^^
+        if (goToPlayer)
+        {
+            navMeshAgent.SetDestination(GameManager.publicGameManager.GetPlayerLocation().position);
+        }
+        else
+        {
+            navMeshAgent.SetDestination(alternatePosition);
+        }
     }
 
 }

@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7953535765956172354}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 621.05334, y: 434.24753, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   lifetime: 5
-  damageAmount: 10
+  damageAmount: 7
   canDamageDashingPlayer: 1
 --- !u!58 &-1321107102462573220
 CircleCollider2D:

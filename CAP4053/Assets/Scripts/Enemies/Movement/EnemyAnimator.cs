@@ -36,7 +36,14 @@ public class EnemyAnimator : MonoBehaviour
     }
     public string CheckCurrentAnimation()
     {
-        return animationObject.name;
+        if (animationObject != null)
+        {
+            return animationObject.name;
+        }
+        else
+        {
+            return "";
+        }
     }
     private bool AttemptPlay(AnimationObject newAnimation)
     {

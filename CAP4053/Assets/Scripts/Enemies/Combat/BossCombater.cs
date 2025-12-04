@@ -4,6 +4,7 @@ using UnityEngine;
 public class BossCombater : ChaserCombater
 {
     protected BossController bossController;
+    [SerializeField] protected GameObject projectilePrefab;
 
     protected new void Start()
     {
@@ -12,20 +13,31 @@ public class BossCombater : ChaserCombater
     }
     protected new void Update()
     {
-        if (currentAttack == null && inRange.Count > 0)
+        DecideAttack(bossController.GetAttackState());
+    }
+    protected void DecideAttack(int attackState)
+    {
+        if (currentAttack != null)
         {
-            currentAttack = StartCoroutine(StartAttack());
+            return;
         }
-        else
+        if (attackState == 1)
         {
-            if (currentAttack == null)
+            if (inRange.Count > 0)
+            {
+                currentAttack = StartCoroutine(StartChaserAttack());
+            }
+            else
             {
                 bossController.SetPosition(true, new Vector3());
             }
         }
-        return;
+        if (attackState == 3)
+        {
+            currentAttack = StartCoroutine(StartShooterAttack());
+        }
     }
-    protected new IEnumerator StartAttack()
+    protected IEnumerator StartChaserAttack()
     {
         bossController.enemyAnimator.ChangeAnimation("attack_1");
         bossController.SetPosition(false, transform.position);
@@ -36,6 +48,32 @@ public class BossCombater : ChaserCombater
             HitWithKnockback(inRange[i], damageAmount, knockbackDir, enemyKnockback, knockbackTime, hitWhileDash);
         }
         currentAttack = null;
+    }
+
+    protected IEnumerator StartShooterAttack()
+    {
+        bossController.enemyAnimator.ChangeAnimation("attack_2");
+
+        while (bossController.GetAttackState() == 3)
+        {
+            Shoot(GameManager.publicGameManager.GetPlayerLocation().position);
+            yield return new WaitForSeconds(attackSpeed / 3);
+        }
+    }
+
+    private void Shoot(Vector3 targetPos)
+    {
+        if (projectilePrefab == null) return;
+
+        // Determine where to spawn the bullet (use current position if no firePoint set)
+        Vector3 spawnLoc = transform.position;
+
+        // Calculate rotation towards the player
+        Vector3 direction = targetPos - spawnLoc;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        Instantiate(projectilePrefab, spawnLoc, rotation);
     }
 
 }

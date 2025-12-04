@@ -35,8 +35,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7071927814405642676}
   m_Father: {fileID: 0}
@@ -202,7 +202,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.75}
-  m_Radius: 3.01
+  m_Radius: 5.8
 --- !u!50 &3057887934761051786
 Rigidbody2D:
   serializedVersion: 5
@@ -264,6 +264,9 @@ MonoBehaviour:
     playFull: 0
     nextAnimationName: 
   - name: attack_1
+    playFull: 1
+    nextAnimationName: 
+  - name: attack_2
     playFull: 1
     nextAnimationName: 
   - name: hurt
@@ -337,7 +340,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 6
+  m_Radius: 12
 --- !u!114 &2711476984369955615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,3 +360,4 @@ MonoBehaviour:
   enemyKnockback: 40
   knockbackTime: 0.2
   hitWhileDash: 0
+  projectilePrefab: {fileID: 4810966256045601767, guid: 0148e022d63205e4dabbf3a9de417c48, type: 3}

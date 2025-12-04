@@ -29,6 +29,11 @@ public class EnemyController : MonoBehaviour
             enemyCombater = GetComponent<EnemyCombater>();
         }
 
+        if (enemyHealth == null)
+        {
+            enemyHealth = GetComponent<EnemyHealth>();
+        }
+
         //sets up combater
         if (enemyCombater != null)
         {
@@ -48,6 +53,18 @@ public class EnemyController : MonoBehaviour
         else if (GetDirection().x > 0)
         {
             spriteRenderer.flipX = false;
+        }
+        else
+        {
+            Vector3 playerPos = GameManager.publicGameManager.GetPlayerLocation().position;
+            if (transform.position.x > playerPos.x)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if (transform.position.x < playerPos.x)
+            {
+                spriteRenderer.flipX = false;
+            }
         }
     }
 
