@@ -7,6 +7,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private float[] comboResetTime; // the combo time window
     [SerializeField] private int damage = 10;
+    [SerializeField] private float heavyAttackLockDuration = 0.4f; // total heavy animation duration (tweak in inspector)
+    private bool heavyInProgress = false;
     [SerializeField] private List<GameObject> enemiesInRange = new List<GameObject>();
     private PlayerController playerController;
     private Coroutine comboResetCoroutine;
@@ -74,12 +76,14 @@ public class PlayerAttack : MonoBehaviour
 
     private void HandleHeavyAttack()
     {
-        if (isAttacking) return;
+        if (isAttacking || heavyInProgress) return;
 
+        // lock heavy immediately so spamming won't start multiple heavy damage instances
+        heavyInProgress = true;
         animator.SetTrigger("HeavyAttack");
 
         // lock player so they cant spam cancel animations
-        StartCoroutine(AttackCoroutine());
+        StartCoroutine(AttackCoroutine(damage, true));
     }
 
     public IEnumerator TriggerAnimation()
@@ -101,7 +105,7 @@ public class PlayerAttack : MonoBehaviour
         canAttack = newState;
     }
 
-    IEnumerator AttackCoroutine()
+    IEnumerator AttackCoroutine(int damageAmount = -1, bool isHeavy = false)
     {
         isAttacking = true;
         // sync with animation length
@@ -125,11 +129,19 @@ public class PlayerAttack : MonoBehaviour
             }
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(damage);
+                int dmg = (damageAmount == -1) ? damage : damageAmount;
+                enemyHealth.TakeDamage(dmg);
             }
         }
 
         isAttacking = false;
+        // if this was a heavy attack, keep the heavy lock for the remainder of the animation
+        if (isHeavy)
+        {
+            float remaining = heavyAttackLockDuration - 0.05f;
+            if (remaining > 0f) yield return new WaitForSeconds(remaining);
+            heavyInProgress = false;
+        }
     }
 
     IEnumerator ResetComboAfterDelay()
