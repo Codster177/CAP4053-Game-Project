@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private GameState CurrentGameState;
     public static event Action<GameState> OnGameStateChanged;
     public int testMode;
+    public int levelCount = -1;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float playerHealth, maxPlayerHealth;
     [SerializeField] private TMP_Text healthLabel;

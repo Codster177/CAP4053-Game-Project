@@ -7,6 +7,7 @@ public class EnemyManager : MonoBehaviour
     public static EnemyManager publicEnemyManager;
     [SerializeField] private EnemyStatManager enemyStatManager;
     private List<GameObject> enemyList = new List<GameObject>();
+    [SerializeField] private GameObject bossPrefab;
 
     void Awake()
     {

@@ -1070,8 +1070,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dash
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7b172398778010643bf41c322b0a6588, type: 2}
-  m_sharedMaterial: {fileID: -2923215997909942336, guid: 7b172398778010643bf41c322b0a6588, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c1f8aa82a0ac46b499ccca98e930e856, type: 2}
+  m_sharedMaterial: {fileID: 7408903655547772609, guid: c1f8aa82a0ac46b499ccca98e930e856, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1867,7 +1867,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5480,8 +5480,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5a140fd0c7dc4f42bfd415763ae0b28, type: 2}
-  m_sharedMaterial: {fileID: 8675650053811939732, guid: c5a140fd0c7dc4f42bfd415763ae0b28, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8578,8 +8578,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Health
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7b172398778010643bf41c322b0a6588, type: 2}
-  m_sharedMaterial: {fileID: -2923215997909942336, guid: 7b172398778010643bf41c322b0a6588, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c1f8aa82a0ac46b499ccca98e930e856, type: 2}
+  m_sharedMaterial: {fileID: 7408903655547772609, guid: c1f8aa82a0ac46b499ccca98e930e856, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10005,6 +10005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testMode: 1
+  levelCount: 0
   playerTransform: {fileID: 975306204}
   playerHealth: 100
   maxPlayerHealth: 100

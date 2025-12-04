@@ -56,7 +56,7 @@ public class BossController : ChaserController
 
         if (attackState == 2)
         {
-            if (Vector3.Distance(transform.position, GameManager.publicGameManager.GetPlayerLocation().position) > 14f)
+            if (Vector3.Distance(transform.position, GameManager.publicGameManager.GetPlayerLocation().position) > 11f)
             {
                 SetPosition(true, new Vector3());
             }
@@ -75,6 +75,11 @@ public class BossController : ChaserController
         attackState = 3;
         yield return new WaitForSeconds(1.3f);
         attackState = 2;
+    }
+    public override void Death()
+    {
+        Debug.Log("THIS THIS THIS");
+        GameManager.publicGameManager.HealFull();
     }
 
     public new void SetPosition(bool goToPlayer, Vector3 alternatePosition)

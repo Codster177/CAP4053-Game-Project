@@ -1574,6 +1574,10 @@ PrefabInstance:
       propertyPath: spawnSquares.Array.data[0].size.y
       value: 11.9
       objectReference: {fileID: 0}
+    - target: {fileID: 2426980584811372116, guid: eb5eb2d732039f84e9148e81f5c23e56, type: 3}
+      propertyPath: safeRoom
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3848511675667609004, guid: eb5eb2d732039f84e9148e81f5c23e56, type: 3}
       propertyPath: m_SortingOrder
       value: -1

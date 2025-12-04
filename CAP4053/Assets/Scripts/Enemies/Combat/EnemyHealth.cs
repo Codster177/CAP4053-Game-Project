@@ -54,6 +54,7 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("deaded");
+        enemyController.Death();
         EnemyManager.publicEnemyManager.RemoveEnemy(gameObject);
         Destroy(gameObject);
     }

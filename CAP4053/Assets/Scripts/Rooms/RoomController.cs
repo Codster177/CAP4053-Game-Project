@@ -16,7 +16,7 @@ public class RoomController : MonoBehaviour
     {
         cameraManager = CameraManager.publicCameraManager;
         roomTrigger.SetRoomController(this);
-        if (!safeRoom)
+        if (enemySpawnTrigger != null)
         {
             enemySpawnTrigger.SetRoomController(this);
         }
@@ -46,7 +46,7 @@ public class RoomController : MonoBehaviour
         {
             return;
         }
-        if ((!safeRoom) && (!RoomProgressionManager.Instance.HasVisitedRoom(this)))
+        if (!RoomProgressionManager.Instance.HasVisitedRoom(this))
         {
             enemySpawner.SpawnEnemies();
         }
@@ -79,7 +79,7 @@ public class RoomController : MonoBehaviour
     private void ExitRoomCheck()
     {
         float distanceFromCenter = Vector3.Distance(GameManager.publicGameManager.GetPlayerLocation().position, transform.position);
-        if (distanceFromCenter < 4f)
+        if (distanceFromCenter < 4f && EnemyManager.publicEnemyManager.GetEnemyList().Count == 0)
         {
             safeRoom = false;
             StartCoroutine(GenerationManager.publicGenerationManager.LoadExitRoom(roomPrefab));

@@ -8,6 +8,7 @@ public class OutfitRooms : ScriptableObject
 {
     [SerializeField] private List<RoomList> roomLists = new List<RoomList>() { new RoomList("Forest Rooms"), new RoomList("Spawn Rooms") };
     [SerializeField] private List<Tile> floorTiles, wallTiles;
+    [SerializeField] private int bossLevel;
 
     public void OutfitRoom(GenerateSegments.SpawnNode spawnNode, RoomPrefab prefab, int startRoomIndex, GenerationDirection startDir, GenerateSegments debug)
     {
@@ -122,6 +123,10 @@ public class OutfitRooms : ScriptableObject
         {
             if (roomLists[i].listName == listName)
             {
+                if (roomLists[i].listName == "Spawn Rooms" && GameManager.publicGameManager.levelCount >= bossLevel)
+                {
+                    return roomLists[2].GetRandomPrefab();
+                }
                 return roomLists[i].GetRandomPrefab();
             }
         }

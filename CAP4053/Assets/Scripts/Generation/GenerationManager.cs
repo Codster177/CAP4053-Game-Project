@@ -61,6 +61,7 @@ public class GenerationManager : MonoBehaviour
         navMeshSurface.BuildNavMesh();
         segmentGenerator.AddToCurrentlyGenerating(exitRoom);
         roomOutfitter.CreateNewDoor(exitRoom, newDirection);
+        GameManager.publicGameManager.levelCount++;
     }
 
     public static GenerationDirection GetOppositeDirection(GenerationDirection direction)

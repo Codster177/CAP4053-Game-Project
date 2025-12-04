@@ -90,6 +90,10 @@ public class EnemyController : MonoBehaviour
     {
         return;
     }
+    public virtual void Death()
+    {
+        return;
+    }
     protected void DeathEnemyCommand(GameState newGameState)
     {
         if (newGameState == GameState.Death)
